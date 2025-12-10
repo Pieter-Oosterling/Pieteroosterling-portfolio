@@ -1,4 +1,5 @@
 import Card from '@/components/Card/Card';
+import Carousel from '@/components/Carousel/Carousel';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -8,10 +9,14 @@ export default function Home() {
         <h1 className={`${styles.title} fade-in`}>
           Mijn <span className="text-gradient">Portfolio</span>
         </h1>
+
+        <div className={`${styles.carousel} fade-in`} style={{ animationDelay: '0.1s' }}>
+          <Carousel />
+        </div>
+
         <div className={`${styles.intro} fade-in`} style={{ animationDelay: '0.2s' }}>
           <p>
-            Welkom op mijn O&O portfolio. Hier vind je een overzicht van mijn projecten,
-            mijn ontwikkeling en wie ik ben.
+            Welkom op mijn O&O portfolio. Hier vind je mijn projecten en persoonlijke ontwikkeling.
           </p>
         </div>
       </div>

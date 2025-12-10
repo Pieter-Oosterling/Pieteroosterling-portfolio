@@ -3,7 +3,8 @@
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding: 6rem 2rem 4rem;
+    padding: 8rem 2rem 4rem;
+    /* More top padding for fixed header */
 }
 
 .title {
@@ -23,29 +24,84 @@
 
 .card {
     position: relative;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 2.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
     border-radius: 1rem;
     transition: all 0.3s ease;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: rgba(6, 182, 212, 0.4);
-    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary);
+    box-shadow: var(--card-shadow);
+}
+
+.imageContainer {
+    width: 100%;
+    height: 200px;
+    background: var(--surface-hover);
+    position: relative;
+    overflow: hidden;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    opacity: 0.2;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardContent {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .cardTitle {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    color: var(--primary);
 }
 
 .cardDesc {
     color: var(--text-secondary);
     line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.actions {
+    margin-top: auto;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.button:hover {
+    opacity: 0.9;
 }
 
 .glow {
@@ -54,9 +110,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 50% 100%, rgba(6, 182, 212, 0.1), transparent 70%);
+    background: radial-gradient(circle at 50% 100%, var(--glow), transparent 70%);
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .card:hover .glow {
@@ -67,12 +124,19 @@
     margin-top: 2rem;
     padding: 0.8rem 1.5rem;
     border-radius: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    background: var(--surface);
     transition: all 0.2s ease;
 }
 
 .backButton:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--surface-hover);
     transform: translateX(-5px);
+}
+
+.empty {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    grid-column: 1 / -1;
+    text-align: center;
 }
