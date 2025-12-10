@@ -32,7 +32,7 @@ export const projectsData: Project[] = [
         description: 'Een conceptueel ontwerp voor een vervoersmiddel in het jaar 2070.',
         client: 'DENP',
         date: '11-11-2022',
-        team: ['Nils Vakande', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
+        team: ['Nils Verkade', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
         role: 'Teamleider',
         thumbnail: '/images/Image - Brugklas Project.png', // Placeholder mapping
         content: {
@@ -123,6 +123,104 @@ export const projectsData: Project[] = [
         Mijn teamleden waardeerden mijn sturing en hulp bij het plannen en verslaglegging.
         Ze zagen mij als een natuurlijke leider die verantwoordelijkheid neemt.
       `
+        }
+    },
+    // --- JAAR 2 ---
+    {
+        id: 4,
+        year: 2,
+        slug: 'mobiliteit-van-de-toekomst',
+        title: 'Mobiliteit van de Toekomst',
+        description: 'Innovatief concept voor persoons- en goederenvervoer in 2070.',
+        client: 'Bas Wilmink (Mobiliteitsdeskundige)',
+        date: '11-12-2023',
+        team: ['Nils Vakande', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
+        role: 'Ontwerper & Onderzoeker',
+        thumbnail: '/images/Image - Project VWO 2.png', // Placeholder
+        content: {
+            summary: `
+        Voor dit project hebben we onderzoek gedaan naar de mobiliteit op Delft Campus en hoe dit verbeterd kan worden voor de toekomst.
+        Na een uitgebreide brainstormfase hebben we drie concepten samengevoegd tot één integraal ontwerp.
+        Het doel was om een efficiënte, duurzame oplossing te vinden die zowel mensen als goederen kan vervoeren.
+      `,
+            result: `
+        Ons eindontwerp combineert een loopband voor personenvervoer (12 km/u) met vacuümbuizen voor pakketbezorging (100-200 km/u).
+        Het systeem wordt aangedreven door zonnepanelen in de overkapping, waardoor het volledig energieneutraal is.
+        De inkomsten uit het snelle pakketvervoer subsidiëren het personenvervoer.
+      `,
+            reflection: `
+        Dit project leerde mij veel over de harde eisen van ontwerpen. Ik leerde dat een Programma van Eisen (PvE) altijd meetbaar moet zijn.
+        Ook de introductie van 'Persona's' was nieuw en waardevol; het dwong ons om echt in de huid van de gebruiker te kruipen.
+        Het interviewen van mensen op straat vond ik aanvankelijk spannend, maar het leverde onmisbare inzichten op.
+      `
+        }
+    },
+    {
+        id: 5,
+        year: 2,
+        slug: 'spelenderwijs-meer-bewegen',
+        title: 'Spelenderwijs Meer Bewegen',
+        description: 'Een spelconcept om chronisch zieke kinderen te stimuleren te bewegen.',
+        client: 'Kim Kortekaas & Karel van Duijkeren',
+        date: '20-03-2024',
+        team: ['Team LAMP', 'Pieter Oosterling'],
+        role: 'Conceptontwikkelaar',
+        thumbnail: '/images/Image - Technasium.png', // Placeholder
+        content: {
+            summary: `
+        De opdracht was om kinderen met een chronische ziekte op een leuke manier meer te laten bewegen.
+        Ons team 'LAMP' heeft zich gericht op een oplossing die bewegen integreert in spel.
+        We hebben gewerkt met de 'Cultural Probe' methode om diepgaand inzicht te krijgen in de leefwereld van de doelgroep.
+      `,
+            result: `
+        Het resultaat is een kaartspel met fysieke opdrachten.
+        Het concept is getest via meerdere prototypes ("low-fidelity" tot "high-fidelity").
+        De feedback loop waarbij andere teams onze prototypes testten, was essentieel voor de verfijning.
+      `,
+            reflection: `
+        De Cultural Probe sprong er voor mij uit: ik leerde dat instructies kraakhelder moeten zijn, zodat proefpersonen ze zonder hulp kunnen uitvoeren.
+        Het iteratieve proces van prototypes maken en testen was nieuw voor mij, maar gaf veel voldoening omdat je het product echt ziet verbeteren.
+      `
+        }
+    },
+    {
+        id: 6,
+        year: 2,
+        slug: 'afval-bestaat-niet',
+        title: 'Aardappelzetmeel of Plastic?',
+        description: 'Circulair verpakkingsmateriaal gemaakt van organisch afval.',
+        client: 'Virgil Grot',
+        date: '21-06-2024',
+        team: ['Thijn', 'Pieter Oosterling', 'Team Inpakdienst Holland'],
+        role: 'Onderzoeker &  Materialen',
+        thumbnail: '/images/Image - Eindopdracht.png', // Placeholder
+        content: {
+            summary: `
+        Onder de naam 'Inpakdienst Holland' hebben we gezocht naar een milieubewust en circulair alternatief voor plastic verpakkingen.
+        Na onderzoek naar de huidige afvalstroom, besloten we ons te richten op bioplastics.
+        We experimenteerden met aardappelzetmeel en tapiocazetmeel als basis voor "Eetbaar Plastic".
+      `,
+            result: `
+        We hebben succesvol een recept ontwikkeld voor eetbaar folie.
+        Onze testen toonden aan dat 100% tapioca een gelei-achtig materiaal gaf, maar een mix met aardappelzetmeel leverde een sterk, folie-achtig materiaal op.
+        Het circulaire concept is compleet: consument eet verpakking -> natuurlijk afval -> wordt mest -> voedt nieuwe grondstoffen.
+      `,
+            reflection: `
+        Dit was een zeer praktisch project. Ik ben trots dat ons experimentele onderzoek naar het recept daadwerkelijk een bruikbaar materiaal opleverde.
+        Het zelf maken van het materiaal in de keuken gaf een tastbaar bewijs van ons onderzoek.
+        Ik heb geleerd hoe je een theoretisch concept (circulair systeem) vertaalt naar een werkend product.
+      `,
+            extra: {
+                title: 'Het Circulaire Systeem',
+                items: [
+                    'Consument nuttigt verpakking',
+                    'Menselijke uitwerpselen worden opgevangen',
+                    'Verwerking tot menselijke mest',
+                    'Mest voedt gewassen (aardappel/tapioca)',
+                    'Productie van nieuw bioplastic',
+                    'Cirkel is rond'
+                ]
+            }
         }
     }
 ];
