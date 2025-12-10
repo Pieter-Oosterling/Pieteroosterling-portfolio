@@ -1,18 +1,6 @@
 import Link from 'next/link';
+import { projectsData } from '@/data/projects';
 import styles from './page.module.css';
-
-// This would typically come from a CMS or database
-const projectsData = {
-    1: [
-        { id: 1, title: 'Brugklas Project', description: 'Eerste O&O project.', image: 'Image - Brugklas Project.png', report: 'Verslag - Brugklas Project.pdf' },
-        { id: 2, title: 'Technasium', description: 'Onderzoek naar...', image: 'Image - Technasium.png', report: 'Verslag - Technasium.pdf' },
-        { id: 3, title: 'Eindopdracht', description: 'Grote finale.', image: 'Image - Eindopdracht.png', report: 'Verslag - Eindopdracht.pdf' },
-    ],
-    2: [
-        { id: 1, title: 'Project VWO 2', description: 'Jaar 2 project.', image: 'Image - Project VWO 2.png', report: 'Verslag - Project VWO 2.pdf' },
-    ],
-    // ... can fill more if needed, default fallbacks below
-};
 
 export async function generateStaticParams() {
     return [1, 2, 3, 4, 5, 6].map((year) => ({
@@ -28,7 +16,7 @@ export default async function ProjectYearPage({
     const { year } = await params;
     const yearNumber = parseInt(year.replace('jaar-', ''));
 
-    const projects = projectsData[yearNumber as keyof typeof projectsData] || [];
+    const projects = projectsData.filter(p => p.year === yearNumber);
 
     return (
         <main className={styles.main}>
@@ -40,7 +28,7 @@ export default async function ProjectYearPage({
                         <div className={styles.imageContainer}>
                             {/* In a real app, use Next/Image. Here using div for layout proofing if image missing */}
                             <div className={styles.imagePlaceholder}>{project.title[0]}</div>
-                            {/* <img src={`/images/${project.image}`} alt={project.title} className={styles.image} /> */}
+                            {/* <img src={project.thumbnail} alt={project.title} className={styles.image} /> */}
                         </div>
 
                         <div className={styles.cardContent}>
@@ -48,11 +36,9 @@ export default async function ProjectYearPage({
                             <p className={styles.cardDesc}>{project.description}</p>
 
                             <div className={styles.actions}>
-                                {project.report && (
-                                    <a href={`/verslagen/${project.report}`} target="_blank" rel="noopener noreferrer" className={styles.button}>
-                                        Bekijk Verslag
-                                    </a>
-                                )}
+                                <Link href={`/projecten/${year}/${project.slug}`} className={styles.button}>
+                                    Bekijk Project
+                                </Link>
                             </div>
                         </div>
                         <div className={styles.glow} />
