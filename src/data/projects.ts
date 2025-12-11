@@ -222,5 +222,85 @@ export const projectsData: Project[] = [
                 ]
             }
         }
+    },
+    // --- JAAR 3 ---
+    {
+        id: 7,
+        year: 3,
+        slug: 'huis-van-je-leven',
+        title: 'Huis van je Leven',
+        description: 'Modulair en levensloopbestendig wonen: "Vandaag besteld, volgende week een nieuw huis!"',
+        client: 'Jörgen Haring (Formhet)',
+        date: '09-01-2025',
+        team: ['Valentijn Snelleman', 'Julian Scholtens', 'Niek Hanemaaijer', 'Pieter Oosterling'],
+        role: 'Ontwerper & Samenwerking',
+        thumbnail: '/images/Image - Brugklas Project.png', // Placeholder until assets provided
+        content: {
+            summary: `
+        De opdracht was het ontwerpen van een modulair, flexibel en levensloopbestendig huis op een kavel van 10.5x10.5m.
+        Het huis moest aanpasbaar zijn aan verschillende levensfases (student, gezin, oudere).
+        Mijn voorkeur ging uit naar ontwerpen, omdat dit het onderzoek tastbaar maakt.
+        We hebben een concept ontwikkeld waarbij modules per vrachtwagen geleverd en met een kraan geplaatst kunnen worden.
+      `,
+            result: `
+        Ons eindontwerp is een volledig modulair systeem.
+        Modules kunnen horizontaal (blok-kruis) en verticaal (paal-gat) gekoppeld worden, tot 3 hoog en 3 breed.
+        We hebben een bijbehorend app-concept bedacht waarmee bewoners hun droomhuis kunnen samenstellen.
+        Modules zijn recyclebaar of tweedehands doorverkoopbaar, wat de duurzaamheid bevordert.
+      `,
+            reflection: `
+        Ik heb dit jaar specifiek gewerkt aan de competentie 'Samenwerken', omdat dit vorig jaar stroef verliep.
+        Door rustiger te communiceren en regelmatige 'pitstops' (tussenevaluaties) in te lassen, verliep de samenwerking veel soepeler.
+        Ik merkte dat ik minder snel geïrriteerd raakte en constructiever was in mijn feedback.
+      `,
+            extra: {
+                title: 'Onderzoek & Stappen',
+                items: [
+                    'Collage & Lifestyle onderzoek',
+                    'Interviews & Persona analyse',
+                    'Programma van Eisen (levensfase specifiek)',
+                    'Lasersnijden eindmodel',
+                    'App ontwikkeling'
+                ]
+            }
+        }
+    },
+    {
+        id: 8,
+        year: 3,
+        slug: 'aqua-stroom',
+        title: 'Aqua Stroom',
+        description: 'Alternatieve rotatie voor golfenergie-converter.',
+        client: 'Dutch Wave Power',
+        date: '08-04-2025',
+        team: ['Micha Doorduin', 'Julia de Graaf', 'Ilian Runderkamp', 'Pieter Oosterling'],
+        role: 'Planner (Plannen & Organiseren)',
+        thumbnail: '/images/Image - Technasium.png', // Placeholder
+        content: {
+            summary: `
+        De opdrachtgever zocht een alternatief voor het tandheugelsysteem in hun golfenergie-converter.
+        Wij hebben 'Aqua Stroom' ontwikkeld: een systeem waarbij de op- en neergaande beweging van golven via strak gespannen HMPE-touwen wordt omgezet in rotatie.
+        Dit drijft een dynamo aan voor extra energieopwekking, naast de rotatie van de buis zelf.
+      `,
+            result: `
+        Ons prototype heeft 4 iteraties doorlopen.
+        Van een lekkend model (iteratie 1) en omvallende constructies (iteratie 2), naar een stabiel werkend model met een vast anker (iteratie 3 & 4).
+        We hebben ook een biomimicry-concept bedacht (vinnen) om de installatie automatisch in de windrichting te laten draaien.
+      `,
+            reflection: `
+        Mijn rol was Planner. Ik heb gewerkt met een dubbele planning: een lange-termijn doelenplanning en een dag/les-planning.
+        Dit zorgde voor structuur in het team.
+        Een leerpunt voor mijzelf is discipline: ik heb de neiging schoolwerk uit te stellen naar thuis, terwijl ik het ook in de les had kunnen afmaken.
+      `,
+            extra: {
+                title: 'Iteratie Proces',
+                items: [
+                    'Iteratie 1: Dichten van boorgaten',
+                    'Iteratie 2: Verplaatsen ankerpunt naar installatie',
+                    'Iteratie 3: Nieuwe 3D-geprinte converters (35mm)',
+                    'Iteratie 4: Definitief functionerend model'
+                ]
+            }
+        }
     }
 ];
