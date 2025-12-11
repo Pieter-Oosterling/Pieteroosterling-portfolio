@@ -19,6 +19,14 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
 
     const filteredProjects = useMemo(() => {
         if (activeFilter === 'Alles') return projects;
+
+        // Handle "Klas X" filters by mapping to year
+        if (activeFilter.startsWith('Klas')) {
+            const year = parseInt(activeFilter.replace('Klas ', ''));
+            return projects.filter((p) => p.year === year);
+        }
+
+        // Fallback for tags if any other filters remain
         return projects.filter((p) => p.tags.includes(activeFilter as any));
     }, [projects, activeFilter]);
 

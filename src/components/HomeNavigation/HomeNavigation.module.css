@@ -8,9 +8,9 @@
 }
 
 .card {
-    background: rgba(10, 10, 10, 0.4);
-    /* Darker base */
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--surface);
+    /* Use theme variable */
+    border: 1px solid var(--border-color);
     padding: 1.5rem;
     border-radius: 1rem;
     text-decoration: none;
@@ -36,7 +36,8 @@
     font-size: 1.4rem;
     /* Larger Title */
     font-weight: 800;
-    color: white;
+    color: var(--text-primary);
+    /* Theme text color */
     letter-spacing: -0.02em;
 }
 
@@ -82,11 +83,12 @@
 }
 
 .card:hover .navTitle {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    color: var(--text-primary);
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
 
 .card:hover .icon {
-    color: white;
+    color: var(--text-primary);
 }
 
 /* Specific Glow Colors */
