@@ -46,21 +46,25 @@
     /* Center everything */
 }
 
-/* The Line - ALIGNED TO NODE CENTER */
-/* Node height is 50px. Center is 25px. */
-/* Line height is 4px. Center is 2px. */
-/* Top should be 25px - 2px = 23px from the top of the node container context */
+/* The Line - STRICT CENTER */
 .line {
     position: absolute;
-    top: 85px;
-    /* 60px pad + 25px half-node */
-    /* nodeWrapper pad 0? Let's check. nodeWrapper has no padding. */
-    /* If nodeWrapper has no vertical padding, and node is first child. */
+    /* 
+    Wrapper padding-top = 60px.
+    Node height = 60px (increased size).
+    Node Center = 30px.
+    Line top = 60px + 30px = 90px.
+    Line height = 6px.
+    Line center offset = 3px.
+    Final Top = 87px.
+  */
+    top: 87px;
     left: 10%;
     right: 10%;
-    height: 4px;
+    height: 6px;
+    /* Thicker line */
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    border-radius: 6px;
     z-index: 0;
 }
 
@@ -73,7 +77,7 @@
     width: 60%;
     /* Progress simulation */
     background: linear-gradient(90deg, var(--primary), var(--secondary));
-    border-radius: 4px;
+    border-radius: 6px;
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
 }
 
@@ -81,9 +85,10 @@
     display: flex;
     justify-content: space-between;
     width: 80%;
+    /* Wider width */
+    max-width: 1000px;
     position: relative;
     z-index: 1;
-    /* Ensure consistent height context */
     align-items: flex-start;
 }
 
@@ -93,32 +98,33 @@
     align-items: center;
     gap: 1.5rem;
     cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    /* Fix alignment logic: The line is at top 60px.
-     The Node is ~50px height.
-     So we want the center of the node to be at the line. */
-    margin-top: 0px;
     z-index: 2;
     position: relative;
-    /* Context */
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nodeWrapper:hover {
+    transform: scale(1.1);
+    /* Hover scale */
 }
 
 /* Ensure the Line passes through the center of this */
 .node {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    /* Bigger nodes */
+    height: 60px;
     background: var(--surface);
-    border: 2px solid var(--border-color);
+    border: 4px solid var(--border-color);
+    /* Thicker border */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    position: relative;
-    /* Ensure clicks work */
     margin-top: 0;
-    /* consistent */
+    font-weight: 800;
+    font-size: 1.2rem;
 }
 
 /* Active/Past state simulation */

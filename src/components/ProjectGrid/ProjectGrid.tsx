@@ -10,7 +10,7 @@ interface ProjectGridProps {
     projects: Project[];
 }
 
-const FILTERS = ['Alles', 'Design', 'Onderzoek', 'Tech', 'Management'];
+const FILTERS = ['Alles', 'Klas 1', 'Klas 2', 'Klas 3', 'Klas 4', 'VWO 5', 'VWO 6'];
 
 export default function ProjectGrid({ projects }: ProjectGridProps) {
     const [activeFilter, setActiveFilter] = useState('Alles');

@@ -64,7 +64,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <section className={`${styles.hero} fade-in`}>
-        <h1 className={styles.title}>Mijn Portfolio</h1>
+        <h1 className={styles.title}>
+          Mijn <span className={styles.gradientPortfolio}>Portfolio</span>
+        </h1>
         <RecentProject />
 
         <div className={styles.intro}>

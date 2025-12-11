@@ -90,14 +90,15 @@
     border-radius: 1rem;
     overflow: hidden;
     text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     display: flex;
     flex-direction: column;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+    /* Purple/Blue glow */
     border-color: var(--primary);
 }
 

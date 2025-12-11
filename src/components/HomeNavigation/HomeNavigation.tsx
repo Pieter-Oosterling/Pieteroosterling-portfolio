@@ -20,8 +20,10 @@ export default function HomeNavigation() {
                     className={`${styles.card} ${styles[item.color]}`}
                 >
                     <span className={styles.icon}>{item.icon}</span>
-                    <span className={styles.label}>{item.label}</span>
-                    <span className={styles.arrow}>→</span>
+                    <div className={styles.contentRow}>
+                        <span className={styles.label}>{item.label}</span>
+                        <span className={styles.arrow}>→</span>
+                    </div>
                 </Link>
             ))}
         </div>
