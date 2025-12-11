@@ -2,7 +2,6 @@ import styles from './Toolkit.module.css';
 
 const TOOLS = [
     { name: 'Onshape', icon: '📐' },
-    { name: 'Fusion360', icon: '⚙️' },
     { name: 'SketchUp', icon: '🏗️' },
     { name: 'Tinkercad', icon: '🧱' },
     { name: 'Windsurf', icon: '🏄‍♂️' },
@@ -10,6 +9,10 @@ const TOOLS = [
     { name: 'HTML', icon: '🌐' },
     { name: 'CSS', icon: '🎨' },
     { name: 'JavaScript', icon: '⚡' },
+    { name: 'Documenten', icon: '📄' },
+    { name: 'Presentaties', icon: '🗣️' },
+    { name: 'Figma', icon: '🎨' },
+    { name: 'Blender', icon: '🧱' },
     { name: 'Canva', icon: '✨' },
 ];
 

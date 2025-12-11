@@ -1,0 +1,145 @@
+.container {
+    min-height: 100vh;
+    padding: 8rem 2rem;
+    background: #0f172a;
+    /* Dark base */
+    color: white;
+    font-family: monospace;
+}
+
+.dashboard {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid #334155;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 1rem;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.badge {
+    background: #ef4444;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.intro {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+}
+
+.panel {
+    background: #0f172a;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #334155;
+}
+
+.panel h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #60a5fa;
+}
+
+.controlGroup {
+    margin-bottom: 1rem;
+}
+
+.controlGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+.colorPickerWrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #1e293b;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #475569;
+}
+
+.colorInput {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.hackBtn {
+    width: 100%;
+    padding: 1rem;
+    background: #22c55e;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: monospace;
+    transition: all 0.2s;
+}
+
+.hackBtn.active {
+    background: black;
+    color: #22c55e;
+    border: 1px solid #22c55e;
+    box-shadow: 0 0 15px #22c55e;
+}
+
+.backLink {
+    display: block;
+    text-align: center;
+    color: #94a3b8;
+    text-decoration: none;
+    margin-top: 2rem;
+}
+
+.backLink:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Global Matrix Hack (will be applied to body via JS class in real scenario, 
+   but simplistic module usage limits global scope. 
+   Ideally put in globals.css, but this illustrates intent) */
+.matrixMode {
+    font-family: 'Courier New', monospace !important;
+    filter: sepia(100%) hue-rotate(90deg) saturate(300%) !important;
+}
