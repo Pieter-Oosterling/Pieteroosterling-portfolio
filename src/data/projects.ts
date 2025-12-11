@@ -367,7 +367,7 @@ export const projectsData: Project[] = [
         description: 'Rendabiliteitsanalyse naar geothermie in vier Rijkswijkse wijken.',
         client: 'Gemeente Rijswijk & TU Delft',
         date: '2025',
-        grade: { group: '?', personal: '?' }, // Grade pending
+        grade: { group: '?', personal: '10' }, // Grade pending
         team: ['Pieter Oosterling', 'Mohammad Khaled Yasin', 'Thijn Merks', 'Nouschka Steenks'],
         role: 'Planner (Plannen & Organiseren)',
         report: 'Verslag - Aardwarmte in Rijswijk-3.pdf',
@@ -391,11 +391,11 @@ export const projectsData: Project[] = [
       `,
             reflection: `
         **Rol: Planner**
-        Als Planner was ik verantwoordelijk voor de structuur van het project. Ik heb de mijlpalen vastgelegd, de taakverdeling gecoördineerd en bewaakt dat we binnen de krappe tijdspanne van 12 weken bleven. Het was een uitdaging om diepgang te combineren met snelheid ("professioneel tempo").
+        Als Planner zorgde ik voor de structuur. Ik heb de deadlines bewaakt en de taken verdeeld, zodat we binnen de krappe 12 weken klaar zouden zijn. Het was een uitdaging om diepgang te combineren met snelheid ("professioneel tempo").
 
         **Persoonlijke Groei (Competenties)**
-        *   **Werkhouding:** In eerdere projecten merkte ik dat mijn focus in de les soms verslapte door afleiding en een inefficiënte setup (één scherm). Dit keer heb ik strenge **lesplanningen** voor mezelf gemaakt met deadlines per uur. Daarnaast ben ik strategisch gaan zitten (weg van afleiding) en heb ik mensen die kwamen buurten assertief weggestuurd als het niet over O&O ging. Dit resulteerde in een enorme productiviteitsboost; ik had vrijwel geen huiswerk meer omdat ik alles in de les afkreeg.
-        *   **Communicatie:** Ik heb bewust gewerkt aan mijn toon en communicatiestijl. Waar ik voorheen soms kortaf of te direct kon zijn, nam ik nu de tijd om eerst actief te luisteren en samen te vatten wat de ander zei ("Bedoel je dat...?"). Ik vroeg mijn teamgenoten (Mohammed, Nouschka) wekelijks om feedback op mijn toon. Zij gaven aan dat ik rustiger en prettiger overkwam, en door controlevragen te stellen ("Begrijpen we allemaal waarom Optie B afvalt?") voorkwam ik grote misverstanden in het team.
+        *   **Werkhouding:** In eerdere projecten merkte ik dat mijn focus in de les soms verslapte door afleiding en doordat ik in de les maar één scherm kan gebruiken. Dit keer heb ik strenge **lesplanningen** voor mezelf gemaakt met deadlines per uur. Daarnaast ben ik strategisch gaan zitten (weg van afleiding) en heb ik mensen die kwamen buurten vriendelijk weggestuurd als het niet over O&O ging. Dit zorgde ervoor dat ik veel sneller werkte; ik had vrijwel geen huiswerk meer omdat ik alles in de les afkreeg.
+        *   **Communicatie:** Ik heb bewust gewerkt aan mijn toon. Waar ik voorheen soms kortaf kon zijn, nam ik nu de tijd om eerst goed te luisteren en samen te vatten wat de ander zei ("Bedoel je dat...?"). Ik vroeg mijn teamgenoten (Mohammed, Nouschka) wekelijks om tips. Zij gaven aan dat ik rustiger overkwam, en door handige vragen te stellen ("Begrijpen we allemaal waarom Optie B afvalt?") voorkwam ik misverstanden.
       `
         }
     }

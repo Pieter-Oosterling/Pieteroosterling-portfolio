@@ -123,6 +123,31 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>Project Galerij</h2>
         <Carousel />
       </div>
+
+      {/* Featured Report Section */}
+      <div className={`${styles.reportSection} fade-in`} style={{ animationDelay: '0.6s' }}>
+        <h2 className={styles.sectionTitle}>Nieuwste Verslag</h2>
+        <div className={styles.reportCard}>
+          <div className={styles.reportContent}>
+            <h3 className={styles.reportTitle}>Aardwarmte in Rijswijk</h3>
+            <p className={styles.reportDesc}>
+              Een uitgebreide rendabiliteitsanalyse naar geothermie in vier Rijkswijkse wijken.
+              Inclusief technisch advies en kosten-batenanalyse.
+            </p>
+            <a
+              href="/Verslagen/Verslag - Aardwarmte in Rijswijk-3.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.reportButton}
+            >
+              Lees Volledig Verslag (PDF) →
+            </a>
+          </div>
+          <div className={styles.reportIcon}>
+            📄
+          </div>
+        </div>
+      </div>
     </main>
   );
 }
