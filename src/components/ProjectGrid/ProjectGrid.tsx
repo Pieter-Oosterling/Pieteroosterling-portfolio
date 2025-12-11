@@ -15,6 +15,7 @@ const FILTERS = ['Alles', 'Design', 'Onderzoek', 'Tech', 'Management'];
 export default function ProjectGrid({ projects }: ProjectGridProps) {
     const [activeFilter, setActiveFilter] = useState('Alles');
     const [loading, setLoading] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false); // New state
 
     const filteredProjects = useMemo(() => {
         if (activeFilter === 'Alles') return projects;
@@ -25,13 +26,26 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
         if (filter === activeFilter) return;
         setLoading(true);
         setActiveFilter(filter);
-        // Fake delay for UX
         setTimeout(() => setLoading(false), 400);
     };
 
+    if (!isExpanded) {
+        return (
+            <section className={styles.container}>
+                <div className={styles.startWrapper}>
+                    <h2 className={styles.title}>Projecten Overzicht</h2>
+                    <p className={styles.subtitle}>Ontdek wat ik heb gemaakt.</p>
+                    <button className={styles.revealBtn} onClick={() => setIsExpanded(true)}>
+                        🔍 Bekijk Alle Projecten
+                    </button>
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section className={styles.container}>
-            <div className={styles.header}>
+            <div className={`${styles.header} fade-in`}>
                 <h2 className={styles.title}>Alle Projecten</h2>
                 <div className={styles.filterBar}>
                     {FILTERS.map((filter) => (

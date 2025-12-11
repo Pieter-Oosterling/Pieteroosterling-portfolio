@@ -17,11 +17,12 @@ export default function ProjectHeroImage({ src, alt }: ProjectHeroImageProps) {
             <div
                 className={styles.imageContainer}
                 onClick={() => setIsOpen(true)}
-                title="Klik om te vergroten"
+                title="Klik voor volledig scherm"
             >
                 <img src={src} alt={alt} className={styles.image} />
-                <div className={styles.overlay}>
-                    🔍 Vergroot
+                {/* Subtle hover hint instead of dark overlay */}
+                <div className={styles.hoverHint}>
+                    <span className={styles.icon}>⤢</span>
                 </div>
             </div>
 

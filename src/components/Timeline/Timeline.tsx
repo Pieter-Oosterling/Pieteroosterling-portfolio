@@ -1,37 +1,98 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import styles from './Timeline.module.css';
+import YearModal from '@/components/YearModal/YearModal';
 
-const TIMELINE_YEARS = [
-    { year: 1, label: 'Brugklas', sub: 'De Start', path: '/portfolios/jaar-1' },
-    { year: 2, label: 'VWO 2', sub: 'Verbreding', path: '/portfolios/jaar-2' },
-    { year: 3, label: 'VWO 3', sub: 'Verdieping', path: '/portfolios/jaar-3' },
-    { year: 4, label: 'VWO 4', sub: 'Specialisatie', path: '/portfolios/jaar-4' },
-    { year: 5, label: 'VWO 5', sub: 'Pre-Exam', path: '/projecten' },
-    { year: 6, label: 'VWO 6', sub: 'Meesterproef', path: '/projecten' },
+interface TimelineNode {
+    year: number;
+    label: string;
+    subLabel: string;
+    summary: string;
+    stats: { label: string; value: string }[];
+}
+
+const TIMELINE_DATA: TimelineNode[] = [
+    {
+        year: 1,
+        label: 'BRUGKLAS',
+        subLabel: 'De Start',
+        summary: 'Mijn eerste kennismaking met O&O. Projecten zoals "Het Voertuig van de Toekomst" leerden mij de basis van samenwerken en creatief denken.',
+        stats: [{ label: 'Gem. Cijfer', value: '7,8' }]
+    },
+    {
+        year: 2,
+        label: 'VWO 2',
+        subLabel: 'Verbreding',
+        summary: 'Een jaar van onderzoek en experimenteren. Van eetbaar plastic tot sociale robots.',
+        stats: [{ label: 'Gem. Cijfer', value: '7,9' }]
+    },
+    {
+        year: 3,
+        label: 'VWO 3',
+        subLabel: 'Verdieping',
+        summary: 'Technisch en complexer. Grote projecten zoals Aqua Stroom en Modulair Wonen vroegen om strakke planning.',
+        stats: [{ label: 'Gem. Cijfer', value: '8,1' }]
+    },
+    {
+        year: 4,
+        label: 'VWO 4',
+        subLabel: 'Specialisatie',
+        summary: 'Professionele opdrachten voor echte klanten (Gemeente Rijswijk). Focus op Geothermie en data-analyse.',
+        stats: [{ label: 'Gem. Cijfer', value: 'TBD' }]
+    },
+    {
+        year: 5,
+        label: 'VWO 5',
+        subLabel: 'Pre-Exam',
+        summary: 'Voorbereiding op het meesterproef. Verdere specialisatie in Design & Technology.',
+        stats: [{ label: 'Focus', value: 'Design' }]
+    },
+    {
+        year: 6,
+        label: 'VWO 6',
+        subLabel: 'Meesterproef',
+        summary: 'De finale. Het ultieme bewijs van bekwaamheid als technasium student.',
+        stats: [{ label: 'Status', value: 'Komt eraan' }]
+    },
 ];
 
 export default function Timeline() {
-    return (
-        <div className={styles.timelineWrapper}>
-            <h2 className={styles.title}>Mijn Reis</h2>
-            <div className={styles.timelineContainer}>
-                <div className={styles.timelineTrack}>
-                    <div className={styles.trackLine}></div>
-                    <div className={styles.trackProgress}></div>
+    const [selectedYear, setSelectedYear] = useState<TimelineNode | null>(null);
 
-                    {TIMELINE_YEARS.map((item) => (
-                        <Link key={item.year} href={item.path} className={styles.node}>
-                            <div className={styles.circleWrapper}>
-                                <div className={styles.circle}>{item.year}</div>
+    return (
+        <div className={styles.container}>
+            <h2 className={styles.title}>Mijn Reis</h2>
+            <div className={styles.timelineWrapper}>
+                {/* The glowing line */}
+                <div className={styles.line}></div>
+
+                <div className={styles.nodesContainer}>
+                    {TIMELINE_DATA.map((node) => (
+                        <div
+                            key={node.year}
+                            className={styles.nodeWrapper}
+                            onClick={() => setSelectedYear(node)}
+                        >
+                            <div className={styles.node}>
+                                <span className={styles.yearNumber}>{node.year}</span>
                             </div>
-                            <div className={styles.content}>
-                                <span className={styles.label}>{item.label}</span>
-                                <span className={styles.subLabel}>{item.sub}</span>
+                            <div className={styles.labels}>
+                                <span className={styles.mainLabel}>{node.label}</span>
+                                <span className={styles.subLabel}>{node.subLabel}</span>
                             </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
             </div>
+
+            <YearModal
+                isOpen={!!selectedYear}
+                onClose={() => setSelectedYear(null)}
+                year={selectedYear?.year || 0}
+                title={selectedYear?.label || ''}
+                summary={selectedYear?.summary || ''}
+                stats={selectedYear?.stats}
+            />
         </div>
     );
 }

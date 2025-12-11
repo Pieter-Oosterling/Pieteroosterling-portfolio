@@ -33,69 +33,85 @@
     display: none;
 }
 
-.timelineTrack {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 800px;
-    /* Ensure it doesn't squish on mobile */
-    margin: 0 auto;
-    padding: 2rem;
+.timelineWrapper {
     position: relative;
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    /* Ensure overflow doesn't cut off hover effects */
+    overflow-x: auto;
+    padding-bottom: 6rem;
+    /* Space for labels */
 }
 
-/* The glowing line background */
-.trackLine {
+/* The Line - Precisely centered */
+.line {
     position: absolute;
     top: 50%;
-    left: 2rem;
-    right: 2rem;
+    /* Center vertically based on nodeWrapper height calculation? No, absolute positioning is better */
+    top: 60px;
+    /* Alins with the center of the 40px/50px nodes + padding */
+    left: 10%;
+    right: 10%;
     height: 4px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
-    transform: translateY(-50%);
     z-index: 0;
 }
 
-/* The active progress line (optional visual flair) */
-.trackProgress {
+.line::after {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 2rem;
-    width: 100%;
-    /* Ideally dynamic, but static gradient works for style */
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60%;
+    /* Progress simulation */
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
     border-radius: 4px;
-    transform: translateY(-50%);
-    z-index: 0;
-    opacity: 0.5;
-    filter: blur(4px);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
 }
 
-.node {
+.nodesContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
     position: relative;
-    z-index: 2;
+    z-index: 1;
+}
+
+.nodeWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    text-decoration: none;
+    gap: 1.5rem;
+    cursor: pointer;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    padding: 1rem;
+    /* Fix alignment logic: The line is at top 60px. 
+     The Node is ~50px height. 
+     So we want the center of the node to be at the line. */
+    margin-top: 0px;
 }
 
-.node:hover {
-    transform: translateY(-10px);
-}
-
-.circleWrapper {
-    position: relative;
-    width: 48px;
-    height: 48px;
+.node {
+    width: 50px;
+    height: 50px;
+    background: var(--surface);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    /* Ensure clicks work */
+}
+
+/* Active/Past state simulation */
+.nodeWrapper:nth-child(-n+4) .node {
+    border-color: var(--primary);
+    background: rgba(139, 92, 246, 0.1);
 }
 
 /* Outer glowing ring */

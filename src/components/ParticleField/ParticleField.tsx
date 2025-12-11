@@ -30,9 +30,10 @@ function Particles(props: any) {
                 <PointMaterial
                     transparent
                     color="#8b5cf6" // Primary purple-ish color
-                    size={0.005}
+                    size={0.008} // Larger size
                     sizeAttenuation={true}
                     depthWrite={false}
+                    opacity={0.8} // More visible
                 />
             </Points>
         </group>
