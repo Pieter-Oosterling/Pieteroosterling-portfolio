@@ -35,22 +35,27 @@
 
 .timelineWrapper {
     position: relative;
-    padding: 4rem 0;
+    padding-top: 60px;
     display: flex;
     justify-content: center;
     /* Ensure overflow doesn't cut off hover effects */
     overflow-x: auto;
     padding-bottom: 6rem;
     /* Space for labels */
+    text-align: center;
+    /* Center everything */
 }
 
-/* The Line - Precisely centered */
+/* The Line - ALIGNED TO NODE CENTER */
+/* Node height is 50px. Center is 25px. */
+/* Line height is 4px. Center is 2px. */
+/* Top should be 25px - 2px = 23px from the top of the node container context */
 .line {
     position: absolute;
-    top: 50%;
-    /* Center vertically based on nodeWrapper height calculation? No, absolute positioning is better */
-    top: 60px;
-    /* Alins with the center of the 40px/50px nodes + padding */
+    top: 85px;
+    /* 60px pad + 25px half-node */
+    /* nodeWrapper pad 0? Let's check. nodeWrapper has no padding. */
+    /* If nodeWrapper has no vertical padding, and node is first child. */
     left: 10%;
     right: 10%;
     height: 4px;
@@ -78,6 +83,8 @@
     width: 80%;
     position: relative;
     z-index: 1;
+    /* Ensure consistent height context */
+    align-items: flex-start;
 }
 
 .nodeWrapper {
@@ -87,12 +94,16 @@
     gap: 1.5rem;
     cursor: pointer;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    /* Fix alignment logic: The line is at top 60px. 
-     The Node is ~50px height. 
+    /* Fix alignment logic: The line is at top 60px.
+     The Node is ~50px height.
      So we want the center of the node to be at the line. */
     margin-top: 0px;
+    z-index: 2;
+    position: relative;
+    /* Context */
 }
 
+/* Ensure the Line passes through the center of this */
 .node {
     width: 50px;
     height: 50px;
@@ -106,6 +117,8 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     position: relative;
     /* Ensure clicks work */
+    margin-top: 0;
+    /* consistent */
 }
 
 /* Active/Past state simulation */

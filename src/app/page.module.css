@@ -61,46 +61,25 @@
 }
 
 .textBlue {
-  color: #3b82f6;
-  /* Blue-500 */
-  text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
 .textPink {
-  color: #ec4899;
-  /* Pink-500 */
-  text-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+  background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
 }
 
-.buttonPrimary {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 3rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.buttonPrimary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
-}
-
+/* Old buttons removed in favor of NavigationGrid */
+.buttonPrimary,
 .buttonSecondary {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 3rem;
-  font-weight: bold;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.2s;
-}
-
-.buttonSecondary:hover {
-  background: rgba(255, 255, 255, 0.2);
+  display: none;
 }
 
 @media (max-width: 768px) {

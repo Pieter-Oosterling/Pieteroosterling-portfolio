@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Card from '@/components/Card/Card';
+import Card from '@/components/Card/Card'; // Keep for type safety if needed, or remove if unused. It's unused but harmless for now.
 import Carousel from '@/components/Carousel/Carousel';
 import RecentProject from '@/components/RecentProject/RecentProject';
 import Toolkit from '@/components/Toolkit/Toolkit';
 import Timeline from '@/components/Timeline/Timeline';
+import HomeNavigation from '@/components/HomeNavigation/HomeNavigation';
 import { projectsData } from '@/data/projects';
 import styles from './page.module.css';
 
@@ -73,32 +74,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Navigation Cards */}
-      <div className={`${styles.grid} fade-in`} style={{ animationDelay: '0.1s' }}>
-        <Card
-          title="Projecten"
-          description="Bekijk al mijn O&O projecten door de jaren heen."
-          href="/projecten"
-          delay="0.1s"
-        />
-        <Card
-          title="Portfolio's"
-          description="Mijn persoonlijke ontwikkelingsportfolio's per jaar."
-          href="/portfolios"
-          delay="0.2s"
-        />
-        <Card
-          title="Over Mij"
-          description="Wie ben ik en wat drijft mij als ontwerper?"
-          href="/over-mij"
-          delay="0.3s"
-        />
-        <Card
-          title="Competenties"
-          description="Mijn groei in de 7 O&O competenties."
-          href="/competenties"
-          delay="0.4s"
-        />
+      {/* Navigation Grid (Replaces old Cards) */}
+      <div className="fade-in" style={{ animationDelay: '0.1s' }}>
+        <HomeNavigation />
       </div>
 
       {/* Grade Stats */}
