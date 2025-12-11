@@ -10,7 +10,7 @@ interface ProjectGridProps {
     projects: Project[];
 }
 
-const FILTERS = ['Alles', 'Klas 1', 'Klas 2', 'Klas 3', 'Klas 4', 'VWO 5', 'VWO 6'];
+const FILTERS = ['Alles', 'Klas 1', 'Klas 2', 'Klas 3', 'Klas 4', 'Klas 5', 'Klas 6'];
 
 export default function ProjectGrid({ projects }: ProjectGridProps) {
     const [activeFilter, setActiveFilter] = useState('Alles');
@@ -93,6 +93,9 @@ export default function ProjectGrid({ projects }: ProjectGridProps) {
                                 <h3 className={styles.cardTitle}>{project.title}</h3>
                                 <p className={styles.cardDesc}>{project.description}</p>
                             </div>
+
+                            {/* Persistent Glow Effect */}
+                            <div className={styles.glow} style={{ '--glow-color': 'rgba(139, 92, 246, 0.4)' } as React.CSSProperties} />
                         </Link>
                     ))}
             </div>

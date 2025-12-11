@@ -37,7 +37,7 @@ const TIMELINE_DATA: TimelineNode[] = [
         year: 4,
         label: 'VWO 4',
         subLabel: 'Specialisatie',
-        summary: 'Professionele opdrachten voor echte klanten (Gemeente Rijswijk). Focus op Geothermie en data-analyse.',
+        summary: 'Professionele opdrachten voor echte bedrijven (Gemeente Rijswijk). Focus op Geothermie en data-analyse.',
         stats: [{ label: 'Gem. Cijfer', value: 'TBD' }]
     },
     {

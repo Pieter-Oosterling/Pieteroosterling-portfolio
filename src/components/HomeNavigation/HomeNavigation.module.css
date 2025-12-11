@@ -63,14 +63,16 @@
     width: 150%;
     height: 150px;
     background: radial-gradient(circle at bottom center, var(--glow-color), transparent 70%);
-    opacity: 0;
+    opacity: 0.3;
+    /* PERSISTENT GLOW */
     transition: opacity 0.4s ease, height 0.4s ease;
     z-index: 1;
     pointer-events: none;
 }
 
 .card:hover .glow {
-    opacity: 0.6;
+    opacity: 0.8;
+    /* Stronger on hover */
     height: 200px;
 }
 
