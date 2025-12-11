@@ -124,6 +124,30 @@ export default async function ProjectDetailPage({
                     </div>
 
                     {/* Actions */}
+                    {(project.grade?.combined || project.grade?.group) && (
+                        <div className={styles.card}>
+                            <h3 className={styles.cardTitle}>Beoordeling</h3>
+                            {project.grade.combined && (
+                                <div className={styles.gradeBox}>
+                                    <span className={styles.gradeLabel}>Cijfer:</span>
+                                    <span className={styles.gradeValue}>{project.grade.combined}</span>
+                                </div>
+                            )}
+                            {project.grade.group && (
+                                <div className={styles.gradeGroup}>
+                                    <div className={styles.gradeRow}>
+                                        <span className={styles.gradeLabel}>Groep:</span>
+                                        <span className={styles.gradeValue}>{project.grade.group}</span>
+                                    </div>
+                                    <div className={styles.gradeRow}>
+                                        <span className={styles.gradeLabel}>Persoonlijk:</span>
+                                        <span className={styles.gradeValue}>{project.grade.personal}</span>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    )}
+
                     <div className={styles.actions}>
                         {project.report && (
                             <a href={`/verslagen/${project.report}`} target="_blank" rel="noopener noreferrer" className={styles.downloadBtn}>

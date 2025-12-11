@@ -20,6 +20,12 @@ export interface Project {
             items: string[];
         };
     };
+    grade?: {
+        combined?: string;
+        group?: string;
+        personal?: string;
+    };
+
 }
 
 export const projectsData: Project[] = [
@@ -32,6 +38,7 @@ export const projectsData: Project[] = [
         description: 'Een conceptueel ontwerp voor een vervoersmiddel in het jaar 2070.',
         client: 'DENP',
         date: '11-11-2022',
+        grade: { combined: '7,6' },
         team: ['Nils Verkade', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
         role: 'Teamleider',
         thumbnail: '/images/Image - Brugklas Project.png', // Placeholder mapping
@@ -62,6 +69,7 @@ export const projectsData: Project[] = [
         description: 'Een sociale robot die voorlichting geeft over Artificial Intelligence.',
         client: 'Epoch',
         date: '2023',
+        grade: { combined: '8,0' },
         team: ['Felix Roeterdink', 'Nouska Steenks', 'Tessa Lock', 'Pieter Oosterling'],
         role: 'Projectleider',
         thumbnail: '/images/Image - Technasium.png',
@@ -100,6 +108,7 @@ export const projectsData: Project[] = [
         description: 'Ecologisch onderzoek naar broedgedrag van muggen.',
         client: 'One Health Pact',
         date: '12-06-2023',
+        grade: { combined: '8,5' },
         team: ['Sami Chioua', 'Leusha Kalasok', 'Damin Hassani', 'Pieter Oosterling'],
         role: 'Teamleider & Planner',
         report: 'Verslag - Aardwarmte in Rijswijk-3.pdf', // Using available PDF as placeholder/example if specific one missing, or logic to hide if missing
@@ -134,6 +143,7 @@ export const projectsData: Project[] = [
         description: 'Innovatief concept voor persoons- en goederenvervoer in 2070.',
         client: 'Bas Wilmink (Mobiliteitsdeskundige)',
         date: '11-12-2023',
+        grade: { group: '7,0', personal: '7,7' },
         team: ['Nils Vakande', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
         role: 'Ontwerper & Onderzoeker',
         thumbnail: '/images/Image - Project VWO 2.png', // Placeholder
@@ -163,6 +173,7 @@ export const projectsData: Project[] = [
         description: 'Een spelconcept om chronisch zieke kinderen te stimuleren te bewegen.',
         client: 'Kim Kortekaas & Karel van Duijkeren',
         date: '20-03-2024',
+        grade: { group: '7,6', personal: '8,0' },
         team: ['Team LAMP', 'Pieter Oosterling'],
         role: 'Conceptontwikkelaar',
         thumbnail: '/images/Image - Technasium.png', // Placeholder
@@ -191,6 +202,7 @@ export const projectsData: Project[] = [
         description: 'Circulair verpakkingsmateriaal gemaakt van organisch afval.',
         client: 'Virgil Grot',
         date: '21-06-2024',
+        grade: { group: '8,3', personal: '8,1' },
         team: ['Thijn', 'Pieter Oosterling', 'Team Inpakdienst Holland'],
         role: 'Onderzoeker &  Materialen',
         thumbnail: '/images/Image - Eindopdracht.png', // Placeholder
@@ -232,6 +244,7 @@ export const projectsData: Project[] = [
         description: 'Modulair en levensloopbestendig wonen: "Vandaag besteld, volgende week een nieuw huis!"',
         client: 'Jörgen Haring (Formhet)',
         date: '09-01-2025',
+        grade: { group: '7,3', personal: '9,1' },
         team: ['Valentijn Snelleman', 'Julian Scholtens', 'Niek Hanemaaijer', 'Pieter Oosterling'],
         role: 'Ontwerper & Samenwerking',
         thumbnail: '/images/Image - Brugklas Project.png', // Placeholder until assets provided
@@ -273,6 +286,7 @@ export const projectsData: Project[] = [
         description: 'Alternatieve rotatie voor golfenergie-converter.',
         client: 'Dutch Wave Power',
         date: '08-04-2025',
+        grade: { group: '7,3', personal: '9,1' },
         team: ['Micha Doorduin', 'Julia de Graaf', 'Ilian Runderkamp', 'Pieter Oosterling'],
         role: 'Planner (Plannen & Organiseren)',
         thumbnail: '/images/Image - Technasium.png', // Placeholder
@@ -311,6 +325,7 @@ export const projectsData: Project[] = [
         description: 'Een webapp en adviesrapport om jongeren gezonder te laten eten.',
         client: 'Maartje (JOGG - Jong Leren Eten)',
         date: '24-05-2025',
+        grade: { group: '6,7', personal: '8,6' },
         team: ['Felix Roeterdink', 'Valentijn Snelleman', 'Resul Eryigit', 'Pieter Oosterling'],
         role: 'Developer & Onderzoeker',
         thumbnail: '/images/Image - Eindopdracht.png', // Placeholder

@@ -182,37 +182,84 @@
 
 /* Bottom Nav */
 .bottomNav {
+    display: flex;
+    justify-content: space-between;
     margin-top: 4rem;
     padding-top: 2rem;
     border-top: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
 }
 
 .navLink {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    transition: background 0.2s;
-    max-width: 45%;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
 .navLink:hover {
-    background: var(--surface);
+    color: var(--primary);
+    transform: translateX(-5px);
 }
 
-.next {
-    align-items: flex-end;
+.navLink.next {
     text-align: right;
+    align-items: flex-end;
+}
+
+.navLink.next:hover {
+    transform: translateX(5px);
 }
 
 .navTitle {
     font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-weight: 500;
+    color: var(--foreground);
 }
+
+/* Grades */
+.gradeBox {
+    display: flex;
+    justify-content: space-between;
+    /* Better alignment */
+    align-items: center;
+    background: var(--surface-hover);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    margin-top: 0.5rem;
+}
+
+.gradeGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--surface-hover);
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    margin-top: 0.5rem;
+}
+
+.gradeRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gradeLabel {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.gradeValue {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: var(--font-mono);
+}
+
 
 .list {
     margin-left: 1.5rem;
