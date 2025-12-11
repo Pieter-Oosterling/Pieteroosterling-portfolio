@@ -265,4 +265,21 @@
     margin-left: 1.5rem;
     color: var(--text-secondary);
     line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.richText {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.paragraph {
+    margin-bottom: 1rem;
+    white-space: pre-line;
+}
+
+.richText strong {
+    color: var(--text-primary);
+    font-weight: 600;
 }

@@ -22,6 +22,53 @@ export default async function ProjectDetailPage({
         notFound();
     }
 
+    // Helper: Simple Markdown Renderer (Bold + Bullets + Paragraphs)
+    const TextRenderer = ({ content }: { content: string }) => {
+        // 1. Split by double newline for paragraphs/blocks
+        const blocks = content.split('\n\n');
+
+        return (
+            <div className={styles.richText}>
+                {blocks.map((block, i) => {
+                    const trimmed = block.trim();
+                    if (!trimmed) return null;
+
+                    // 2. Handle Lists (lines starting with '*')
+                    if (trimmed.includes('\n* ') || trimmed.startsWith('* ')) {
+                        const lines = trimmed.split('\n');
+                        const listItems = lines.filter(l => l.trim().startsWith('* ')).map(l => l.trim().slice(2));
+                        // If lines had other content mixed, this simple parser treats the whole block as list-heavy
+                        // For this specific use case, our data is structured well.
+                        return (
+                            <ul key={i} className={styles.list}>
+                                {listItems.map((item, j) => (
+                                    <li key={j}>
+                                        {item.split(/(\*\*.*?\*\*)/).map((part, k) =>
+                                            part.startsWith('**') && part.endsWith('**')
+                                                ? <strong key={k}>{part.slice(2, -2)}</strong>
+                                                : part
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        );
+                    }
+
+                    // 3. Handle Paragraphs with Bold
+                    return (
+                        <p key={i} className={styles.paragraph}>
+                            {trimmed.split(/(\*\*.*?\*\*)/).map((part, j) =>
+                                part.startsWith('**') && part.endsWith('**')
+                                    ? <strong key={j}>{part.slice(2, -2)}</strong>
+                                    : part
+                            )}
+                        </p>
+                    );
+                })}
+            </div>
+        );
+    };
+
     // Determine Prev/Next logic
     const yearProjects = projectsData.filter(p => p.year === project.year);
     const currentIndex = yearProjects.findIndex(p => p.id === project.id);
@@ -68,23 +115,23 @@ export default async function ProjectDetailPage({
 
                     <div className={styles.section}>
                         <h2 className={styles.sectionTitle}>Samenvatting</h2>
-                        <div className={styles.text}>{project.content.summary}</div>
+                        <TextRenderer content={project.content.summary} />
                     </div>
 
                     <div className={styles.section}>
                         <h2 className={styles.sectionTitle}>Resultaat</h2>
-                        <div className={styles.text}>{project.content.result}</div>
+                        <TextRenderer content={project.content.result} />
                     </div>
 
                     <div className={styles.section}>
                         <h2 className={styles.sectionTitle}>Persoonlijke Reflectie</h2>
-                        <div className={styles.text}>{project.content.reflection}</div>
+                        <TextRenderer content={project.content.reflection} />
                     </div>
 
                     {project.content.feedback && (
                         <div className={styles.section}>
                             <h2 className={styles.sectionTitle}>Feedback Team</h2>
-                            <div className={styles.text}>{project.content.feedback}</div>
+                            <TextRenderer content={project.content.feedback} />
                         </div>
                     )}
 
