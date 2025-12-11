@@ -1,9 +1,19 @@
 import Card from '@/components/Card/Card';
 import Carousel from '@/components/Carousel/Carousel';
 import RecentProject from '@/components/RecentProject/RecentProject';
+import { projectsData } from '@/data/projects';
 import styles from './page.module.css';
 
 export default function Home() {
+  // Calculate Averages (Years 2-6)
+  const validProjects = projectsData.filter(p => p.year >= 2 && p.grade?.personal && p.grade?.group);
+
+  const totalPersonal = validProjects.reduce((sum, p) => sum + parseFloat(p.grade!.personal!.replace(',', '.')), 0);
+  const totalGroup = validProjects.reduce((sum, p) => sum + parseFloat(p.grade!.group!.replace(',', '.')), 0);
+
+  const avgPersonal = validProjects.length > 0 ? (totalPersonal / validProjects.length).toFixed(1).replace('.', ',') : '-';
+  const avgGroup = validProjects.length > 0 ? (totalGroup / validProjects.length).toFixed(1).replace('.', ',') : '-';
+
   return (
     <main className={styles.main}>
       <div className={styles.hero}>
@@ -13,6 +23,18 @@ export default function Home() {
 
         <div className="fade-in" style={{ animationDelay: '0.1s', width: '100%' }}>
           <RecentProject />
+        </div>
+
+        {/* Stats Section */}
+        <div className={`${styles.statsContainer} fade-in`} style={{ animationDelay: '0.15s' }}>
+          <div className={styles.statCard}>
+            <span className={styles.statLabel}>Gemiddeld Persoonlijk</span>
+            <span className={styles.statValue}>{avgPersonal}</span>
+          </div>
+          <div className={styles.statCard}>
+            <span className={styles.statLabel}>Gemiddeld Groepscijfer</span>
+            <span className={styles.statValue}>{avgGroup}</span>
+          </div>
         </div>
 
         <div className={`${styles.intro} fade-in`} style={{ animationDelay: '0.2s' }}>
