@@ -38,11 +38,19 @@ const AnimatedNumber = ({ value }: { value: string }) => {
 };
 
 export default function Home() {
-  // Calculate Averages (Years 2-6)
-  const validProjects = projectsData.filter(p => p.year >= 2 && p.grade?.personal && p.grade?.group);
+  // Parsing helper that returns NaN for invalid inputs
+  const parseGrade = (g?: string) => {
+    if (!g || g === '?') return NaN;
+    return parseFloat(g.replace(/\s/g, '').replace(',', '.'));
+  };
 
-  // Robust parsing: remove spaces, replace comma
-  const parseGrade = (g?: string) => parseFloat((g || '0').replace(/\s/g, '').replace(',', '.'));
+  // Calculate Averages (Years 2-6) - Filter out projects with invalid/missing grades
+  const validProjects = projectsData.filter(p => {
+    if (p.year < 2) return false;
+    const personal = parseGrade(p.grade?.personal);
+    const group = parseGrade(p.grade?.group);
+    return !isNaN(personal) && !isNaN(group);
+  });
 
   const totalPersonal = validProjects.reduce((sum, p) => sum + parseGrade(p.grade?.personal), 0);
   const totalGroup = validProjects.reduce((sum, p) => sum + parseGrade(p.grade?.group), 0);
