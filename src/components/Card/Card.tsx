@@ -6,11 +6,19 @@ interface CardProps {
     description?: string;
     href: string;
     gradient?: string;
+    delay?: string;
 }
 
-export default function Card({ title, description, href, gradient }: CardProps) {
+export default function Card({ title, description, href, gradient, delay }: CardProps) {
     return (
-        <Link href={href} className={styles.card} style={{ '--gradient': gradient } as React.CSSProperties}>
+        <Link
+            href={href}
+            className={styles.card}
+            style={{
+                '--gradient': gradient,
+                animationDelay: delay
+            } as React.CSSProperties}
+        >
             <div className={styles.content}>
                 <h2 className={styles.title}>
                     {title} <span>-&gt;</span>

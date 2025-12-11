@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Card from '@/components/Card/Card';
 import Carousel from '@/components/Carousel/Carousel';
 import RecentProject from '@/components/RecentProject/RecentProject';
+import Toolkit from '@/components/Toolkit/Toolkit';
+import Timeline from '@/components/Timeline/Timeline';
 import { projectsData } from '@/data/projects';
 import styles from './page.module.css';
 
@@ -55,84 +57,91 @@ export default function Home() {
   const totalPersonal = validProjects.reduce((sum, p) => sum + parseGrade(p.grade?.personal), 0);
   const totalGroup = validProjects.reduce((sum, p) => sum + parseGrade(p.grade?.group), 0);
 
-  const avgPersonal = validProjects.length > 0 ? (totalPersonal / validProjects.length).toFixed(1).replace('.', ',') : '-';
-  const avgGroup = validProjects.length > 0 ? (totalGroup / validProjects.length).toFixed(1).replace('.', ',') : '-';
+  const average = validProjects.length > 0 ? (totalPersonal / validProjects.length).toFixed(1).replace('.', ',') : '-';
+  const groupAverage = validProjects.length > 0 ? (totalGroup / validProjects.length).toFixed(1).replace('.', ',') : '-';
 
   return (
     <main className={styles.main}>
-      <div className={styles.hero}>
-        <h1 className={`${styles.title} fade-in`}>
-          Mijn <span className="text-gradient">Portfolio</span>
-        </h1>
+      <section className={`${styles.hero} fade-in`}>
+        <h1 className={styles.title}>Mijn Portfolio</h1>
+        <RecentProject />
 
-        <div className="fade-in" style={{ animationDelay: '0.1s', width: '100%' }}>
-          <RecentProject />
-        </div>
-
-        <div className={`${styles.intro} fade-in`} style={{ animationDelay: '0.2s' }}>
+        <div className={styles.intro}>
           <p className={styles.slogan}>
-            Innovatie door <span className="text-gradient">Onderzoek</span> & <span className="text-gradient">Design</span>
+            Innovatie door <span className="highlight">Onderzoek</span> & <span className="highlight">Design</span>
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className={`${styles.grid} fade-in`} style={{ animationDelay: '0.3s' }}>
+      {/* Navigation Cards */}
+      <div className={`${styles.grid} fade-in`} style={{ animationDelay: '0.1s' }}>
         <Card
           title="Projecten"
-          description="Bekijk mijn O&O projecten van vwo 1 t/m 6."
+          description="Bekijk al mijn O&O projecten door de jaren heen."
           href="/projecten"
-          gradient="rgba(6, 182, 212, 0.4)"
+          delay="0.1s"
         />
         <Card
           title="Portfolio's"
-          description="Mijn persoonlijke ontwikkelingsportfolio per jaarlaag."
+          description="Mijn persoonlijke ontwikkelingsportfolio's per jaar."
           href="/portfolios"
-          gradient="rgba(139, 92, 246, 0.4)"
+          delay="0.2s"
         />
         <Card
           title="Over Mij"
-          description="Wie ben ik en wat drijft mij?"
+          description="Wie ben ik en wat drijft mij als ontwerper?"
           href="/over-mij"
-          gradient="rgba(236, 72, 153, 0.4)"
+          delay="0.3s"
         />
         <Card
           title="Competenties"
-          description="Overzicht van mijn vaardigheden en groei."
+          description="Mijn groei in de 7 O&O competenties."
           href="/competenties"
-          gradient="rgba(34, 197, 94, 0.4)"
+          delay="0.4s"
         />
       </div>
 
-      {/* Stats Section - Now below text */}
+      {/* Grade Stats */}
       <div className={`${styles.statsContainer} fade-in`} style={{ animationDelay: '0.4s' }}>
         <div className={styles.statCard}>
-          <span className={styles.statLabel}>Gemiddeld Persoonlijk</span>
+          <span className={styles.statLabel}>Gemiddeld Cijfer</span>
           <span className={styles.statValue}>
-            <AnimatedNumber value={avgPersonal} />
+            <AnimatedNumber value={average} />
           </span>
         </div>
         <div className={styles.statCard}>
-          <span className={styles.statLabel}>Gemiddeld Groepscijfer</span>
+          <span className={styles.statLabel}>Groepsgemiddelde</span>
           <span className={styles.statValue}>
-            <AnimatedNumber value={avgGroup} />
+            <AnimatedNumber value={groupAverage} />
           </span>
         </div>
       </div>
 
-      <div className={`${styles.carouselSection} fade-in`} style={{ animationDelay: '0.5s' }}>
+      {/* Toolkit Section */}
+      <div className="fade-in" style={{ animationDelay: '0.5s' }}>
+        <Toolkit />
+      </div>
+
+      {/* Project Gallery */}
+      <div className={`${styles.carouselSection} fade-in`} style={{ animationDelay: '0.6s' }}>
         <h2 className={styles.sectionTitle}>Project Galerij</h2>
         <Carousel />
       </div>
 
+      {/* Timeline Section */}
+      <div className="fade-in" style={{ animationDelay: '0.7s' }}>
+        <Timeline />
+      </div>
+
       {/* Featured Report Section */}
-      <div className={`${styles.reportSection} fade-in`} style={{ animationDelay: '0.6s' }}>
+      <div className={`${styles.reportSection} fade-in`} style={{ animationDelay: '0.8s' }}>
         <h2 className={styles.sectionTitle}>Nieuwste Verslag</h2>
         <div className={styles.reportCard}>
           <div className={styles.reportContent}>
             <h3 className={styles.reportTitle}>Aardwarmte in Rijswijk</h3>
             <p className={styles.reportDesc}>
-              Een uitgebreide rendabiliteitsanalyse naar geothermie in vier Rijkswijkse wijken.
-              Inclusief technisch advies en kosten-batenanalyse.
+              Een uitgebreid onderzoek naar geothermie in vier Rijkswijkse wijken.
+              Inclusief technisch advies en kostenplaatje.
             </p>
             <a
               href="/Verslagen/Verslag - Aardwarmte in Rijswijk-3.pdf"

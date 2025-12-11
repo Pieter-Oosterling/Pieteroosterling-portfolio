@@ -364,7 +364,7 @@ export const projectsData: Project[] = [
         year: 4,
         slug: 'aardwarmte-rijswijk',
         title: 'Aardwarmte in Rijswijk',
-        description: 'Rendabiliteitsanalyse naar geothermie in vier Rijkswijkse wijken.',
+        description: 'Kostenonderzoek naar geothermie in vier Rijkswijkse wijken.',
         client: 'Gemeente Rijswijk & TU Delft',
         date: '2025',
         grade: { group: '?', personal: '10' }, // Grade pending
@@ -376,7 +376,7 @@ export const projectsData: Project[] = [
             summary: `
         In opdracht van de beleidsmedewerker energietransitie van de Gemeente Rijswijk (i.s.m. TU Delft) hebben wij een verkennend onderzoek uitgevoerd naar de mogelijkheden voor geothermie (aardwarmte) in vier wijken: Oud-Rijswijk, Kleurenbuurt, Hoornwijck en Muziekbuurt.
 
-        Het hoofddoel was vast te stellen welke locatie de beste eigenschappen bezat voor een aardwarmtecentrale, met een sterke focus op technisch rendement en financiële haalbaarheid. We hebben hiervoor de bodemgesteldheid, warmtevraag en ruimtelijke inpassing geanalyseerd.
+        Het hoofddoel was te kijken welke buurt het handigst was voor een aardwarmtecentrale. We hebben hierbij vooral gekeken naar wat technisch kan en wat het kost (financieel haalbaar). We hebben onderzocht hoe de bodem eruitziet, hoeveel warmte er nodig is en of er plek is.
       `,
             result: `
         **Locatiekeuze:**

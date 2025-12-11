@@ -1,0 +1,45 @@
+.container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.errorCode {
+    font-size: 8rem;
+    font-weight: 800;
+    color: var(--primary);
+    opacity: 0.2;
+    margin: 0;
+    line-height: 1;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.description {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.homeButton {
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.homeButton:hover {
+    opacity: 0.9;
+}
