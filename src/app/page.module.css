@@ -26,11 +26,17 @@
 }
 
 .intro {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
-  max-width: 800px;
   margin-top: 2rem;
+  max-width: 800px;
+}
+
+.slogan {
+  font-size: 1.5rem;
+  /* Larger than before */
+  font-weight: 500;
+  color: var(--foreground);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
 .grid {
