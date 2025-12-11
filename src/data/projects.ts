@@ -302,5 +302,45 @@ export const projectsData: Project[] = [
                 ]
             }
         }
+    },
+    {
+        id: 9,
+        year: 3,
+        slug: 'gezond-eten',
+        title: 'Gezond Eten (SnackCheck)',
+        description: 'Een webapp en adviesrapport om jongeren gezonder te laten eten.',
+        client: 'Maartje (JOGG - Jong Leren Eten)',
+        date: '24-05-2025',
+        team: ['Felix Roeterdink', 'Valentijn Snelleman', 'Resul Eryigit', 'Pieter Oosterling'],
+        role: 'Developer & Onderzoeker',
+        thumbnail: '/images/Image - Eindopdracht.png', // Placeholder
+        content: {
+            summary: `
+        De opdracht was om onderzoek te doen naar hoe we middelbare scholieren kunnen verleiden tot gezondere voedselkeuzes.
+        We hebben een breed onderzoek opgezet met brainstorms, interviews, enquêtes en nudging-experimenten.
+        Hieruit bleek dat een combinatie van inzicht (via een app) en onbewuste sturing (nudging) het meest effectief is.
+      `,
+            result: `
+        Ons eindproduct bestaat uit twee delen:
+        1. **SnackCheck Webapp**: Een applicatie waarmee leerlingen hun eetgedrag bijhouden, punten verdienen voor gezonde keuzes en AI-gedreven tips krijgen.
+        2. **Adviesrapport Supermarkten**: Een plan om winkels anders in te richten (gezond op ooghoogte, kleurgebruik) om jongeren onbewust te sturen.
+        Daarnaast hebben we een infographic gemaakt over de impact van voeding.
+      `,
+            reflection: `
+        In dit project heb ik een enorme groei doorgemaakt op technisch vlak.
+        Ik heb geleerd te programmeren in HTML, CSS, JavaScript en Python om de webapp te realiseren.
+        Het bouwen van een werkende applicatie die data verwerkt was een complexe maar leerzame uitdaging.
+      `,
+            extra: {
+                title: 'Technische & Onderzoeks Skills',
+                items: [
+                    'Web Development (HTML/CSS/JS)',
+                    'Python Scripting',
+                    'Nudging Experimenten',
+                    'Data Analyse (Enquêtes)',
+                    'Infographic Design'
+                ]
+            }
+        }
     }
 ];
