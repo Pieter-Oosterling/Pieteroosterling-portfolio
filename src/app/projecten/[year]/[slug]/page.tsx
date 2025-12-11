@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projectsData } from '@/data/projects';
+import ProjectHeroImage from '@/components/ProjectHeroImage/ProjectHeroImage';
 import styles from './page.module.css';
 
 export async function generateStaticParams() {
@@ -79,6 +80,9 @@ export default async function ProjectDetailPage({
         <main className={styles.main}>
             {/* Hero Section */}
             <section className={`${styles.hero} fade-in`}>
+                <Link href={`/portfolios/${year}`} className={styles.backLink}>
+                    &larr; Terug naar Jaar {project.year}
+                </Link>
                 <div className={styles.heroContent}>
                     <span className={styles.badge}>VWO {project.year}</span>
                     <h1 className={styles.title}>{project.title}</h1>
@@ -105,6 +109,7 @@ export default async function ProjectDetailPage({
                         )}
                     </div>
                 </div>
+                <ProjectHeroImage src={project.thumbnail} alt={project.title} />
             </section>
 
             {/* Main Content Grid */}

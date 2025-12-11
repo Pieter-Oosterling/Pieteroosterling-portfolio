@@ -25,7 +25,7 @@ export interface Project {
         group?: string;
         personal?: string;
     };
-
+    tags: ('Design' | 'Onderzoek' | 'Tech' | 'Management')[];
 }
 
 export const projectsData: Project[] = [
@@ -41,6 +41,7 @@ export const projectsData: Project[] = [
         grade: { combined: '7,6' },
         team: ['Nils Verkade', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
         role: 'Teamleider',
+        tags: ['Management', 'Design'],
         thumbnail: '/images/Image - Brugklas Project.png', // Placeholder mapping
         content: {
             summary: `
@@ -72,6 +73,7 @@ export const projectsData: Project[] = [
         grade: { combined: '8,0' },
         team: ['Felix Roeterdink', 'Nouska Steenks', 'Tessa Lock', 'Pieter Oosterling'],
         role: 'Projectleider',
+        tags: ['Onderzoek', 'Management'],
         thumbnail: '/images/Image - Technasium.png',
         content: {
             summary: `
@@ -111,6 +113,7 @@ export const projectsData: Project[] = [
         grade: { combined: '8,5' },
         team: ['Sami Chioua', 'Leusha Kalasok', 'Damin Hassani', 'Pieter Oosterling'],
         role: 'Teamleider & Planner',
+        tags: ['Onderzoek', 'Management'],
         report: 'Verslag - Aardwarmte in Rijswijk-3.pdf', // Using available PDF as placeholder/example if specific one missing, or logic to hide if missing
         thumbnail: '/images/Image - Eindopdracht.png',
         content: {
@@ -146,6 +149,7 @@ export const projectsData: Project[] = [
         grade: { group: '7,0', personal: '7,7' },
         team: ['Nils Vakande', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
         role: 'Ontwerper & Onderzoeker',
+        tags: ['Design', 'Onderzoek'],
         thumbnail: '/images/Image - Project VWO 2.png', // Placeholder
         content: {
             summary: `
@@ -176,6 +180,7 @@ export const projectsData: Project[] = [
         grade: { group: '7,6', personal: '8,0' },
         team: ['Team LAMP', 'Pieter Oosterling'],
         role: 'Conceptontwikkelaar',
+        tags: ['Design', 'Onderzoek'],
         thumbnail: '/images/Image - Technasium.png', // Placeholder
         content: {
             summary: `
@@ -205,6 +210,7 @@ export const projectsData: Project[] = [
         grade: { group: '8,3', personal: '8,1' },
         team: ['Thijn', 'Pieter Oosterling', 'Team Inpakdienst Holland'],
         role: 'Onderzoeker &  Materialen',
+        tags: ['Onderzoek', 'Tech'],
         thumbnail: '/images/Image - Eindopdracht.png', // Placeholder
         content: {
             summary: `
@@ -247,6 +253,7 @@ export const projectsData: Project[] = [
         grade: { group: '7,3', personal: '9,1' },
         team: ['Valentijn Snelleman', 'Julian Scholtens', 'Niek Hanemaaijer', 'Pieter Oosterling'],
         role: 'Ontwerper & Samenwerking',
+        tags: ['Design', 'Management'],
         thumbnail: '/images/Image - Brugklas Project.png', // Placeholder until assets provided
         content: {
             summary: `
@@ -289,6 +296,7 @@ export const projectsData: Project[] = [
         grade: { group: '7,3', personal: '9,1' },
         team: ['Micha Doorduin', 'Julia de Graaf', 'Ilian Runderkamp', 'Pieter Oosterling'],
         role: 'Planner (Plannen & Organiseren)',
+        tags: ['Tech', 'Management'],
         thumbnail: '/images/Image - Technasium.png', // Placeholder
         content: {
             summary: `
@@ -328,6 +336,7 @@ export const projectsData: Project[] = [
         grade: { group: '6,7', personal: '8,6' },
         team: ['Felix Roeterdink', 'Valentijn Snelleman', 'Resul Eryigit', 'Pieter Oosterling'],
         role: 'Developer & Onderzoeker',
+        tags: ['Tech', 'Design'],
         thumbnail: '/images/Image - Eindopdracht.png', // Placeholder
         content: {
             summary: `
@@ -370,6 +379,7 @@ export const projectsData: Project[] = [
         grade: { group: '?', personal: '10' }, // Grade pending
         team: ['Pieter Oosterling', 'Mohammad Khaled Yasin', 'Thijn Merks', 'Nouschka Steenks'],
         role: 'Planner (Plannen & Organiseren)',
+        tags: ['Onderzoek', 'Management'],
         report: 'Verslag - Aardwarmte in Rijswijk-3.pdf',
         thumbnail: '/images/Image - Technasium.png',
         content: {

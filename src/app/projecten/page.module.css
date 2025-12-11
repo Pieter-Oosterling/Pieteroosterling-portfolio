@@ -68,3 +68,25 @@
     max-width: 700px;
     margin: 0 auto;
 }
+
+.extraSection h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.extraSection p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.divider {
+    width: 60%;
+    height: 1px;
+    background: var(--border-color);
+    margin: 4rem auto;
+    border: none;
+}

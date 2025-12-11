@@ -1,47 +1,56 @@
 import Card from '@/components/Card/Card';
+import ProjectGrid from '@/components/ProjectGrid/ProjectGrid';
+import { projectsData } from '@/data/projects';
 import styles from './page.module.css';
 
-const years = [
-    { id: 1, title: 'VWO 1', description: 'Ontdekken en Onderzoeken', gradient: 'rgba(6, 182, 212, 0.4)' },
-    { id: 2, title: 'VWO 2', description: 'Technisch Ontwerpen & Prototyping', gradient: 'rgba(139, 92, 246, 0.4)' },
-    { id: 3, title: 'VWO 3', description: 'Complexe Probleemoplossing', gradient: 'rgba(236, 72, 153, 0.4)' },
-    { id: 4, title: 'VWO 4', description: 'Ondernemerschap en Innovatie', gradient: 'rgba(34, 197, 94, 0.4)' },
-    { id: 5, title: 'VWO 5', description: 'Meest en Gezel', gradient: 'rgba(249, 115, 22, 0.4)' },
-    { id: 6, title: 'VWO 6', description: 'Eindwerkstuk (Meesterproef)', gradient: 'rgba(59, 130, 246, 0.4)' },
-];
-
-export default function ProjectenPage() {
+export default function Projecten() {
     return (
         <main className={styles.main}>
             <div className={styles.header}>
-                <h1 className={`${styles.title} fade-in`}>Selecteer een <span className="text-gradient">Jaarlaag</span></h1>
-                <p className={`${styles.subtitle} fade-in`}>
-                    Bekijk hier mijn O&O projecten per leerjaar. Elk jaar staat in het teken van specifieke vaardigheden en uitdagingen.
+                <h1 className={styles.title}>Projecten</h1>
+                <p className={styles.subtitle}>
+                    Selecteer een schooljaar of filter hieronder door alle projecten.
                 </p>
             </div>
 
-            <div className={`${styles.grid} fade-in`} style={{ animationDelay: '0.2s' }}>
-                {years.map((year) => (
-                    <Card
-                        key={year.id}
-                        title={year.title}
-                        description={year.description}
-                        href={`/projecten/jaar-${year.id}`}
-                        gradient={year.gradient}
-                    />
-                ))}
+            <div className={styles.grid}>
+                <Card
+                    title="Klas 1"
+                    description="Brugklas projecten (O&O)"
+                    href="/projecten/jaar-1"
+                    gradient="linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)"
+                />
+                <Card
+                    title="Klas 2"
+                    description="VWO 2 projecten"
+                    href="/projecten/jaar-2"
+                    gradient="linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+                />
+                <Card
+                    title="Klas 3"
+                    description="VWO 3 (Technasium)"
+                    href="/projecten/jaar-3"
+                    gradient="linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+                />
+                <Card
+                    title="Klas 4"
+                    description="VWO 4 (Specialisatie)"
+                    href="/projecten/jaar-4"
+                    gradient="linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
+                />
             </div>
 
-            <section className={`${styles.extraSection} fade-in`} style={{ animationDelay: '0.4s' }}>
-                <div className={styles.extraContent}>
-                    <h2 className={styles.extraTitle}>Mijn Groei in O&O</h2>
-                    <p className={styles.extraText}>
-                        Gedurende mijn tijd op het VWO heb ik mij ontwikkeld van een beginnend onderzoeker naar een ervaren ontwerper.
-                        De focus is verschoven van simpele opdrachten naar complexe, integrale ontwerpvraagstukken met echte opdrachtgevers.
-                        Klik op een jaarlaag hierboven om de specifieke projecten en resultaten te zien.
-                    </p>
-                </div>
-            </section>
+            <div className={styles.extraSection}>
+                <h2>Mijn Groei</h2>
+                <p>
+                    Van simpele kartonnen prototypes in de brugklas naar complexe rendabiliteitsanalyses en Python-applicaties in de bovenbouw.
+                </p>
+            </div>
+
+            <hr className={styles.divider} />
+
+            <ProjectGrid projects={projectsData} />
+
         </main>
     );
 }

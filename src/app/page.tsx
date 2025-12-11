@@ -117,24 +117,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Toolkit Section */}
-      <div className="fade-in" style={{ animationDelay: '0.5s' }}>
-        <Toolkit />
-      </div>
-
-      {/* Project Gallery */}
-      <div className={`${styles.carouselSection} fade-in`} style={{ animationDelay: '0.6s' }}>
-        <h2 className={styles.sectionTitle}>Project Galerij</h2>
-        <Carousel />
-      </div>
-
-      {/* Timeline Section */}
-      <div className="fade-in" style={{ animationDelay: '0.7s' }}>
-        <Timeline />
-      </div>
-
-      {/* Featured Report Section */}
-      <div className={`${styles.reportSection} fade-in`} style={{ animationDelay: '0.8s' }}>
+      {/* Featured Report Section (Top Priority) */}
+      <div className={`${styles.reportSection} fade-in`} style={{ animationDelay: '0.45s' }}>
         <h2 className={styles.sectionTitle}>Nieuwste Verslag</h2>
         <div className={styles.reportCard}>
           <div className={styles.reportContent}>
@@ -156,6 +140,22 @@ export default function Home() {
             📄
           </div>
         </div>
+      </div>
+
+      {/* Project Gallery */}
+      <div className={`${styles.carouselSection} fade-in`} style={{ animationDelay: '0.5s' }}>
+        <h2 className={styles.sectionTitle}>Project Galerij</h2>
+        <Carousel />
+      </div>
+
+      {/* Premium Timeline */}
+      <div className="fade-in" style={{ animationDelay: '0.6s' }}>
+        <Timeline />
+      </div>
+
+      {/* Toolkit Section */}
+      <div className="fade-in" style={{ animationDelay: '0.7s' }}>
+        <Toolkit />
       </div>
     </main>
   );
