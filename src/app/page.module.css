@@ -61,26 +61,36 @@
 }
 
 .gradientPortfolio {
-  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #60a5fa 100%);
+  /* Purple to Light Blue */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+  /* Fix for some browsers */
 }
 
 .textBlue {
-  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
+  /* Blue to Cyan */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
+  display: inline-block;
+  padding-right: 0.1em;
+  /* Prevent clipping */
 }
 
 .textPink {
-  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #ec4899 0%, #d946ef 100%);
+  /* Pink to Fuschsia */
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 800;
+  display: inline-block;
+  padding-right: 0.1em;
 }
 
 /* Old buttons removed in favor of NavigationGrid */
