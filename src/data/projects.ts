@@ -376,7 +376,7 @@ export const projectsData: Project[] = [
         description: 'Kostenonderzoek naar geothermie in vier Rijkswijkse wijken.',
         client: 'Gemeente Rijswijk & TU Delft',
         date: '2025',
-        grade: { group: '?', personal: '10' }, // Grade pending
+        grade: { group: '?', personal: '?' }, // Grade pending
         team: ['Pieter Oosterling', 'Mohammad Khaled Yasin', 'Thijn Merks', 'Nouschka Steenks'],
         role: 'Planner (Plannen & Organiseren)',
         tags: ['Onderzoek', 'Management'],
