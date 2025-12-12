@@ -1,11 +1,33 @@
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
+.galleryContainer {
+    width: 100%;
 }
 
-.imageCard {
+.carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.carousel::-webkit-scrollbar-track {
+    background: var(--surface);
+    border-radius: 3px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.carouselItem {
     position: relative;
+    min-width: 200px;
+    width: 200px;
     aspect-ratio: 4/3;
     border-radius: 0.75rem;
     overflow: hidden;
@@ -14,41 +36,23 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.imageCard:hover {
+.carouselItem:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.image {
+.carouselImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.imageCard:hover .image {
+.carouselItem:hover .carouselImage {
     transform: scale(1.05);
 }
 
-.caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    color: white;
-    font-size: 0.85rem;
-    line-height: 1.4;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.imageCard:hover .caption {
-    opacity: 1;
-}
-
-.overlay {
+.carouselOverlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -62,12 +66,184 @@
     transition: opacity 0.3s ease;
 }
 
-.imageCard:hover .overlay {
+.carouselItem:hover .carouselOverlay {
     opacity: 1;
 }
 
 .zoomIcon {
     font-size: 2rem;
+}
+
+.moreIndicator {
+    position: relative;
+    min-width: 200px;
+    width: 200px;
+    aspect-ratio: 4/3;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moreIndicator:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4);
+}
+
+.moreText {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+}
+
+.moreSubtext {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0.5rem;
+}
+
+.instruction {
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Lightbox */
+.lightboxContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightboxBackdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    cursor: pointer;
+}
+
+.lightboxContent {
+    position: relative;
+    z-index: 10001;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.imageWrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightboxImage {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.lightboxCaption {
+    margin-top: 1.5rem;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    max-width: 800px;
+}
+
+.counter {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10002;
+}
+
+.closeBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+.navBtn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navBtn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .carouselItem,
+    .moreIndicator {
+        min-width: 150px;
+        width: 150px;
+    }
+
+    .moreText {
+        font-size: 2rem;
+    }
+
+    .lightboxContent {
+        width: 95%;
+    }
+
+    .navBtn {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .closeBtn {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.2rem;
+    }
 }
 
 /* Lightbox */

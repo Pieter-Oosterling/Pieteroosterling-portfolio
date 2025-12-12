@@ -30,26 +30,43 @@ export default function Gallery({ images }: GalleryProps) {
         setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
     };
 
+    // Show first 4 images as preview
+    const previewImages = images.slice(0, 4);
+    const hasMore = images.length > 4;
+
     return (
         <>
-            <div className={styles.gallery}>
-                {images.map((image, index) => (
-                    <div
-                        key={index}
-                        className={styles.imageCard}
-                        onClick={() => openLightbox(index)}
-                    >
-                        <img
-                            src={image.src}
-                            alt={image.caption}
-                            className={styles.image}
-                        />
-                        <div className={styles.caption}>{image.caption}</div>
-                        <div className={styles.overlay}>
-                            <span className={styles.zoomIcon}>🔍</span>
+            <div className={styles.galleryContainer}>
+                <div className={styles.carousel}>
+                    {previewImages.map((image, index) => (
+                        <div
+                            key={index}
+                            className={styles.carouselItem}
+                            onClick={() => openLightbox(index)}
+                        >
+                            <img
+                                src={image.src}
+                                alt={image.caption}
+                                className={styles.carouselImage}
+                            />
+                            <div className={styles.carouselOverlay}>
+                                <span className={styles.zoomIcon}>🔍</span>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                    {hasMore && (
+                        <div
+                            className={styles.moreIndicator}
+                            onClick={() => openLightbox(0)}
+                        >
+                            <span className={styles.moreText}>+{images.length - 4}</span>
+                            <span className={styles.moreSubtext}>meer foto's</span>
+                        </div>
+                    )}
+                </div>
+                <p className={styles.instruction}>
+                    Klik op de afbeelding om de gehele gallerij te zien en de beschrijving
+                </p>
             </div>
 
             {lightboxOpen && (
