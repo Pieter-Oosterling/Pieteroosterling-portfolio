@@ -7,6 +7,8 @@ import RecentProject from '@/components/RecentProject/RecentProject';
 import Toolkit from '@/components/Toolkit/Toolkit';
 import Timeline from '@/components/Timeline/Timeline';
 import HomeNavigation from '@/components/HomeNavigation/HomeNavigation';
+import AboutMe from '@/components/AboutMe/AboutMe';
+import FeaturedProject from '@/components/FeaturedProject/FeaturedProject';
 import { projectsData } from '@/data/projects';
 import styles from './page.module.css';
 
@@ -61,6 +63,14 @@ export default function Home() {
   const average = validProjects.length > 0 ? (totalPersonal / validProjects.length).toFixed(1).replace('.', ',') : '-';
   const groupAverage = validProjects.length > 0 ? (totalGroup / validProjects.length).toFixed(1).replace('.', ',') : '-';
 
+  // Get latest project (highest year, then most recent in that year)
+  const latestProject = projectsData
+    .slice()
+    .sort((a, b) => {
+      if (b.year !== a.year) return b.year - a.year;
+      return b.id - a.id; // Assuming higher ID = more recent
+    })[0];
+
   return (
     <main className={styles.main}>
       <section className={`${styles.hero} fade-in`}>
@@ -79,6 +89,16 @@ export default function Home() {
       {/* Navigation Grid (Replaces old Cards) */}
       <div className="fade-in" style={{ animationDelay: '0.1s' }}>
         <HomeNavigation />
+      </div>
+
+      {/* About Me Section */}
+      <div className="fade-in" style={{ animationDelay: '0.2s' }}>
+        <AboutMe />
+      </div>
+
+      {/* Featured Project */}
+      <div className="fade-in" style={{ animationDelay: '0.3s' }}>
+        <FeaturedProject project={latestProject} />
       </div>
 
       {/* Grade Stats */}

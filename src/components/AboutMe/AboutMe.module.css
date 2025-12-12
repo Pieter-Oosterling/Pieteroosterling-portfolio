@@ -1,0 +1,135 @@
+.container {
+    max-width: var(--max-width);
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.textSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+/* Avatar Section */
+.avatarSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.avatar {
+    position: relative;
+}
+
+.avatarPlaceholder {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.3);
+    position: relative;
+}
+
+.avatarPlaceholder::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0.3;
+    filter: blur(20px);
+    z-index: -1;
+}
+
+.initials {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.stat {
+    text-align: center;
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .avatarSection {
+        order: -1;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .avatarPlaceholder {
+        width: 150px;
+        height: 150px;
+    }
+
+    .initials {
+        font-size: 3rem;
+    }
+
+    .stats {
+        gap: 1.5rem;
+    }
+
+    .statValue {
+        font-size: 1.5rem;
+    }
+}
