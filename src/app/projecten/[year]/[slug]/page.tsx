@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { projectsData } from '@/data/projects';
 import ProjectHeroImage from '@/components/ProjectHeroImage/ProjectHeroImage';
+import Gallery from '@/components/Gallery/Gallery';
 import styles from './page.module.css';
 
 export async function generateStaticParams() {
@@ -172,14 +173,13 @@ export default async function ProjectDetailPage({
                         </ul>
                     </div>
 
-                    {/* Gallery Placeholder (Carousel could go here) */}
-                    <div className={styles.card}>
-                        <h3 className={styles.cardTitle}>Galerij</h3>
-                        <div className={styles.galleryPlaceholder}>
-                            {/* Placeholder for now */}
-                            <div className={styles.galleryItem}>{project.title}</div>
+                    {/* Gallery */}
+                    {project.gallery && project.gallery.length > 0 && (
+                        <div className={styles.card}>
+                            <h3 className={styles.cardTitle}>Galerij</h3>
+                            <Gallery images={project.gallery} />
                         </div>
-                    </div>
+                    )}
 
                     {/* Actions */}
                     {(project.grade?.combined || project.grade?.group) && (

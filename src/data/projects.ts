@@ -10,6 +10,10 @@ export interface Project {
     role?: string;
     thumbnail: string;
     report?: string;
+    gallery?: {
+        src: string;
+        caption: string;
+    }[];
     content: {
         summary: string;
         result: string;
@@ -381,7 +385,73 @@ export const projectsData: Project[] = [
         role: 'Planner (Plannen & Organiseren)',
         tags: ['Onderzoek', 'Management'],
         report: 'Verslag - Aardwarmte in Rijswijk-3.pdf',
-        thumbnail: '/images/Image - Technasium.png',
+        thumbnail: '/images/vwo4/project1/logo - Aardwarmte in Rijswkijk.png',
+        gallery: [
+            {
+                src: '/images/vwo4/project1/logo - Aardwarmte in Rijswkijk.png',
+                caption: 'Project Logo: Aardwarmte in Rijswijk - Geothermie verkennend onderzoek'
+            },
+            {
+                src: '/images/vwo4/project1/opdrachtgever-bedrijf-gemeente_Rijswijk.png',
+                caption: 'Opdrachtgever: Gemeente Rijswijk - Beleidsmedewerker Energietransitie'
+            },
+            {
+                src: '/images/vwo4/project1/Hulp-opdrachtgever(bedrijf)-TUDelft.png',
+                caption: 'Samenwerking met TU Delft - Technische ondersteuning en expertise'
+            },
+            {
+                src: '/images/vwo4/project1/kaartRijswijk-opbasisvanwarmtevraag+warmtelinq.png',
+                caption: 'Kaart van Rijswijk - Warmtevraag analyse en Warmte LinQ netwerk'
+            },
+            {
+                src: '/images/vwo4/project1/samenvatting_warmtevraag.png',
+                caption: 'Samenvatting van de warmtevraag per wijk in Rijswijk'
+            },
+            {
+                src: '/images/vwo4/project1/doublet_samenvatting_1 - buurten en wijken.png',
+                caption: 'Doublet Scenario 1: Analyse van buurten en wijken voor aardwarmte'
+            },
+            {
+                src: '/images/vwo4/project1/doublet_samenvatting_1 - optimaal Rijswijk.png',
+                caption: 'Doublet Scenario - Optimale configuratie voor Rijswijk'
+            },
+            {
+                src: '/images/vwo4/project1/doublet_samenvatting_1 - toekomst visie.png',
+                caption: 'Doublet Scenario - Toekomstvisie voor duurzame warmtevoorziening'
+            },
+            {
+                src: '/images/vwo4/project1/Doublet - optimaal Rijswijk - Breakthourgh time.png',
+                caption: 'Doorbraaktijd (Breakthrough Time) analyse voor de optimale doublet in Rijswijk'
+            },
+            {
+                src: '/images/vwo4/project1/Doublet - optimaal Rijswijk - energy - TJ.png',
+                caption: 'Energieproductie optimale doublet: 250 TJ per jaar in Rijswijk'
+            },
+            {
+                src: '/images/vwo4/project1/Doublet - toekomst visie - informatie over breakthrough time.png',
+                caption: 'Toekomstvisie: Technische informatie over doorbraaktijd en duurzaamheid'
+            },
+            {
+                src: '/images/vwo4/project1/heatmap-3_Toekomst-TJ.png',
+                caption: 'Heatmap: Toekomstige warmtevraag in TJ (Terajoules) per gebied'
+            },
+            {
+                src: '/images/vwo4/project1/Toekomst aardwarme - CBS-ontrokken aardwarmte.png',
+                caption: 'CBS Data: Ontrokken aardwarmte toekomstscenario in Nederland'
+            },
+            {
+                src: '/images/vwo4/project1/locatie_bovengrond - kleurenbuurt - grasveld 2.png',
+                caption: 'Gekozen locatie: Grasveld 2 in de Kleurenbuurt nabij Kruisvaarderspark'
+            },
+            {
+                src: '/images/vwo4/project1/image-warmtewisselaar.png',
+                caption: 'Technische schema: Warmtewisselaar voor geothermisch systeem'
+            },
+            {
+                src: '/images/vwo4/project1/double2.png',
+                caption: 'Doublet technologie: Tweeling-boorgatensysteem voor aardwarmte-extractie'
+            }
+        ],
         content: {
             summary: `
         In opdracht van de beleidsmedewerker energietransitie van de Gemeente Rijswijk (i.s.m. TU Delft) hebben wij een verkennend onderzoek uitgevoerd naar de mogelijkheden voor geothermie (aardwarmte) in vier wijken: Oud-Rijswijk, Kleurenbuurt, Hoornwijck en Muziekbuurt.
