@@ -154,7 +154,57 @@ export const projectsData: Project[] = [
         team: ['Nils Vakande', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
         role: 'Ontwerper & Onderzoeker',
         tags: ['Design', 'Onderzoek'],
-        thumbnail: '/images/Image - Project VWO 2.png', // Placeholder
+        thumbnail: '/images/vwo3/project1/FormHet_Logo.png',
+        gallery: [
+            {
+                src: '/images/vwo3/project1/FormHet_Logo.png',
+                caption: 'FormHet Logo - Formaat Hergebruik project voor schakelwoningen'
+            },
+            {
+                src: '/images/vwo3/project1/logo - floppers - team.jpg',
+                caption: 'Team Floppers Logo - Projectteam VWO 3'
+            },
+            {
+                src: '/images/vwo3/project1/Persona.jpg',
+                caption: 'Persona Analyse - Doelgroep onderzoek voor schakelwoning gebruikers'
+            },
+            {
+                src: '/images/vwo3/project1/Levensfases.png',
+                caption: 'Levensfases Diagram - Verschillende gebruikersfasen voor schakelwoningen'
+            },
+            {
+                src: '/images/vwo3/project1/PVE.jpg',
+                caption: 'Programma van Eisen (PvE) - Technische en functionele requirements'
+            },
+            {
+                src: '/images/vwo3/project1/plattegrond-oudere woning.jpg',
+                caption: 'Plattegrond oudere bewoner - Woning configuratie voor senioren'
+            },
+            {
+                src: '/images/vwo3/project1/plategrond-studenten_woning.jpg',
+                caption: 'Plattegrond studenten woning - Flexibele indeling voor jongeren'
+            },
+            {
+                src: '/images/vwo3/project1/Uitleg1.png',
+                caption: 'Uitleg Concept 1 - Modulaire schakelwoning principes'
+            },
+            {
+                src: '/images/vwo3/project1/Uitleg2_Plattegrond.jpg',
+                caption: 'Uitleg Concept 2 - Gedetailleerde plattegrond met afmetingen'
+            },
+            {
+                src: '/images/vwo3/project1/Eindproduct.jpg',
+                caption: 'Eindproduct - Fysiek model van de schakelwoning'
+            },
+            {
+                src: '/images/vwo3/project1/Collage.jpg',
+                caption: 'Collage - Visualisatie van het complete FormHet concept'
+            },
+            {
+                src: '/images/vwo3/project1/Poster.jpg',
+                caption: 'Project Poster - Presentatie van onderzoek en ontwerp'
+            }
+        ],
         content: {
             summary: `
         Voor dit project hebben we onderzoek gedaan naar de mobiliteit op Delft Campus en hoe dit verbeterd kan worden voor de toekomst.
@@ -245,7 +295,37 @@ export const projectsData: Project[] = [
         team: ['Thijn', 'Pieter Oosterling', 'Team Inpakdienst Holland'],
         role: 'Onderzoeker &  Materialen',
         tags: ['Onderzoek', 'Tech'],
-        thumbnail: '/images/Image - Eindopdracht.png', // Placeholder
+        thumbnail: '/images/vwo2/project3/logo-Inpak_Dienst_Holland-zero waste.png',
+        gallery: [
+            {
+                src: '/images/vwo2/project3/logo-Inpak_Dienst_Holland-zero waste.png',
+                caption: 'Opdrachtgever Logo: Inpak Dienst Holland - Zero Waste verpakkingen'
+            },
+            {
+                src: '/images/vwo2/project3/3d-model-optie-verpakking.png',
+                caption: '3D Model - Verpakkingsontwerp optie voor duurzaam materiaal'
+            },
+            {
+                src: '/images/vwo2/project3/eindproduct-iteratie_1-(100%-tapiocazetmeel).jpg',
+                caption: 'Iteratie 1: Eindproduct met 100% tapioca zetmeel'
+            },
+            {
+                src: '/images/vwo2/project3/eindproduct-iteratie_2-(50%-tapiocazetmeel-50%_aardappelzetmeel).jpg',
+                caption: 'Iteratie 2: Mix van 50% tapioca en 50% aardappelzetmeel'
+            },
+            {
+                src: '/images/vwo2/project3/eindproduct-uitgebreid-eindproduct(100%_aardappelzetmeel).jpg',
+                caption: 'Eindproduct: 100% aardappelzetmeel - Optimale samenstelling'
+            },
+            {
+                src: '/images/vwo2/project3/eindproduct-ingezoemd-letop:draai90graden.jpg',
+                caption: 'Close-up van eindproduct - Detail van bioplastic structuur'
+            },
+            {
+                src: '/images/vwo2/project3/presentatiemarkt.png',
+                caption: 'Presentatie op de markt - Publieke demonstratie circulaire verpakking'
+            }
+        ],
         content: {
             summary: `
         Onder de naam 'Inpakdienst Holland' hebben we gezocht naar een milieubewust en circulair alternatief voor plastic verpakkingen.
