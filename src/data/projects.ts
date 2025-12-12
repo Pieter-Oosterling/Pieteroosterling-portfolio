@@ -185,7 +185,37 @@ export const projectsData: Project[] = [
         team: ['Team LAMP', 'Pieter Oosterling'],
         role: 'Conceptontwikkelaar',
         tags: ['Design', 'Onderzoek'],
-        thumbnail: '/images/Image - Technasium.png', // Placeholder
+        thumbnail: '/images/vwo2/project2/Logo - LAMP.png',
+        gallery: [
+            {
+                src: '/images/vwo2/project2/Logo - LAMP.png',
+                caption: 'Team LAMP Logo - Spelenderwijs Meer Bewegen project team'
+            },
+            {
+                src: '/images/vwo2/project2/logo_product.png',
+                caption: 'Product Logo - Bewegingsspel voor chronisch zieke kinderen'
+            },
+            {
+                src: '/images/vwo2/project2/schets-product-LETOP:draai90gradennaarlinks.png',
+                caption: 'Product schets - Initieel ontwerp van het kaartspel concept'
+            },
+            {
+                src: '/images/vwo2/project2/prototype2(spuugmodel)-Spelenderwijsbewegen.jpg',
+                caption: 'Spuugmodel (Low-Fidelity Prototype) - Vroege iteratie voor concept testing'
+            },
+            {
+                src: '/images/vwo2/project2/prototype1(eindproduct)-Spelenderwijsbewegen.jpg',
+                caption: 'Eindproduct Prototype 1 - Verfijnd kaartspel met fysieke opdrachten'
+            },
+            {
+                src: '/images/vwo2/project2/prototype3(eindproduct-dicht)-Spelenderwijsbewegen.jpg',
+                caption: 'Eindproduct (Gesloten) - Verpakking van het bewegingsspel'
+            },
+            {
+                src: '/images/vwo2/project2/prototype4(eindproduct-open)-Spelenderwijsbewegen.jpg',
+                caption: 'Eindproduct (Geopend) - Speelkaarten met bewegingsopdrachten zichtbaar'
+            }
+        ],
         content: {
             summary: `
         De opdracht was om kinderen met een chronische ziekte op een leuke manier meer te laten bewegen.
