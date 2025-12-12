@@ -38,10 +38,45 @@
     margin-bottom: 2rem;
 }
 
+/* Header Layout */
+.heroLayout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+    margin-top: 1rem;
+}
+
+.heroContent {
+    flex: 1;
+}
+
+.heroImageWrapper {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+/* Override standard responsive logic for this layout */
+@media (max-width: 800px) {
+    .heroLayout {
+        flex-direction: column-reverse;
+        /* Image top on mobile, or bottom? User prefers bottom usually, stick to standard flow */
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .heroImageWrapper {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
 .metaGrid {
     display: flex;
     gap: 3rem;
     flex-wrap: wrap;
+    margin-top: 2rem;
+    /* Ensure logic separation */
 }
 
 .metaItem {

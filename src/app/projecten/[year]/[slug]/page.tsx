@@ -83,33 +83,39 @@ export default async function ProjectDetailPage({
                 <Link href={`/portfolios/${year}`} className={styles.backLink}>
                     &larr; Terug naar Jaar {project.year}
                 </Link>
-                <div className={styles.heroContent}>
-                    <span className={styles.badge}>VWO {project.year}</span>
-                    <h1 className={styles.title}>{project.title}</h1>
-                    <p className={styles.subtitle}>{project.description}</p>
 
-                    <div className={styles.metaGrid}>
-                        {project.client && (
-                            <div className={styles.metaItem}>
-                                <span className={styles.metaLabel}>Opdrachtgever</span>
-                                <span className={styles.metaValue}>{project.client}</span>
-                            </div>
-                        )}
-                        {project.date && (
-                            <div className={styles.metaItem}>
-                                <span className={styles.metaLabel}>Datum</span>
-                                <span className={styles.metaValue}>{project.date}</span>
-                            </div>
-                        )}
-                        {project.role && (
-                            <div className={styles.metaItem}>
-                                <span className={styles.metaLabel}>Mijn Rol</span>
-                                <span className={styles.metaValue}>{project.role}</span>
-                            </div>
-                        )}
+                <div className={styles.heroLayout}>
+                    <div className={styles.heroContent}>
+                        <span className={styles.badge}>VWO {project.year}</span>
+                        <h1 className={styles.title}>{project.title}</h1>
+                        <p className={styles.subtitle}>{project.description}</p>
+
+                        <div className={styles.metaGrid}>
+                            {project.client && (
+                                <div className={styles.metaItem}>
+                                    <span className={styles.metaLabel}>Opdrachtgever</span>
+                                    <span className={styles.metaValue}>{project.client}</span>
+                                </div>
+                            )}
+                            {project.date && (
+                                <div className={styles.metaItem}>
+                                    <span className={styles.metaLabel}>Datum</span>
+                                    <span className={styles.metaValue}>{project.date}</span>
+                                </div>
+                            )}
+                            {project.role && (
+                                <div className={styles.metaItem}>
+                                    <span className={styles.metaLabel}>Mijn Rol</span>
+                                    <span className={styles.metaValue}>{project.role}</span>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    <div className={styles.heroImageWrapper}>
+                        <ProjectHeroImage src={project.thumbnail} alt={project.title} />
                     </div>
                 </div>
-                <ProjectHeroImage src={project.thumbnail} alt={project.title} />
             </section>
 
             {/* Main Content Grid */}

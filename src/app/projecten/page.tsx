@@ -18,25 +18,37 @@ export default function Projecten() {
                     title="Klas 1"
                     description="Brugklas projecten (O&O)"
                     href="/projecten/jaar-1"
-                    gradient="linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)"
+                    gradient="rgba(96, 165, 250, 0.6)" // Light Blue
                 />
                 <Card
                     title="Klas 2"
                     description="VWO 2 projecten"
                     href="/projecten/jaar-2"
-                    gradient="linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+                    gradient="rgba(74, 222, 128, 0.6)" // Green
                 />
                 <Card
                     title="Klas 3"
                     description="VWO 3 (Technasium)"
                     href="/projecten/jaar-3"
-                    gradient="linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
+                    gradient="rgba(251, 146, 60, 0.6)" // Orange
                 />
                 <Card
                     title="Klas 4"
                     description="VWO 4 (Specialisatie)"
                     href="/projecten/jaar-4"
-                    gradient="linear-gradient(135deg, #fa709a 0%, #fee140 100%)"
+                    gradient="rgba(248, 113, 113, 0.6)" // Red
+                />
+                <Card
+                    title="Klas 5"
+                    description="VWO 5 (Verdieping)"
+                    href="/projecten/jaar-5"
+                    gradient="rgba(192, 132, 252, 0.6)" // Purple
+                />
+                <Card
+                    title="Klas 6"
+                    description="VWO 6 (Eindopdrachten)"
+                    href="/projecten/jaar-6"
+                    gradient="rgba(250, 204, 21, 0.6)" // Yellow
                 />
             </div>
 

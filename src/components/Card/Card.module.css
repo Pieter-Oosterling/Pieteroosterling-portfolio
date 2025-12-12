@@ -56,20 +56,21 @@
 
 .glow {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 120%,
-            var(--gradient, rgba(139, 92, 246, 0.15)),
-            transparent 60%);
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 150px;
+    background: radial-gradient(circle at bottom center, var(--gradient, rgba(139, 92, 246, 0.6)), transparent 70%);
     opacity: 0.3;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Persistent glow */
+    transition: opacity 0.4s ease, height 0.4s ease;
     z-index: 1;
     pointer-events: none;
 }
 
 .card:hover .glow {
-    opacity: 0.6;
-    transform: scale(1.1);
+    opacity: 0.8;
+    /* Stronger on hover */
+    height: 200px;
 }
