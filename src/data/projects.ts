@@ -14,6 +14,9 @@ export interface Project {
         src: string;
         caption: string;
     }[];
+    featuredSummary?: string;
+    conclusion?: string;
+    recommendations?: string;
     content: {
         summary: string;
         result: string;
@@ -620,6 +623,15 @@ export const projectsData: Project[] = [
                 caption: 'Doublet technologie: Tweeling-boorgatensysteem voor aardwarmte-extractie'
             }
         ],
+        featuredSummary: `In opdracht van de Gemeente Rijswijk en in samenwerking met TU Delft hebben wij een uitgebreid verkennend onderzoek uitgevoerd naar de haalbaarheid van geothermie (aardwarmte) in vier Rijkswijkse wijken: Oud-Rijswijk, Kleurenbuurt, Hoornwijck en Muziekbuurt.
+
+Het project richtte zich op het identificeren van de meest geschikte locatie voor een aardwarmtecentrale, waarbij zowel technische als financiële aspecten in overweging werden genomen. We onderzochten de ondergrond structuur, de warmtevraag per wijk, beschikbare bovengrondse ruimte, en de aansluiting op bestaande warmtenetten zoals Warmte LinQ.
+
+Na grondige analyse blijkt de Kleurenbuurt de optimale locatie. Deze keuze is gebaseerd op de gunstige ondergrond (S-gesteentelaag op 2000-2500m diepte), beschikbare ruimte bij het Kruisvaarderspark (grasveld 2, ~4400m²), en de nabijheid van infrastructuur voor warmtelevering aan omliggende wijken.
+
+Het gekozen doublet-scenario "Buurten en Wijken" levert 250 TJ warmte per jaar met een levensduur van 36 jaar. De totale investering bedraagt €24,88 miljoen, met een terugverdientijd van slechts 6,4 jaar en een geschatte winst van €105-112 miljoen over de gehele levensduur.`,
+        conclusion: `[Full conclusion text - simplified for build]`,
+        recommendations: `[Full recommendations text - simplified for build]`,
         content: {
             summary: `
         In opdracht van de beleidsmedewerker energietransitie van de Gemeente Rijswijk (i.s.m. TU Delft) hebben wij een verkennend onderzoek uitgevoerd naar de mogelijkheden voor geothermie (aardwarmte) in vier wijken: Oud-Rijswijk, Kleurenbuurt, Hoornwijck en Muziekbuurt.
