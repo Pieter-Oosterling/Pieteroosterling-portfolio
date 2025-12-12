@@ -411,7 +411,65 @@ export const projectsData: Project[] = [
         team: ['Micha Doorduin', 'Julia de Graaf', 'Ilian Runderkamp', 'Pieter Oosterling'],
         role: 'Planner (Plannen & Organiseren)',
         tags: ['Tech', 'Management'],
-        thumbnail: '/images/Image - Technasium.png', // Placeholder
+        thumbnail: '/images/vwo3/project2/logo-AquaStroom.png',
+        gallery: [
+            {
+                src: '/images/vwo3/project2/logo-AquaStroom.png',
+                caption: 'AquaStroom Logo - Golfenergie conversie systeem'
+            },
+            {
+                src: '/images/vwo3/project2/logo - opdrachtgever.png',
+                caption: 'Opdrachtgever Logo - Samenwerkingspartner voor duurzame energie'
+            },
+            {
+                src: '/images/vwo3/project2/brainstrom-LETOP:kleine-inzoemgebruiken.jpg',
+                caption: 'Brainstorm Sessie - Initiële ideeën voor golfenergie conversie'
+            },
+            {
+                src: '/images/vwo3/project2/Concept-1-LETOP:DRAAI90graden(linksom).jpg',
+                caption: 'Concept 1 - Eerste ontwerp voor AquaStroom mechanisme'
+            },
+            {
+                src: '/images/vwo3/project2/Concept-2.jpg',
+                caption: 'Concept 2 - Alternatieve benadering voor energie-opwekking'
+            },
+            {
+                src: '/images/vwo3/project2/Concept-3-LETOP:DRAAI90graden(linksom).jpg',
+                caption: 'Concept 3 - Verfijnd ontwerp met tandwiel systeem'
+            },
+            {
+                src: '/images/vwo3/project2/Tandwielen-orientatie-aquastroom.png',
+                caption: 'Tandwielen Oriëntatie - Technisch schema van aandrijving'
+            },
+            {
+                src: '/images/vwo3/project2/iteratie-planning.png',
+                caption: 'Iteratie Planning - Ontwikkelproces en testfasen'
+            },
+            {
+                src: '/images/vwo3/project2/eindontwerp-vanaf_voren.png',
+                caption: 'Eindontwerp Voorkant - Complete AquaStroom opstelling'
+            },
+            {
+                src: '/images/vwo3/project2/eindontwerp-vanaf_boven.png',
+                caption: 'Eindontwerp Bovenaanzicht - Overzicht mechanisme layout'
+            },
+            {
+                src: '/images/vwo3/project2/eindontwerp-vanaf_studio.jpg',
+                caption: 'Eindontwerp Studio - Professionele product fotografie'
+            },
+            {
+                src: '/images/vwo3/project2/eindontwerp-vanaf_inactie.jpg',
+                caption: 'Eindontwerp in Actie - Werkend prototype tijdens demonstratie'
+            },
+            {
+                src: '/images/vwo3/project2/eindontwerp-online.png',
+                caption: 'Eindontwerp Render - Digitale visualisatie van AquaStroom'
+            },
+            {
+                src: '/images/vwo3/project2/poster.png',
+                caption: 'Project Poster - Presentatie van onderzoek en resultaten'
+            }
+        ],
         content: {
             summary: `
         De opdrachtgever zocht een alternatief voor het tandheugelsysteem in hun golfenergie-converter.
