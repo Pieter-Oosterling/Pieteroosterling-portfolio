@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import SkillsMatrix from '@/components/SkillsMatrix/SkillsMatrix';
 import styles from './page.module.css';
 
 const competenties = [
@@ -14,15 +15,26 @@ export default function CompetentiesPage() {
     return (
         <main className={styles.main}>
             <h1 className={`${styles.title} fade-in`}>Competenties</h1>
-            <div className={`${styles.grid} fade-in`} style={{ animationDelay: '0.2s' }}>
-                {competenties.map((comp, index) => (
-                    <div key={index} className={styles.card}>
-                        <h2 className={styles.cardTitle}>{comp.title}</h2>
-                        <p className={styles.cardDesc}>{comp.description}</p>
-                        <div className={styles.glow} />
-                    </div>
-                ))}
+
+            {/* Skills Matrix */}
+            <div className="fade-in" style={{ animationDelay: '0.1s' }}>
+                <SkillsMatrix />
             </div>
+
+            {/* Traditional Competenties */}
+            <div className={styles.section}>
+                <h2 className={styles.sectionTitle}>Kerncompetenties</h2>
+                <div className={`${styles.grid} fade-in`} style={{ animationDelay: '0.3s' }}>
+                    {competenties.map((comp, index) => (
+                        <div key={index} className={styles.card}>
+                            <h3 className={styles.cardTitle}>{comp.title}</h3>
+                            <p className={styles.cardDesc}>{comp.description}</p>
+                            <div className={styles.glow} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+
             <Link href="/" className={styles.backButton}>
                 ← Terug naar Home
             </Link>

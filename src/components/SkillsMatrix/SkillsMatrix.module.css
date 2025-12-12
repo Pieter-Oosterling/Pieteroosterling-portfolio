@@ -1,0 +1,199 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Skills Grid */
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.skillCard {
+    background: var(--surface);
+    border: 2px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skillCard:hover,
+.skillCard.active {
+    border-color: var(--skill-color);
+    transform: translateY(-4px);
+}
+
+.skillName {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.skillCount {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.skillGlow {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 60px;
+    background: radial-gradient(circle at bottom center, var(--skill-color), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.skillCard:hover .skillGlow,
+.skillCard.active .skillGlow {
+    opacity: 0.4;
+}
+
+/* Filter Info */
+.filterInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface-hover);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.clearBtn {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.clearBtn:hover {
+    opacity: 0.7;
+}
+
+/* Matrix */
+.matrix {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.matrixHeader {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 0.5rem;
+    background: var(--surface-hover);
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.projectCol {
+    padding-left: 0.5rem;
+}
+
+.skillCol {
+    text-align: center;
+}
+
+.matrixRow {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.matrixRow:hover {
+    background: var(--surface-hover);
+}
+
+.matrixRow:last-child {
+    border-bottom: none;
+}
+
+.projectInfo {
+    padding-left: 0.5rem;
+}
+
+.projectTitle {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.projectMeta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkmark {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    .matrix {
+        overflow-x: auto;
+    }
+
+    .matrixHeader,
+    .matrixRow {
+        min-width: 700px;
+    }
+
+    .skillsGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
