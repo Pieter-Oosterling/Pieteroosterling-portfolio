@@ -630,8 +630,91 @@ Het project richtte zich op het identificeren van de meest geschikte locatie voo
 Na grondige analyse blijkt de Kleurenbuurt de optimale locatie. Deze keuze is gebaseerd op de gunstige ondergrond (S-gesteentelaag op 2000-2500m diepte), beschikbare ruimte bij het Kruisvaarderspark (grasveld 2, ~4400m²), en de nabijheid van infrastructuur voor warmtelevering aan omliggende wijken.
 
 Het gekozen doublet-scenario "Buurten en Wijken" levert 250 TJ warmte per jaar met een levensduur van 36 jaar. De totale investering bedraagt €24,88 miljoen, met een terugverdientijd van slechts 6,4 jaar en een geschatte winst van €105-112 miljoen over de gehele levensduur.`,
-        conclusion: `[Full conclusion text - simplified for build]`,
-        recommendations: `[Full recommendations text - simplified for build]`,
+        conclusion: `<h2>Conclusie</h2>
+
+<p>Dit project heeft onderzoek gedaan naar meerdere aspecten om een optimale locatie voor de realisatie van een aardwarmtecentrale te kiezen. Uiteindelijk is besloten dat de <strong>Kleurenbuurt</strong> over de beste specificaties beschikt van alle wijken.</p>
+
+<h3>Deelvragen</h3>
+
+<p><strong>1. Is het voor de gemeente rendabel om een aardwarmtecentrale te bouwen?</strong></p>
+
+<p>Voor de gemeente is het zeer rendabel om een aardwarmtecentrale te bouwen op één van de grasvelden in het nabijgelegen park bij de Kleurenbuurt. Op basis van de doublet opties is er gekozen voor de doublet met de langste levensduur: <strong>36,37 jaar</strong> (het "Doublet buurten en wijken" scenario).</p>
+
+<p>In de jaren dat de centrale actief is kan de aardwarmtecentrale een <strong>totale opbrengst van €141,48 miljoen</strong> leveren, wanneer alle warmte gebruikt wordt die de centrale opwekt. De algemene prijs voor een aardwarmtecentrale ligt rond de <strong>€24.880.000</strong>.</p>
+
+<p>Daarnaast is er onderhoud nodig van ongeveer €200.000 per jaar, wat betekent dat er over de levensduur ongeveer <strong>€7,8 miljoen</strong> gebruikt wordt voor onderhoud. Dus in totaal is er een <strong>winst van ongeveer €105-112 miljoen</strong>.</p>
+
+<p>De aardwarmtecentrale kan deze winst bereiken door ook de omliggende wijken om de Kleurenbuurt (Muziekbuurt, Artiestenbuurt, etc.) te verwarmen.</p>
+
+<p><strong>2. Welke van de toegewezen locaties is het meest geschikt voor dit project?</strong></p>
+
+<p>Van de vier verschillende wijken binnen Rijswijk is de <strong>Kleurenbuurt</strong> het meest geschikt. Dit komt doordat de Kleurenbuurt buiten de wijk over vele gasvelden beschikt.</p>
+
+<p>Het meest geschikte grasveld in de Kleurenbuurt is <strong>grasveld 2</strong>, doordat deze:</p>
+<ul>
+<li>Naast infrastructuur ligt voor bereikbaarheid van bouwverkeer</li>
+<li>Groot genoeg is voor de realisatie van een aardwarmtecentrale (4400 m²)</li>
+<li>Omringd is door bomen voor esthetische beschutting</li>
+<li>In de nabijheid ligt van de Warmte LinQ warmteleiding</li>
+</ul>
+
+<p><strong>3. Naar welke ondergrondse locatie is het meest geschikt om te boren?</strong></p>
+
+<p>De meest geschikte ondergrondse locatie is <strong>gesteente laag S</strong> (Schielanden en Nedersaksen groepen). Deze laag ligt bij de Kleurenbuurt op een diepte van <strong>2000 tot 2500 meter</strong> onder de grond.</p>
+
+<p>Voor het eerder besproken rendement moet er ongeveer <strong>2400 meter diep</strong> geboord worden en moeten de buizen ongeveer <strong>1000 meter uit elkaar</strong> liggen (injectie en productieput) om een optimale levensduur te behalen.</p>
+
+<h3>Hoofdvraag</h3>
+
+<p><strong>Welke van de toegewezen locaties heeft de beste eigenschappen voor de gemeente om een aardwarmtecentrale te bouwen?</strong></p>
+
+<p>De <strong>Kleurenbuurt</strong> heeft de beste eigenschappen voor de gemeente om een aardwarmtecentrale te realiseren:</p>
+
+<ul>
+<li><strong>Ondergrond</strong>: Beschikt over een ondergrond met de juiste permeabele eigenschappen op de juiste diepte (S-gesteentelaag)</li>
+<li><strong>Bovengrondse locatie</strong>: Dichtstbijzijnde grasvelden naast het Kruisvaarderspark met veel mogelijkheid tot realisatie door het oppervlak</li>
+<li><strong>Warmtevraag</strong>: De Kleurenbuurt heeft zelf niet genoeg vraag, maar de warmtelevering kan gedeeld worden over verschillende omliggende wijken met hoogbouw en dus veel vraag (bijvoorbeeld de Muziekbuurt met 101,4 TJ warmteverbruik)</li>
+</ul>
+
+<p>Dit plan sluit aan bij het warmteplan van de gemeente Rijswijk zelf, waarin dit concept al genoemd wordt.</p>`,
+        recommendations: `<h2>Aanbevelingen</h2>
+
+<p>Naast de conclusie voor de boorlocatie zijn er aanbevelingen voor de opdrachtgever op basis van de boorspecificaties en de diepte voor de doublet. Deze aanbevelingen zijn gebaseerd op de eerder uitgewerkte onderzoeken in dit verslag en vormen een richtlijn waaraan gehouden kan worden tijdens de realisatie van de aardwarmtecentrale.</p>
+
+<h3>Boren</h3>
+
+<p>Voor boren wordt er geadviseerd om tot een diepte van ongeveer <strong>2000 tot 2500 meter</strong> te boren. Op deze diepte bevindt zich de gesteentelaag met de gesteentegroep onder de afkorting <strong>S</strong> (Schielanden/Nedersaksen), die over de meest geschikte eigenschappen beschikt voor permeabiliteit.</p>
+
+<p>Daarnaast bevindt zich onder deze grondlaag een slecht permeabele ondergrondstructuur, waardoor er mogelijk al water in de ondergrond aanwezig is. Hierbij wordt ook geadviseerd om rekening te houden met plaatselijke fluctuaties in diepte, waardoor een diepte van 2500 meter zich al kan bevinden op de hoogte van de slecht permeabele ondergrond.</p>
+
+<p>Voor de twee buizen voor aardwarmte (de injectie en productieputten) wordt geadviseerd om deze tot een diepte van <strong>2000 meter</strong> te laten lopen. Verder zouden deze buizen ook ongeveer <strong>1000 meter van elkaar</strong> af moeten liggen voor een optimale warmteproductie. Deze waarden zijn deel van het doublet-scenario met de langste levensduur: <strong>"Doublet buurten en wijken"</strong>.</p>
+
+<h3>Locatie</h3>
+
+<p>Het is aangetoond dat de aardwarmtecentrale het meeste rendement zal hebben als deze warmte levert aan de <strong>Kleurenbuurt en de Muziekbuurt</strong>.</p>
+
+<p>Hierbij wordt geadviseerd om de centrale op <strong>grasveld 2</strong> te plaatsen. Dit grasveld heeft de volgende voordelen:</p>
+
+<ul>
+<li><strong>Esthetische beschutting</strong>: Omringende bomenbeschutting werkt tegen eventuele esthetische kwesties</li>
+<li><strong>Infrastructuur</strong>: Naast dit grasveld ligt grote infrastructuur wat leidt tot makkelijk vervoer van bouwmaterialen</li>
+<li><strong>Warmtenet aansluiting</strong>: Daaronder ligt een warmteleiding van het warmteprogramma <strong>Warmte LinQ</strong></li>
+</ul>
+
+<h3>Aansluiting op Warmte LinQ</h3>
+
+<p>De aardwarmtecentrale kan aangesloten worden op het Warmte LinQ warmtenet om zo een groter gedeelte van Rijswijk te voorzien van duurzame energie. Dit moet alleen gedaan worden als de aardwarmtecentrale <strong>niet alle</strong> gebouwen die zijn aangesloten aan dit warmtenet hoeft te verwarmen.</p>
+
+<p>In combinatie met de huidige bron voor warmte (de fabrieken in de Rotterdamse haven) zou de aardwarmtecentrale de levering van warmte wel aankunnen. Natuurlijk is het geadviseerd om hierbij nog <strong>grondige berekeningen</strong> uit te voeren om de mogelijkheid van dit concept te bewijzen, aangezien de aardwarmte ook de energie van de Kleurenbuurt en de Muziekbuurt moet leveren.</p>
+
+<h3>Vervolgstappen</h3>
+
+<ul>
+<li><strong>Gedetailleerde bodemonderzoek</strong>: Uitvoeren van specifieke boringen op grasveld 2 voor exacte parameters</li>
+<li><strong>Vergunningen aanvragen</strong>: Proces starten voor bouw- en milieuvergunningen</li>
+<li><strong>Businesscase verfijnen</strong>: Exacte kostenberekening met lokale leveranciers</li>
+<li><strong>Stakeholder consultatie</strong>: Bewoners van Kleurenbuurt en Muziekbuurt informeren en betrekken</li>
+</ul>`,
         content: {
             summary: `
         In opdracht van de beleidsmedewerker energietransitie van de Gemeente Rijswijk (i.s.m. TU Delft) hebben wij een verkennend onderzoek uitgevoerd naar de mogelijkheden voor geothermie (aardwarmte) in vier wijken: Oud-Rijswijk, Kleurenbuurt, Hoornwijck en Muziekbuurt.
