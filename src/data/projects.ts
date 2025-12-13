@@ -14,6 +14,11 @@ export interface Project {
         src: string;
         caption: string;
     }[];
+    videos?: {
+        type: 'youtube' | 'local';
+        url: string;
+        title?: string;
+    }[];
     featuredSummary?: string;
     conclusion?: string;
     recommendations?: string;
@@ -446,7 +451,7 @@ export const projectsData: Project[] = [
             },
             {
                 src: '/images/vwo3/project2/iteratie-planning.png',
-                caption: 'Iteratie Planning - Ontwikkelproces en testfasen'
+                caption: 'Iteratie 4 - Prototype fysieke uitvoering voor testen'
             },
             {
                 src: '/images/vwo3/project2/eindontwerp-vanaf_voren.png',

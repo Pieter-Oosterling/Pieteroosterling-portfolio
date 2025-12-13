@@ -23,6 +23,12 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
     const [modalOpen, setModalOpen] = useState(false);
     const summary = project.featuredSummary || project.description;
 
+    // Truncate summary to first 5-7 sentences (roughly 400-500 chars)
+    const shouldTruncate = summary.length > 500;
+    const truncatedSummary = shouldTruncate
+        ? summary.substring(0, 500).split('. ').slice(0, -1).join('. ') + '...'
+        : summary;
+
     return (
         <>
             <section className={styles.container}>
@@ -46,7 +52,7 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
                     <div className={styles.textSection}>
                         <div className={styles.badge}>VWO {project.year}</div>
                         <h3 className={styles.projectTitle}>{project.title}</h3>
-                        <p className={styles.projectDesc}>{summary}</p>
+                        <p className={styles.projectDesc}>{truncatedSummary}</p>
 
                         <div className={styles.tags}>
                             {project.tags.map((tag, i) => (
@@ -54,7 +60,7 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
                             ))}
                         </div>
 
-                        {project.conclusion && project.recommendations ? (
+                        {(shouldTruncate || (project.conclusion && project.recommendations)) ? (
                             <button
                                 onClick={() => setModalOpen(true)}
                                 className={styles.cta}
@@ -84,6 +90,13 @@ export default function FeaturedProject({ project }: FeaturedProjectProps) {
                         <h2 className={styles.modalTitle}>{project.title}</h2>
 
                         <div className={styles.modalBody}>
+                            {shouldTruncate && (
+                                <div className={styles.section}>
+                                    <h3>Samenvatting</h3>
+                                    <p className={styles.fullSummary}>{summary}</p>
+                                </div>
+                            )}
+
                             {project.conclusion && (
                                 <div className={styles.section}>
                                     <div
