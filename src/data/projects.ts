@@ -600,7 +600,7 @@ export const projectsData: Project[] = [
         tags: ['Onderzoek', 'Management'],
         report: 'Verslag - Aardwarmte in Rijswijk-3.pdf',
         aiSummaryVideo: '/images/vwo4/project1/verslag in video_Gemaakt met AI.mp4',
-        thumbnail: '/images/vwo4/project1/logo - Aardwarmte in Rijswkijk.png',
+        thumbnail: '/images/vwo4/project1/logo-Aardwarmte-in-Rijswijk.png',
         gallery: [
             {
                 src: '/images/vwo4/project1/logo - Aardwarmte in Rijswkijk.png',

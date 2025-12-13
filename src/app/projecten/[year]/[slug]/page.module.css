@@ -181,28 +181,53 @@
     background: var(--primary);
     color: white;
     padding: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
     border-radius: 0.5rem;
-    font-weight: 600;
-    transition: opacity 0.2s;
+    color: var(--text-primary);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .downloadBtn:hover {
-    opacity: 0.9;
+    background: var(--surface-hover);
+    transform: translateY(-2px);
+    border-color: var(--primary);
+}
+
+.aiButton {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(96, 165, 250, 0.1));
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: var(--text-primary);
+}
+
+.aiButton:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-color: transparent;
 }
 
 .portfolioBtn {
     display: block;
-    text-align: center;
-    background: var(--surface);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
+    width: 100%;
     padding: 1rem;
+    background: var(--primary);
+    color: white;
     border-radius: 0.5rem;
-    transition: background 0.2s;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .portfolioBtn:hover {
-    background: var(--surface-hover);
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
 }
 
 /* Gallery Placeholder */
@@ -222,17 +247,6 @@
     transform: translateY(-2px);
 }
 
-.aiButton {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(96, 165, 250, 0.1));
-    border: 1px solid rgba(139, 92, 246, 0.2);
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.aiButton:hover {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border-color: transparent;
-}
 
 .navLink.next {
     text-align: right;

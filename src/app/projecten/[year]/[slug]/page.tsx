@@ -114,37 +114,7 @@ export default async function ProjectDetailPage({
                             )}
                         </div>
 
-                        {/* Links Card */}
-                        {(project.report || project.aiSummaryVideo) && (
-                            <div className={styles.card}>
-                                <h3 className={styles.cardTitle}>Downloads & Media</h3>
-                                <div className={styles.links}>
-                                    {project.report && (
-                                        <a
-                                            href={project.report}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className={styles.linkButton}
-                                        >
-                                            📄 Bekijk Verslag (PDF)
-                                        </a>
-                                    )}
-                                    {project.aiSummaryVideo && (
-                                        <div className={styles.aiVideoWrapper}>
-                                            <a
-                                                href={project.aiSummaryVideo}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className={`${styles.linkButton} ${styles.aiButton}`}
-                                            >
-                                                🤖 Verslag door AI samenvatten in video (Max. 10 min.)
-                                            </a>
-                                            {/* Optional: Add inline video player for this specifically if requested later, for now just a link/button as requested */}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        )}
+                        {/* Link Card Removed - Moved to Actions */}
                     </div>
 
                     <div className={styles.heroImageWrapper}>
@@ -242,6 +212,16 @@ export default async function ProjectDetailPage({
                         {project.report && (
                             <a href={`/verslagen/${project.report}`} target="_blank" rel="noopener noreferrer" className={styles.downloadBtn}>
                                 Download Verslag (PDF)
+                            </a>
+                        )}
+                        {project.aiSummaryVideo && (
+                            <a
+                                href={project.aiSummaryVideo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`${styles.downloadBtn} ${styles.aiButton}`}
+                            >
+                                🤖 Verslag door AI samenvatten in video (Max. 10 min.)
                             </a>
                         )}
                         <Link href={`/portfolios/jaar-${project.year}`} className={styles.portfolioBtn}>
