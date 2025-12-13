@@ -5,6 +5,7 @@ import ProjectHeroImage from '@/components/ProjectHeroImage/ProjectHeroImage';
 import Gallery from '@/components/Gallery/Gallery';
 import AnimatedGrade from '@/components/AnimatedGrade/AnimatedGrade';
 import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
+import ProjectActions from './ProjectActions';
 import styles from './page.module.css';
 
 export async function generateStaticParams() {
@@ -208,26 +209,7 @@ export default async function ProjectDetailPage({
                         </div>
                     )}
 
-                    <div className={styles.actions}>
-                        {project.report && (
-                            <a href={`/verslagen/${project.report}`} target="_blank" rel="noopener noreferrer" className={styles.downloadBtn}>
-                                Download Verslag (PDF)
-                            </a>
-                        )}
-                        {project.aiSummaryVideo && (
-                            <a
-                                href={project.aiSummaryVideo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`${styles.downloadBtn} ${styles.aiButton}`}
-                            >
-                                🤖 Verslag door AI samenvatten in video (Max. 10 min.)
-                            </a>
-                        )}
-                        <Link href={`/portfolios/jaar-${project.year}`} className={styles.portfolioBtn}>
-                            Ga naar Portfolio
-                        </Link>
-                    </div>
+                    <ProjectActions project={project} />
                 </div>
 
             </div>
