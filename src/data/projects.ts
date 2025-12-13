@@ -19,6 +19,7 @@ export interface Project {
         url: string;
         title?: string;
     }[];
+    aiSummaryVideo?: string; // Path to AI summary mp4
     featuredSummary?: string;
     conclusion?: string;
     recommendations?: string;
@@ -160,9 +161,10 @@ export const projectsData: Project[] = [
         date: '11-12-2023',
         grade: { group: '7,0', personal: '7,7' },
         team: ['Nils Vakande', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
-        role: 'Ontwerper & Onderzoeker',
-        tags: ['Design', 'Onderzoek'],
-        thumbnail: '/images/vwo3/project1/FormHet_Logo.png',
+        role: 'Designer & Architect',
+        tags: ['Design', 'Tech'],
+        report: 'Verslag de Floppers-LR3-Pr1.pdf',
+        thumbnail: '/images/vwo3/project1/logo - floppers - team.jpg',
         gallery: [
             {
                 src: '/images/vwo3/project1/FormHet_Logo.png',
@@ -241,9 +243,10 @@ export const projectsData: Project[] = [
         date: '20-03-2024',
         grade: { group: '7,6', personal: '8,0' },
         team: ['Team LAMP', 'Pieter Oosterling'],
-        role: 'Conceptontwikkelaar',
+        role: 'Designer',
         tags: ['Design', 'Onderzoek'],
-        thumbnail: '/images/vwo2/project2/Logo - LAMP.png',
+        report: 'Verslag Inpakdienst Holland-2.pdf',
+        thumbnail: '/images/vwo2/project3/logo - Inpakdienst (1).jpg',
         gallery: [
             {
                 src: '/images/vwo2/project2/Logo - LAMP.png',
@@ -424,9 +427,10 @@ export const projectsData: Project[] = [
         date: '08-04-2025',
         grade: { group: '7,3', personal: '9,1' },
         team: ['Micha Doorduin', 'Julia de Graaf', 'Ilian Runderkamp', 'Pieter Oosterling'],
-        role: 'Planner (Plannen & Organiseren)',
-        tags: ['Tech', 'Management'],
-        thumbnail: '/images/vwo3/project2/logo-AquaStroom.png',
+        role: 'Planner',
+        tags: ['Design', 'Tech', 'Management'],
+        report: 'vwo3_Pr2_verslag-aquastroom.pdf',
+        thumbnail: '/images/vwo3/project2/Logo - aqua stroom.png',
         gallery: [
             {
                 src: '/images/vwo3/project2/logo-AquaStroom.png',
@@ -595,6 +599,7 @@ export const projectsData: Project[] = [
         role: 'Planner (Plannen & Organiseren)',
         tags: ['Onderzoek', 'Management'],
         report: 'Verslag - Aardwarmte in Rijswijk-3.pdf',
+        aiSummaryVideo: '/images/vwo4/project1/verslag in video_Gemaakt met AI.mp4',
         thumbnail: '/images/vwo4/project1/logo - Aardwarmte in Rijswkijk.png',
         gallery: [
             {

@@ -219,23 +219,19 @@
 .bottomNav {
     display: flex;
     justify-content: space-between;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
+    transform: translateY(-2px);
 }
 
-.navLink {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: all 0.2s ease;
+.aiButton {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(96, 165, 250, 0.1));
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
 }
 
-.navLink:hover {
-    color: var(--primary);
-    transform: translateX(-5px);
+.aiButton:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-color: transparent;
 }
 
 .navLink.next {
