@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Lightbox from '@/components/Lightbox/Lightbox';
 import styles from './Gallery.module.css';
 
 interface GalleryImage {
@@ -16,10 +15,12 @@ interface GalleryProps {
 export default function Gallery({ images }: GalleryProps) {
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [showAllImages, setShowAllImages] = useState(false);
 
     const openLightbox = (index: number) => {
         setCurrentIndex(index);
         setLightboxOpen(true);
+        setShowAllImages(false);
     };
 
     const nextImage = () => {
@@ -30,72 +31,83 @@ export default function Gallery({ images }: GalleryProps) {
         setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
     };
 
-    // Show first 4 images as preview
-    const previewImages = images.slice(0, 4);
-    const hasMore = images.length > 4;
+    const closeLightbox = () => {
+        setLightboxOpen(false);
+        setShowAllImages(false);
+    };
 
     return (
         <>
-            <div className={styles.galleryContainer}>
-                <div className={styles.carousel}>
-                    {previewImages.map((image, index) => (
-                        <div
-                            key={index}
-                            className={styles.carouselItem}
-                            onClick={() => openLightbox(index)}
-                        >
-                            <img
-                                src={image.src}
-                                alt={image.caption}
-                                className={styles.carouselImage}
-                            />
-                            <div className={styles.carouselOverlay}>
-                                <span className={styles.zoomIcon}>🔍</span>
-                            </div>
-                        </div>
-                    ))}
-                    {hasMore && (
-                        <div
-                            className={styles.moreIndicator}
-                            onClick={() => openLightbox(0)}
-                        >
-                            <span className={styles.moreText}>+{images.length - 4}</span>
-                            <span className={styles.moreSubtext}>meer foto's</span>
-                        </div>
-                    )}
+            {/* Single Featured Image */}
+            <div className={styles.featuredContainer}>
+                <div className={styles.featuredImage} onClick={() => openLightbox(0)}>
+                    <img src={images[0].src} alt={images[0].caption} />
+                    <div className={styles.overlay}>
+                        <span className={styles.zoomIcon}>🔍</span>
+                    </div>
                 </div>
                 <p className={styles.instruction}>
-                    Klik op de afbeelding om de gehele gallerij te zien en de beschrijving
+                    Klik voor meer foto's ({images.length} totaal)
                 </p>
             </div>
 
+            {/* Lightbox */}
             {lightboxOpen && (
                 <div className={styles.lightboxContainer}>
-                    <div className={styles.lightboxBackdrop} onClick={() => setLightboxOpen(false)} />
+                    <div className={styles.lightboxBackdrop} onClick={closeLightbox} />
                     <div className={styles.lightboxContent}>
-                        <button className={styles.closeBtn} onClick={() => setLightboxOpen(false)}>
+                        <button className={styles.closeBtn} onClick={closeLightbox}>
                             ✕
                         </button>
 
-                        <button className={styles.navBtn} style={{ left: '2rem' }} onClick={prevImage}>
-                            ←
-                        </button>
+                        {!showAllImages ? (
+                            <>
+                                <button className={styles.navBtn} style={{ left: '2rem' }} onClick={prevImage}>
+                                    ←
+                                </button>
 
-                        <div className={styles.imageWrapper}>
-                            <img
-                                src={images[currentIndex].src}
-                                alt={images[currentIndex].caption}
-                                className={styles.lightboxImage}
-                            />
-                            <p className={styles.lightboxCaption}>
-                                {images[currentIndex].caption}
-                                <span className={styles.counter}> ({currentIndex + 1}/{images.length})</span>
-                            </p>
-                        </div>
+                                <div className={styles.imageWrapper}>
+                                    <img
+                                        src={images[currentIndex].src}
+                                        alt={images[currentIndex].caption}
+                                        className={styles.lightboxImage}
+                                    />
+                                    <p className={styles.lightboxCaption}>
+                                        {images[currentIndex].caption}
+                                        <span className={styles.counter}> ({currentIndex + 1}/{images.length})</span>
+                                    </p>
+                                    <button
+                                        className={styles.viewAllBtn}
+                                        onClick={() => setShowAllImages(true)}
+                                    >
+                                        Zie alle afbeeldingen →
+                                    </button>
+                                </div>
 
-                        <button className={styles.navBtn} style={{ right: '2rem' }} onClick={nextImage}>
-                            →
-                        </button>
+                                <button className={styles.navBtn} style={{ right: '2rem' }} onClick={nextImage}>
+                                    →
+                                </button>
+                            </>
+                        ) : (
+                            <div className={styles.gridView}>
+                                <h3 className={styles.gridTitle}>Alle Afbeeldingen ({images.length})</h3>
+                                <div className={styles.imageGrid}>
+                                    {images.map((image, index) => (
+                                        <div
+                                            key={index}
+                                            className={styles.gridItem}
+                                            onClick={() => {
+                                                setCurrentIndex(index);
+                                                setShowAllImages(false);
+                                            }}
+                                        >
+                                            <img src={image.src} alt={image.caption} />
+                                            <p className={styles.gridCaption}>{image.caption}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             )}

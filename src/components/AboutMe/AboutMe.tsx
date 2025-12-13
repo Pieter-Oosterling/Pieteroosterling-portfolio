@@ -29,7 +29,7 @@ export default function AboutMe() {
 
                     <div className={styles.stats}>
                         <div className={styles.stat}>
-                            <div className={styles.statValue}>10+</div>
+                            <div className={styles.statValue}>10</div>
                             <div className={styles.statLabel}>Projecten</div>
                         </div>
                         <div className={styles.stat}>
