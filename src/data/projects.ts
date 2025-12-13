@@ -274,6 +274,13 @@ export const projectsData: Project[] = [
                 caption: 'Eindproduct (Geopend) - Speelkaarten met bewegingsopdrachten zichtbaar'
             }
         ],
+        videos: [
+            {
+                type: 'youtube',
+                url: 'https://youtu.be/zHYxul0iaGw',
+                title: 'Move Madness - Reclame Video'
+            }
+        ],
         content: {
             summary: `
         De opdracht was om kinderen met een chronische ziekte op een leuke manier meer te laten bewegen.
@@ -476,6 +483,33 @@ export const projectsData: Project[] = [
             {
                 src: '/images/vwo3/project2/poster.png',
                 caption: 'Project Poster - Presentatie van onderzoek en resultaten'
+            }
+        ],
+        videos: [
+            {
+                type: 'youtube',
+                url: 'https://youtu.be/qK52XXuNM-Y',
+                title: 'Iteratie 1 - Omval test'
+            },
+            {
+                type: 'youtube',
+                url: 'https://youtu.be/35-lQ_0GVn0',
+                title: 'Iteratie 2 - Golven test'
+            },
+            {
+                type: 'youtube',
+                url: 'https://youtu.be/BT2sYu-hHzM',
+                title: 'Uitleg Werking - Aqua Stroom systeem'
+            },
+            {
+                type: 'youtube',
+                url: 'https://youtu.be/jNgm06Izjjc',
+                title: 'Zij-stroming test'
+            },
+            {
+                type: 'youtube',
+                url: 'https://youtu.be/-LJrYY_5kG0',
+                title: 'Eindpresentatie Video + Poster'
             }
         ],
         content: {

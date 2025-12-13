@@ -4,6 +4,7 @@ import { projectsData } from '@/data/projects';
 import ProjectHeroImage from '@/components/ProjectHeroImage/ProjectHeroImage';
 import Gallery from '@/components/Gallery/Gallery';
 import AnimatedGrade from '@/components/AnimatedGrade/AnimatedGrade';
+import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
 import styles from './page.module.css';
 
 export async function generateStaticParams() {
@@ -140,6 +141,11 @@ export default async function ProjectDetailPage({
                         <h2 className={styles.sectionTitle}>Persoonlijke Reflectie</h2>
                         <TextRenderer content={project.content.reflection} />
                     </div>
+
+                    {/* Videos Section */}
+                    {project.videos && project.videos.length > 0 && (
+                        <VideoPlayer videos={project.videos} />
+                    )}
 
                     {project.content.feedback && (
                         <div className={styles.section}>
