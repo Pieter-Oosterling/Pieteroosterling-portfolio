@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import styles from '../page.module.css';
+import styles from './page.module.css';
 import { Project } from '@/data/projects';
 
 interface ProjectActionsProps {
@@ -63,6 +63,17 @@ export default function ProjectActions({ project }: ProjectActionsProps) {
                             >
                                 Annuleren
                             </button>
+                            {project.report && (
+                                <a
+                                    href={`/verslagen/${project.report}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.secondaryBtn}
+                                    onClick={() => setShowAiModal(false)}
+                                >
+                                    Verslag Openen
+                                </a>
+                            )}
                             <button
                                 className={styles.confirmBtn}
                                 onClick={handleConfirm}
