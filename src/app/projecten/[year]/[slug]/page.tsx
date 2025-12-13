@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { projectsData } from '@/data/projects';
 import ProjectHeroImage from '@/components/ProjectHeroImage/ProjectHeroImage';
 import Gallery from '@/components/Gallery/Gallery';
+import AnimatedGrade from '@/components/AnimatedGrade/AnimatedGrade';
 import styles from './page.module.css';
 
 export async function generateStaticParams() {
@@ -182,27 +183,20 @@ export default async function ProjectDetailPage({
                     )}
 
                     {/* Actions */}
-                    {(project.grade?.combined || project.grade?.group) && (
+                    {(project.grade?.combined || project.grade?.group || project.grade?.personal) && (
                         <div className={styles.card}>
-                            <h3 className={styles.cardTitle}>Beoordeling</h3>
-                            {project.grade.combined && (
-                                <div className={styles.gradeBox}>
-                                    <span className={styles.gradeLabel}>Cijfer:</span>
-                                    <span className={styles.gradeValue}>{project.grade.combined}</span>
-                                </div>
-                            )}
-                            {project.grade.group && (
-                                <div className={styles.gradeGroup}>
-                                    <div className={styles.gradeRow}>
-                                        <span className={styles.gradeLabel}>Groep:</span>
-                                        <span className={styles.gradeValue}>{project.grade.group}</span>
-                                    </div>
-                                    <div className={styles.gradeRow}>
-                                        <span className={styles.gradeLabel}>Persoonlijk:</span>
-                                        <span className={styles.gradeValue}>{project.grade.personal}</span>
-                                    </div>
-                                </div>
-                            )}
+                            <h3 className={styles.cardTitle}>Cijfer</h3>
+                            <div className={styles.gradeContainer}>
+                                {project.grade?.combined && (
+                                    <AnimatedGrade label="Cijfer" grade={project.grade.combined} />
+                                )}
+                                {project.grade?.group && (
+                                    <AnimatedGrade label="Groep" grade={project.grade.group} />
+                                )}
+                                {project.grade?.personal && (
+                                    <AnimatedGrade label="Persoonlijk" grade={project.grade.personal} />
+                                )}
+                            </div>
                         </div>
                     )}
 
