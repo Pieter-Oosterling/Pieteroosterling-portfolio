@@ -4,9 +4,9 @@ import Image from 'next/image';
 import styles from './Carousel.module.css';
 
 const projects = [
-    { id: 1, title: 'Brugklas Project', image: '/images/Image - Brugklas Project.png' },
-    { id: 2, title: 'Technasium', image: '/images/Image - Technasium.png' },
-    { id: 3, title: 'Eindopdracht', image: '/images/Image - Eindopdracht.png' },
+    { id: 1, title: 'Aardwarmte - warmtevraag', image: '/images/vwo4//project1/kaartRijswijk-opbasisvanwarmtevraag+warmtelinq.png' },
+    { id: 2, title: 'Eindontwerp Aqua Linq - vwo3', image: '/images/vwo3/project2/eindontwerp-vanaf_voren.png' },
+    { id: 3, title: 'Reclame video - vwo2', image: '/images/vwo2/project2/Move madness-reclame_video.mp4' },
     // Add more as needed or make dynamic
 ];
 
