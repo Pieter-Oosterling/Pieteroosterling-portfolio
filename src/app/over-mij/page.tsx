@@ -30,7 +30,7 @@ export default function OverMijPage() {
                     </p>
                     <p className={styles.text}>
                         In VWO 2 en 3 ben ik deze passie gaan volgen. Bij het project <strong>Huis van je Leven</strong>
-                        heb ik mijn ontwerp-skills kunnen inzetten voor een modulair woonconcept.
+                         heb ik mijn ontwerp-skills kunnen inzetten voor een modulair woonconcept.
                         Ik ben niet langer iemand die alleen vragen stelt, maar iemand die oplossingen bouwt.
                     </p>
                 </section>
@@ -66,8 +66,8 @@ export default function OverMijPage() {
                             </p>
                             <div>
                                 <span className={styles.skillBadge}>Lasersnijden</span>
-                                <span className={styles.skillBadge}>3D Modeling</span>
-                                <span className={styles.skillBadge}>Python</span>
+                                <span className={styles.skillBadge}>3D Modeling - Blender</span>
+                                <span className={styles.skillBadge}>Plattegrondontwerp</span>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,9 @@ export default function OverMijPage() {
                     <p className={styles.text}>
                         Techniek is niets zonder een goed team. In VWO 1 nam ik vaak direct de leiding,
                         zoals bij <strong>Robot XAAR</strong>. In de loop der jaren heb ik geleerd dat leiderschap
-                        niet gaat om 'de baas spelen', maar om faciliteren.
+                        niet gaat om 'de baas spelen', maar om sturen. 
+                        Tot aan het einde van 3 VWO was ik vaak de leider in het team. 
+                        In het eerste projec van VWO 4 <em>Aardwarmte in Rijswijk</em> heb ik dit voor het eerst los gelaten en hadden we in het groepje geen leider, dit beviel me wel!
                     </p>
                     <p className={styles.text}>
                         Bij <strong>Aqua Stroom</strong> (Jaar 3) heb ik als planner gewerkt met een dubbele planning.
