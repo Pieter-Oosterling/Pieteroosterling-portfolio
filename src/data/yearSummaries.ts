@@ -9,22 +9,22 @@ export const yearSummaries: YearSummary[] = [
     {
         year: 1,
         teacher: 'Mevrouw van Well',
-        description: 'In het eerste jaar hebben we kennisgemaakt met O&O door drie verschillende projecten. We leerden de basis van onderzoek doen, samenwerken in teams, en presenteren van resultaten.'
+        description: 'Dit jaar hebben jullie kennisgemaakt met O&O door drie verschillende projecten. Jullie leerden de basis van onderzoek doen, samenwerken in teams, en presenteren van resultaten.'
     },
     {
         year: 2,
         teacher: 'Meneer Sluiter',
-        description: 'Het tweede jaar stond in het teken van verdieping. We werkten aan complexere projecten waarbij we leerden om zelfstandiger onderzoek te doen en meer verantwoordelijkheid te nemen binnen het team.'
+        description: 'Het tweede jaar stond in het teken van verdieping. Citaat: "Niks is perfect en er is altijd nog ruimte voor verbetering".'
     },
     {
         year: 3,
         teacher: 'Mevrouw van der Brand',
-        description: 'In VWO 3 hebben we ons gefocust op maatschappelijke vraagstukken. De projecten waren grootschaliger en we moesten samenwerken met échte opdrachtgevers, wat een belangrijke stap was in onze ontwikkeling.'
+        description: 'In VWO 3 hebben jullie gefocust op maatschappelijke problemen, zoals de woningcrisis, duurzaamheid en gezondheid. De projecten waren grootschaliger en jullie moesten samenwerken met échte opdrachtgevers, wat een belangrijke stap was in jullie ontwikkeling.'
     },
     {
         year: 4,
         teacher: 'Meneer Sluiter',
-        description: 'Het vierde jaar was het meest uitdagend tot nu toe. We hebben gewerkt aan een grootschalig onderzoeksproject voor de Gemeente Rijswijk waarbij we gebruik maakten van professionele tools en methoden.'
+        description: 'Citaat: "De opdrachtgever was echt heel tevreden met het resultaat van jullie verslag en hoe jullie je voor zo ver mogelijk konden verdiepen in het verslag." - citaat van: 19-12-2025'
     },
     {
         year: 5,
