@@ -10,9 +10,11 @@ export default function AboutMe() {
                     <h2 className={styles.title}>Wie ben ik?</h2>
                     <p className={styles.description}>
                         Ik ben Pieter Oosterling, een VWO 4 leerling met een passie voor innovatie en technologie.
-                        Door mijn opleiding Onderzoek & Ontwikkelen heb ik geleerd om creatieve oplossingen te bedenken
+                        Door het vak Onderzoek & Ontwikkelen (o&o) te volgen heb ik geleerd om creatieve oplossingen te bedenken
                         voor complexe vraagstukken. Van het ontwerpen van duurzame mobiliteitsconcepten tot het ontwikkelen
                         van technische prototypes – ik combineer onderzoek, design en techniek om impact te maken.
+                        Verder heb ik ook geleerd dat reflecteren heel belangrijk is en dat je altijd nog kan leren, 
+                        want zoals meneer Sluiter zegt: "Niks is perfect en er is altijd nog ruimte voor verbetering".
                     </p>
                     <p className={styles.description}>
                         Wat mij drijft is nieuwsgierigheid en de wil om te blijven leren. Elk project is een kans om
