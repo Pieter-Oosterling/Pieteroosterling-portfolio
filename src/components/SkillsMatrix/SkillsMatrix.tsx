@@ -18,7 +18,10 @@ export default function SkillsMatrix() {
         'Design': '#ec4899',        // Pink
         'Onderzoek': '#3b82f6',     // Blue
         'Tech': '#8b5cf6',          // Purple
-        'Management': '#10b981'     // Green
+        'Management': '#10b981',
+        'Planning': '#14c7e6ff', //light blue
+        'AI': '#f59e0b',     // Orange
+        'Prototype': '#e84e4eff'     // rood
     };
 
     const filteredProjects = selectedSkill
