@@ -38,6 +38,11 @@ export interface Project {
         group?: string;
         personal?: string;
     };
+    documents?: {
+        title: string;
+        type: 'report' | 'presentation' | 'poster' | 'model' | 'other' | 'portfolio' | 'missing_report';
+        path?: string;
+    }[];
     tags: ('Design' | 'Onderzoek' | 'Tech' | 'Management')[];
 }
 
@@ -56,6 +61,10 @@ export const projectsData: Project[] = [
         role: 'Teamleider',
         tags: ['Management', 'Design'],
         thumbnail: '/images/Image - Brugklas Project.png', // Placeholder mapping
+        documents: [
+            { title: 'Verslag', type: 'missing_report' },
+            { title: 'Presentatie', type: 'presentation', path: '/bestanden/vwo1/project1/Auto VT1C door Nils,Pieter,Pee,Demi.pdf' }
+        ],
         content: {
             summary: `
         In dit project hebben we een visie ontwikkeld voor mobiliteit in het jaar 2070. 
@@ -82,12 +91,16 @@ export const projectsData: Project[] = [
         title: 'Project Informatie: Robot XAAR',
         description: 'Een sociale robot die voorlichting geeft over Artificial Intelligence.',
         client: 'Epoch',
-        date: '2023',
+        date: '10-02-2023',
         grade: { combined: '8,0' },
         team: ['Felix Roeterdink', 'Nouska Steenks', 'Tessa Lock', 'Pieter Oosterling'],
         role: 'Projectleider',
         tags: ['Onderzoek', 'Management'],
         thumbnail: '/images/Image - Technasium.png',
+        documents: [
+            { title: 'Verslag', type: 'report', path: '/verslagen/verslag_v1_p2.pdf' },
+            { title: 'Eindpresentatie', type: 'presentation', path: '/bestanden/vwo1/project2/eindpresentatie_v1_p2.pdf' }
+        ],
         content: {
             summary: `
         We hebben onderzoek gedaan naar de perceptie van Artificial Intelligence (A.I.) in de samenleving.
@@ -129,6 +142,11 @@ export const projectsData: Project[] = [
         tags: ['Onderzoek', 'Management'],
         report: 'Verslag - Aardwarmte in Rijswijk-3.pdf', // Using available PDF as placeholder/example if specific one missing, or logic to hide if missing
         thumbnail: '/images/Image - Eindopdracht.png',
+        documents: [
+            { title: 'Verslag', type: 'report', path: '/verslagen/verslag_v1_p3.pdf' },
+            { title: 'Poster', type: 'poster', path: '/bestanden/vwo1/project3/Muggen-poster-DPLS_v1_p3.png' },
+            { title: 'Extra Info (Muggen)', type: 'other', path: '/bestanden/vwo1/project3/Extra:Volwasse_muggen.pdf' }
+        ],
         content: {
             summary: `
         In opdracht van het One Health Pact hebben we onderzoek gedaan naar de invloed van temperatuur (zon vs. schaduw) 
@@ -158,13 +176,18 @@ export const projectsData: Project[] = [
         title: 'Mobiliteit van de Toekomst',
         description: 'Innovatief concept voor persoons- en goederenvervoer in 2070.',
         client: 'Bas Wilmink (Mobiliteitsdeskundige)',
-        date: '11-12-2023',
+        date: '30-11-2023',
         grade: { group: '7,0', personal: '7,7' },
         team: ['Nils Vakande', 'Pee van Gorkum', 'Démi Babayigit', 'Pieter Oosterling'],
         role: 'Designer & Architect',
         tags: ['Design', 'Tech'],
         report: 'Verslag de Floppers-LR3-Pr1.pdf',
         thumbnail: '/images/vwo3/project1/logo - floppers - team.jpg',
+        documents: [
+            { title: 'Verslag', type: 'report', path: '/verslagen/verslag_v2_p1.pdf' },
+            { title: 'Eindpresentatie', type: 'presentation', path: '/bestanden/vwo2/project1/Eindpresentatie MWD Project 1 .pdf' },
+            { title: 'Tussenpresentatie', type: 'presentation', path: '/bestanden/vwo2/project2/Tussenpresentatie MWD Project 1.pdf' }
+        ],
         gallery: [
             {
                 src: '/images/vwo3/project1/FormHet_Logo.png',
@@ -247,6 +270,10 @@ export const projectsData: Project[] = [
         tags: ['Design', 'Onderzoek'],
         report: 'Verslag Inpakdienst Holland-2.pdf',
         thumbnail: '/images/vwo2/project3/logo - Inpakdienst (1).jpg',
+        documents: [
+            { title: 'Verslag', type: 'report', path: '/verslagen/Verslag-LAMP-project 2-2.pdf' },
+            { title: 'Presentatie', type: 'presentation', path: '/bestanden/vwo2/project2/Presentatie spelenderwijs meer bewegen.pdf' }
+        ],
         gallery: [
             {
                 src: '/images/vwo2/project2/Logo - LAMP.png',
@@ -314,6 +341,9 @@ export const projectsData: Project[] = [
         role: 'Onderzoeker &  Materialen',
         tags: ['Onderzoek', 'Tech'],
         thumbnail: '/images/vwo2/project3/logo-Inpak_Dienst_Holland-zero waste.png',
+        documents: [
+            { title: 'Verslag', type: 'report', path: '/verslagen/Verslag Inpakdienst Holland-2.pdf' }
+        ],
         gallery: [
             {
                 src: '/images/vwo2/project3/logo-Inpak_Dienst_Holland-zero waste.png',
@@ -381,12 +411,17 @@ export const projectsData: Project[] = [
         title: 'Huis van je Leven',
         description: 'Modulair en levensloopbestendig wonen: "Vandaag besteld, volgende week een nieuw huis!"',
         client: 'Jörgen Haring (Formhet)',
-        date: '09-01-2025',
+        date: '15-11-2024',
         grade: { group: '7,3', personal: '9,1' },
         team: ['Valentijn Snelleman', 'Julian Scholtens', 'Niek Hanemaaijer', 'Pieter Oosterling'],
         role: 'Ontwerper & Samenwerking',
         tags: ['Design', 'Management'],
         thumbnail: '/images/Image - Brugklas Project.png', // Placeholder until assets provided
+        documents: [
+            { title: 'Portfolio (Oud)', type: 'other', path: '/bestanden/vwo3/project1/portfolio_v3_p1-oud.pdf' },
+            { title: 'Verslag', type: 'report', path: '/verslagen/Verslag de Floppers  (2).pdf' },
+            { title: 'Poster', type: 'poster', path: '/bestanden/vwo3/project1/Het huis van je leven_Poster.pdf' }
+        ],
         content: {
             summary: `
         De opdracht was het ontwerpen van een modulair, flexibel en levensloopbestendig huis op een kavel van 10.5x10.5m.
@@ -424,13 +459,18 @@ export const projectsData: Project[] = [
         title: 'Dutch Wave Power - Alternatieve Rotaie voor de Buis',
         description: 'Alternatieve rotatie voor golfenergie-converter.',
         client: 'Dutch Wave Power',
-        date: '08-04-2025',
+        date: '17-04-2025',
         grade: { group: '7,3', personal: '9,1' },
         team: ['Micha Doorduin', 'Julia de Graaf', 'Ilian Runderkamp', 'Pieter Oosterling'],
         role: 'Planner',
         tags: ['Design', 'Tech', 'Management'],
         report: 'vwo3_Pr2_verslag-aquastroom.pdf',
         thumbnail: '/images/vwo3/project2/Logo - aqua stroom.png',
+        documents: [
+            { title: 'Verslag', type: 'report', path: '/verslagen/At3o Groep 2_verslag-2.pdf' },
+            { title: '3D Model (Paal-Machine)', type: 'model', path: '/bestanden/vwo3/project2/Verbinder (paal-Machine), Dutch Wave Power.stl' },
+            { title: '3D Model (Paal-Buis)', type: 'model', path: '/bestanden/vwo3/project2/Paal-buis (incl. katrol systeem) Dutch Wave Power.stl' }
+        ],
         gallery: [
             {
                 src: '/images/vwo3/project2/logo-AquaStroom.png',
@@ -550,12 +590,16 @@ export const projectsData: Project[] = [
         title: 'Gezond Eten (SnackCheck)',
         description: 'Een webapp en adviesrapport om jongeren gezonder te laten eten.',
         client: 'Maartje (JOGG - Jong Leren Eten)',
-        date: '24-05-2025',
+        date: '09-05-2025',
         grade: { group: '6,7', personal: '8,6' },
         team: ['Felix Roeterdink', 'Valentijn Snelleman', 'Resul Eryigit', 'Pieter Oosterling'],
         role: 'Developer & Onderzoeker',
         tags: ['Tech', 'Design'],
         thumbnail: '/images/Image - Eindopdracht.png', // Placeholder
+        documents: [
+            { title: 'Verslag', type: 'report', path: '/verslagen/Project Eet jezelf gezond - team_4 - AT3o - P3-5.pdf' },
+            { title: 'Poster', type: 'poster', path: '/bestanden/vwo3/project3/GEZOND_EETPATROON (1).pdf' }
+        ],
         content: {
             summary: `
         De opdracht was om onderzoek te doen naar hoe we middelbare scholieren kunnen verleiden tot gezondere voedselkeuzes.

@@ -20,26 +20,52 @@ export default async function PortfolioDetail({
     const yearProjects = projectsData.filter(p => p.year === yearNumber);
     const project = yearProjects[periodNumber - 1];
 
-    // Construct PDF Path
+    // Construct PDF Path (Default Fallback)
     const basePath = `/bestanden/vwo${yearNumber}/project${periodNumber}`;
     const mainPortfolioPath = `${basePath}/portfolio_v${yearNumber}_p${periodNumber}.pdf`;
 
     // Initialize documents array
-    const documents = [
+    let documents = [
         { title: 'Portfolio', path: mainPortfolioPath }
     ];
 
-    // VWO 3 Extras
-    if (yearNumber === 3) {
-        if (periodNumber === 1) {
-            documents.push({ title: 'Portfolio (Oud)', path: `${basePath}/portfolio_v3_p1-oud.pdf` });
+    // If project has defined documents in data, us those instead or merge
+    // Strategy: If data has 'portfolio' type, replace the default. If data has only extras, append?
+    // User request implies specific control. Let's prioritize data.
+    if (project?.documents && project.documents.length > 0) {
+        // If the data includes a "Portfolio" or "Missing Portfolio", we should use the data list entirely to be precise.
+        // However, for VWO 1 P1, user said "found portfolio" AND "custom missing report page".
+        // The data I wrote for VWO1 P1 has: [{ title: 'Verslag', type: 'missing_report' }, { title: 'Presentatie', ... }]
+        // It DOES NOT have the portfolio in the data list I wrote in previous step (I missed adding the portfolio item itself to the list in projects.ts, 
+        // I only handled the Extras in the list for VWO 1 P1 in the thought process? No, wait. 
+        // In projects.ts update I wrote: documents: [{ title: 'Verslag', type: 'missing_report' }, { ...Presentation... }]
+        // So I need to ensure the Main Portfolio is arguably ALWAYS there unless explicitly excluded.
+
+        // Let's prepend "Portfolio" to the data list if it's not explicitly in there?
+        // Or better: Just use exactly what's in data + the default portfolio if not present?
+
+        // Check if data has a portfolio-like entry
+        const hasPortfolio = project.documents.some(d => d.type === 'portfolio' || d.title.toLowerCase().includes('portfolio'));
+
+        if (!hasPortfolio) {
+            // Prepend default portfolio
+            documents = [
+                { title: 'Portfolio', path: mainPortfolioPath },
+                ...project.documents.map(d => ({ ...d, path: d.path || '' })) // Ensure path string
+            ];
+        } else {
+            // Use data fully
+            documents = project.documents.map(d => ({ ...d, path: d.path || '' }));
         }
-        documents.push({ title: 'Persoonlijk Verslag PV', path: `${basePath}/pv_v${yearNumber}_p${periodNumber}.pdf` });
-        documents.push({ title: 'Werkhouding', path: `${basePath}/werkhouding_v${yearNumber}_p${periodNumber}.pdf` });
+    } else {
+        // VWO 3 Legacy Logic or Fallback (should cover everything via data now, but safe to keep default if no data)
+        // (Empty else block as default is set above)
     }
 
-    // Special Case: VWO 1 - Periode 1 -> Missing
-    const isMissing = yearNumber === 1 && periodNumber === 1;
+    // Special Case: VWO 1 - Periode 1 -> Missing Portfolio EXCEPTION REMOVED
+    // User found the file: /Users/p.oosterling/PieterOosterling/Portfolio/public/bestanden/vwo1/project1/portfolio_v1_p1.pdf
+    // This matches the default `mainPortfolioPath` generator.
+    const isMissing = false; // Always false now as we found it.
 
     return (
         <main className={styles.main}>
@@ -62,6 +88,11 @@ export default async function PortfolioDetail({
                         </p>
 
                         <div className={metaStyles.metadataContainer}>
+                            <div className={`${metaStyles.metadataCard} ${metaStyles.delay1}`}>
+                                <span className={metaStyles.label}>Datum</span>
+                                <span className={metaStyles.value}>{project.date || 'Onbekend'}</span>
+                            </div>
+
                             <div className={`${metaStyles.metadataCard} ${metaStyles.delay1}`}>
                                 <span className={metaStyles.label}>Opdrachtgever</span>
                                 <span className={`${metaStyles.value} ${metaStyles.clientValue}`}>
