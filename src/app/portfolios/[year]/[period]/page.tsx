@@ -2,8 +2,9 @@
 import Link from 'next/link';
 import styles from '../page.module.css'; // Reuse styles or create new
 import MissingPortfolio from '@/components/Portfolio/MissingPortfolio';
-import ReflectionForm from '@/components/Reflection/ReflectionForm';
 import DocumentViewer from '@/components/Portfolio/DocumentViewer';
+
+import { projectsData } from '@/data/projects';
 
 export default async function PortfolioDetail({
     params,
@@ -14,8 +15,12 @@ export default async function PortfolioDetail({
     const yearNumber = parseInt(year.replace('jaar-', ''));
     const periodNumber = parseInt(period);
 
-    // Construct PDF Path based on user convention:
-    // /public/bestanden/vwo1/project1/portfolio_v1_p1.pdf
+    // Find Project Data
+    // Filter projects by year, then pick by index (period 1 = index 0)
+    const yearProjects = projectsData.filter(p => p.year === yearNumber);
+    const project = yearProjects[periodNumber - 1];
+
+    // Construct PDF Path
     const basePath = `/bestanden/vwo${yearNumber}/project${periodNumber}`;
     const mainPortfolioPath = `${basePath}/portfolio_v${yearNumber}_p${periodNumber}.pdf`;
 
@@ -26,26 +31,15 @@ export default async function PortfolioDetail({
 
     // VWO 3 Extras
     if (yearNumber === 3) {
-        // Add "Portfolio Oud" if it exists (assuming for Project 1 based on request, or maybe all? 
-        // User pattern suggests Project 1 had "oud". I'll add it conditionally or just for P1 for now to be safe,
-        // or add it and if it 404s it's minor, but better to be precise. 
-        // User listed: vwo3/project1/portfolio_v3_p1-oud.pdf. 
         if (periodNumber === 1) {
             documents.push({ title: 'Portfolio (Oud)', path: `${basePath}/portfolio_v3_p1-oud.pdf` });
         }
-
-        // Add Proces Verslag (PV)
         documents.push({ title: 'Proces Verslag (PV)', path: `${basePath}/pv_v${yearNumber}_p${periodNumber}.pdf` });
-
-        // Add Werkhouding
         documents.push({ title: 'Werkhouding', path: `${basePath}/werkhouding_v${yearNumber}_p${periodNumber}.pdf` });
     }
 
     // Special Case: VWO 1 - Periode 1 -> Missing
     const isMissing = yearNumber === 1 && periodNumber === 1;
-
-    // Reflection Form: Only for VWO 3 and above
-    const showReflection = yearNumber >= 3;
 
     return (
         <main className={styles.main}>
@@ -56,9 +50,46 @@ export default async function PortfolioDetail({
                 </Link>
             </div>
 
-            <h1 className={`${styles.title} fade-in`}>
-                Portfolio VWO {yearNumber} - Periode {periodNumber}
-            </h1>
+            {/* Project Header Info */}
+            <div className={`fade-in`} style={{ marginBottom: '2rem' }}>
+                <h1 className={styles.title}>
+                    {project ? project.title : `Portfolio VWO ${yearNumber} - Periode ${periodNumber}`}
+                </h1>
+                {project && (
+                    <div style={{
+                        background: 'rgba(255,255,255,0.03)',
+                        padding: '1.5rem',
+                        borderRadius: '12px',
+                        border: '1px solid rgba(255,255,255,0.05)',
+                        maxWidth: '800px',
+                        margin: '0 auto 2rem auto',
+                        textAlign: 'left'
+                    }}>
+                        <p style={{ color: '#aaa', fontSize: '1.1rem', marginBottom: '1rem' }}>{project.description}</p>
+
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem' }}>
+                            <div>
+                                <span style={{ display: 'block', color: '#666', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Opdrachtgever</span>
+                                <span style={{ color: '#fff' }}>{project.client || 'N.v.t.'}</span>
+                            </div>
+                            <div>
+                                <span style={{ display: 'block', color: '#666', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Team</span>
+                                <span style={{ color: '#fff' }}>{project.team ? project.team.join(', ') : 'Individueel'}</span>
+                            </div>
+                            <div>
+                                <span style={{ display: 'block', color: '#666', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Rol</span>
+                                <span style={{ color: '#fff' }}>{project.role || 'Onbekend'}</span>
+                            </div>
+                            <div>
+                                <span style={{ display: 'block', color: '#666', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Cijfer</span>
+                                <span style={{ color: '#4a9eff', fontWeight: 'bold' }}>
+                                    {project.grade?.combined || project.grade?.personal || 'N.v.t.'}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
 
             <div className="fade-in" style={{ animationDelay: '0.2s', width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
 
@@ -66,10 +97,6 @@ export default async function PortfolioDetail({
                     <MissingPortfolio />
                 ) : (
                     <DocumentViewer documents={documents} />
-                )}
-
-                {!isMissing && showReflection && (
-                    <ReflectionForm />
                 )}
 
             </div>
