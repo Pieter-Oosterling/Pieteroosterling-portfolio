@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from './DocumentViewer.module.css';
 import MissingReport from './MissingReport';
+import STLViewer from '@/components/3D/STLViewer';
 
 interface Document {
     title: string;
@@ -31,11 +32,10 @@ export default function DocumentViewer({ documents }: DocumentViewerProps) {
         if (activeDoc.type === 'model') {
             return (
                 <div className={styles.modelContainer}>
-                    <div className={styles.modelContent}>
-                        <h3>3D Model: {activeDoc.title}</h3>
-                        <p>Dit bestand is een 3D model (.stl).</p>
+                    <STLViewer url={activeDoc.path || ''} />
+                    <div className={styles.modelFooter} style={{ marginTop: '1rem', textAlign: 'center' }}>
                         <a href={activeDoc.path} download className={styles.downloadBtnLarge}>
-                            Download 3D Model
+                            Download 3D Model (.stl)
                         </a>
                     </div>
                 </div>

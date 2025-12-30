@@ -73,6 +73,21 @@ export default function ProjectActions({ project }: ProjectActionsProps) {
                     // Standard Downloads
                     if (!doc.path) return null;
 
+                    // Special Case: 3D Model
+                    // User wants to VIEW it, not download it directly. Link to Detail Page.
+                    if (doc.type === 'model') {
+                        return (
+                            <Link
+                                key={idx}
+                                href={`/portfolios/jaar-${project.year}/${period}`} // Link to detail page/viewer
+                                className={styles.downloadBtn}
+                                title={`${doc.title} (Bekijk in 3D Viewer)`}
+                            >
+                                {getDocLabel(doc as any)}
+                            </Link>
+                        );
+                    }
+
                     return (
                         <a
                             key={idx}
