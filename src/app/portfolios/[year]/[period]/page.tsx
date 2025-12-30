@@ -1,6 +1,6 @@
-
 import Link from 'next/link';
 import styles from '../page.module.css'; // Reuse styles or create new
+import metaStyles from '@/components/Portfolio/ProjectMetadata.module.css'; // New Styles
 import MissingPortfolio from '@/components/Portfolio/MissingPortfolio';
 import DocumentViewer from '@/components/Portfolio/DocumentViewer';
 
@@ -34,7 +34,7 @@ export default async function PortfolioDetail({
         if (periodNumber === 1) {
             documents.push({ title: 'Portfolio (Oud)', path: `${basePath}/portfolio_v3_p1-oud.pdf` });
         }
-        documents.push({ title: 'Proces Verslag (PV)', path: `${basePath}/pv_v${yearNumber}_p${periodNumber}.pdf` });
+        documents.push({ title: 'Persoonlijk Verslag PV', path: `${basePath}/pv_v${yearNumber}_p${periodNumber}.pdf` });
         documents.push({ title: 'Werkhouding', path: `${basePath}/werkhouding_v${yearNumber}_p${periodNumber}.pdf` });
     }
 
@@ -51,38 +51,41 @@ export default async function PortfolioDetail({
             </div>
 
             {/* Project Header Info */}
-            <div className={`fade-in`} style={{ marginBottom: '2rem' }}>
+            <div className={`fade-in`} style={{ marginBottom: '3rem' }}>
                 <h1 className={styles.title}>
                     {project ? project.title : `Portfolio VWO ${yearNumber} - Periode ${periodNumber}`}
                 </h1>
                 {project && (
-                    <div style={{
-                        background: 'rgba(255,255,255,0.03)',
-                        padding: '1.5rem',
-                        borderRadius: '12px',
-                        border: '1px solid rgba(255,255,255,0.05)',
-                        maxWidth: '800px',
-                        margin: '0 auto 2rem auto',
-                        textAlign: 'left'
-                    }}>
-                        <p style={{ color: '#aaa', fontSize: '1.1rem', marginBottom: '1rem' }}>{project.description}</p>
+                    <div className="fade-in delay1">
+                        <p style={{ color: '#aaa', fontSize: '1.2rem', marginBottom: '1rem', lineHeight: '1.6', maxWidth: '800px' }}>
+                            {project.description}
+                        </p>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem' }}>
-                            <div>
-                                <span style={{ display: 'block', color: '#666', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Opdrachtgever</span>
-                                <span style={{ color: '#fff' }}>{project.client || 'N.v.t.'}</span>
+                        <div className={metaStyles.metadataContainer}>
+                            <div className={`${metaStyles.metadataCard} ${metaStyles.delay1}`}>
+                                <span className={metaStyles.label}>Opdrachtgever</span>
+                                <span className={`${metaStyles.value} ${metaStyles.clientValue}`}>
+                                    {project.client || 'N.v.t.'}
+                                </span>
                             </div>
-                            <div>
-                                <span style={{ display: 'block', color: '#666', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Team</span>
-                                <span style={{ color: '#fff' }}>{project.team ? project.team.join(', ') : 'Individueel'}</span>
+
+                            <div className={`${metaStyles.metadataCard} ${metaStyles.delay2}`}>
+                                <span className={metaStyles.label}>Team</span>
+                                <span className={metaStyles.value}>
+                                    {project.team ? project.team.join(', ') : 'Individueel'}
+                                </span>
                             </div>
-                            <div>
-                                <span style={{ display: 'block', color: '#666', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Rol</span>
-                                <span style={{ color: '#fff' }}>{project.role || 'Onbekend'}</span>
+
+                            <div className={`${metaStyles.metadataCard} ${metaStyles.delay3}`}>
+                                <span className={metaStyles.label}>Rol</span>
+                                <span className={metaStyles.value}>
+                                    {project.role || 'Onbekend'}
+                                </span>
                             </div>
-                            <div>
-                                <span style={{ display: 'block', color: '#666', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Cijfer</span>
-                                <span style={{ color: '#4a9eff', fontWeight: 'bold' }}>
+
+                            <div className={`${metaStyles.metadataCard} ${metaStyles.delay4}`}>
+                                <span className={metaStyles.label}>Cijfer</span>
+                                <span className={metaStyles.gradeValue}>
                                     {project.grade?.combined || project.grade?.personal || 'N.v.t.'}
                                 </span>
                             </div>

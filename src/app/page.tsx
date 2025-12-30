@@ -119,7 +119,7 @@ export default function Home() {
 
       {/* Featured Report Section (Top Priority) */}
       <div className={`${styles.reportSection} fade-in`} style={{ animationDelay: '0.45s' }}>
-        <h2 className={styles.sectionTitle}>Nieuwste Verslag</h2>
+        <h2 className={styles.sectionTitle}>Een uitblinker</h2>
         <div className={styles.reportCard}>
           <div className={styles.reportContent}>
             <h3 className={styles.reportTitle}>Aardwarmte in Rijswijk</h3>
