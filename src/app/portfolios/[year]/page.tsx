@@ -15,11 +15,14 @@ export default async function PortfolioYearPage({
     const { year } = await params;
     const yearNumber = parseInt(year.replace('jaar-', ''));
 
-    // Mock data fallback
+    // Generate 3 periods for each year as per standard structure
+    // We can adjust this if some years have more/fewer, but standard seems to be 3-4.
     const portfolios = [
-        { id: 1, title: 'Portfolio Deel 1', description: `Ontwikkeling in VWO ${yearNumber} deel 1` },
-        { id: 2, title: 'Portfolio Deel 2', description: `Ontwikkeling in VWO ${yearNumber} deel 2` },
-        { id: 3, title: 'Reflectie', description: `Jaarreflectie VWO ${yearNumber}` },
+        { id: 1, title: 'Periode 1', description: `Portfolio & Projecten uit Periode 1` },
+        { id: 2, title: 'Periode 2', description: `Portfolio & Projecten uit Periode 2` },
+        { id: 3, title: 'Periode 3', description: `Portfolio & Projecten uit Periode 3` },
+        // Optional: Add period 4 if needed, but sticking to 3 for now based on typical school years or check data.
+        // User mentioned "project1", "project2", etc.
     ];
 
     return (
@@ -27,11 +30,15 @@ export default async function PortfolioYearPage({
             <h1 className={`${styles.title} fade-in`}>Portfolio VWO {yearNumber}</h1>
             <div className={`${styles.grid} fade-in`} style={{ animationDelay: '0.2s' }}>
                 {portfolios.map((item) => (
-                    <div key={item.id} className={styles.card}>
+                    <Link
+                        key={item.id}
+                        href={`/portfolios/${year}/${item.id}`}
+                        className={styles.card}
+                    >
                         <h2 className={styles.cardTitle}>{item.title}</h2>
                         <p className={styles.cardDesc}>{item.description}</p>
                         <div className={styles.glow} />
-                    </div>
+                    </Link>
                 ))}
             </div>
             <Link href="/portfolios" className={styles.backButton}>
