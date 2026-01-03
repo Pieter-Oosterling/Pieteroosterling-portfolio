@@ -129,7 +129,7 @@ export default function ProjectActions({ project }: ProjectActionsProps) {
                         </p>
                         <div className={styles.modalButtons}>
                             <button
-                                className={styles.cancelBtn}
+                                className={styles.secondaryBtn}
                                 onClick={() => setShowAiModal(false)}
                             >
                                 Annuleren
@@ -146,7 +146,7 @@ export default function ProjectActions({ project }: ProjectActionsProps) {
                                 </a>
                             )}
                             <button
-                                className={styles.confirmBtn}
+                                className={styles.secondaryBtn}
                                 onClick={handleConfirm}
                             >
                                 Video Openen
