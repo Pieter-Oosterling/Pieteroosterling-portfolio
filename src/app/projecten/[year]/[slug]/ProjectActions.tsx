@@ -33,10 +33,10 @@ export default function ProjectActions({ project }: ProjectActionsProps) {
     // Helper to get icon/label
     const getDocLabel = (doc: { title: string, type: string }) => {
         if (doc.type === 'missing_report') return null; // Don't show button for missing
-        let icon = 'verslag';
-        if (doc.type === 'presentation') icon = 'presentatie';
-        if (doc.type === 'poster') icon = 'poster';
-        if (doc.type === 'model') icon = 'model';
+        let icon = '';
+        if (doc.type === 'presentation') icon = '';
+        if (doc.type === 'poster') icon = '';
+        if (doc.type === 'model') icon = '';
         return `${icon} ${doc.title}`;
     };
 
