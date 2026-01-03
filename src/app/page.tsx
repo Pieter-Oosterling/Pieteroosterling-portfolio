@@ -137,7 +137,7 @@ export default function Home() {
             </a>
           </div>
           <div className={styles.reportIcon}>
-            📄
+           Verslag
           </div>
         </div>
       </div>
