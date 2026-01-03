@@ -24,7 +24,7 @@ export const yearSummaries: YearSummary[] = [
     {
         year: 4,
         teacher: 'Meneer Sluiter',
-        description: 'Citaat: "De opdrachtgever was echt heel tevreden met het resultaat van jullie verslag en hoe jullie je voor zo ver mogelijk konden verdiepen in het verslag." - citaat van: 19-12-2025'
+        description: 'Citaat: "De opdrachtgever was echt heel tevreden met het resultaat van jullie verslag en over hoe jullie je, voor zo ver mogelijk, konden verdiepen in het verslag." - citaat van: 19-12-2025 - citaat over: Aardwarmte in Rijswijk'
     },
     {
         year: 5,
