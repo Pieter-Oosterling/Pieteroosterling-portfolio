@@ -65,7 +65,7 @@ export default function ProjectActions({ project }: ProjectActionsProps) {
                                 className={`${styles.downloadBtn} ${styles.missingBtn}`} // Add semantic class if needed
                                 title="Geen verslag beschikbaar (Klik voor info)"
                             >
-                                📄 Verslag
+                                Verslag
                             </Link>
                         );
                     }
