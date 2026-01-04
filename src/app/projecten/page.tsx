@@ -9,7 +9,7 @@ export default function Projecten() {
             <div className={styles.header}>
                 <h1 className={styles.title}>Projecten</h1>
                 <p className={styles.subtitle}>
-                    Selecteer een schooljaar of filter hieronder door alle projecten.
+                    Selecteer een schooljaar of filter hieronder door alle projecten. 
                 </p>
             </div>
 
