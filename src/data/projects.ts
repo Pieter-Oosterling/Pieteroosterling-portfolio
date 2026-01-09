@@ -815,10 +815,14 @@ Het gekozen doublet-scenario "Buurten en Wijken" levert 250 TJ warmte per jaar m
 
         **Technisch & Financieel:**
         *   **Scenario:** Doublet-optie 2 (levering aan Kleurenbuurt & Muziekbuurt).
-        *   **Bron:** S-gesteentelaag (Schielanden/Nedersaksen) op 2000-2500m diepte (temp ~75°C).
+        *   **Bron:** S-gesteentelaag (zand) op ~2060m diepte (temp ~75°C).
         *   **Energie:** Warmteproductie van 250 TJ/jaar, voldoende voor de warmtevraag.
         *   **Rendement:** Totale kosten €24,88 miljoen vs. opbrengst €141,48 miljoen over 36 jaar.
         *   **Winstgevendheid:** Terugverdientijd van 6,4 jaar met een geschatte winst van €105-112 miljoen.
+        *   **Installatie informatie:** De injectieputten hebben een diameter van 0.2035 en een flow van 120 m³/uur. 
+        *   **Extra informatie:** Het doublet levert per jaar zo'n 4,44 MW op wat gelijk staat aan ~*3,89 miljoen euro per jaar.
+        *   **** Dit geld als de kWh prijs 0,10 euro is.
+
       `,
             reflection: `
         **Rol: Planner**
