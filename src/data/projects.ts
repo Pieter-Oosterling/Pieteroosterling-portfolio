@@ -647,7 +647,7 @@ export const projectsData: Project[] = [
         thumbnail: '/images/vwo4/project1/logo-Aardwarmte-in-Rijswijk.png',
         gallery: [
             {
-                src: '/images/vwo4/project1/logo - Aardwarmte in Rijswkijk.png',
+                src: '/images/vwo4/project1/logo-Aardwarmte-in-Rijswijk.png',
                 caption: 'Project Logo: Aardwarmte in Rijswijk - Geothermie verkennend onderzoek'
             },
             {
