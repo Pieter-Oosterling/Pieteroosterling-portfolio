@@ -8,8 +8,8 @@ export async function GET(req: NextRequest) {
     const pwd = searchParams.get('pwd');
 
     // 1. Password Check
-    if (pwd !== '12345678') { // Simple 8-digit code
-        return new NextResponse('Unauthorized', { status: 401 });
+    if (pwd !== 'De beste docent van CLD - 65473829') { // Simple 8-digit code
+        return new NextResponse('Niet geautoriseerd', { status: 401 });
     }
 
     // 2. File Path
