@@ -638,7 +638,7 @@ export const projectsData: Project[] = [
         description: 'Kostenonderzoek naar geothermie in vier Rijkswijkse wijken.',
         client: 'Gemeente Rijswijk & TU Delft',
         date: '2025',
-        grade: { group: '8,2', personal: 'ntb' }, // Grade pending
+        grade: { group: '8,2', personal: '8,2' }, // Grade pending
         team: ['Pieter Oosterling', 'Mohammad Khaled Yasin', 'Thijn Merks', 'Nouschka Steenks'],
         role: 'Planner (Plannen & Organiseren)',
         tags: ['Onderzoek', 'Management'],
@@ -840,7 +840,7 @@ Het gekozen doublet-scenario "Buurten en Wijken" levert 250 TJ warmte per jaar m
         slug: 'SOS',
         title: 'Save Our Soldiers (SOS)',
         description: 'Een medische reddingsdrone voor het slagveld.',
-        client: 'Ministerie van Defensie (Bart de Graaff)',
+        client: 'Ministerie van Defensie \n (Bart de Graaff)',
         date: '01-05-2026',
         grade: {},
         team: ['Mohammad Khaled Yasin', 'Felix Roeterdink', 'Pepijn de Graaff', 'Pieter Oosterling'],
