@@ -6,7 +6,7 @@ import { OrbitControls, Stage, Center, Html } from '@react-three/drei';
 import { STLLoader } from 'three-stdlib';
 import * as THREE from 'three';
 
-function Model({ url }: { url: string }) {
+function Model({ url, rotation }: { url: string, rotation?: [number, number, number] }) {
     // Load STL. STLLoader returns a BufferGeometry.
     const geometry = useLoader(STLLoader, url);
     const mesh = useRef<THREE.Mesh>(null!);
@@ -14,7 +14,7 @@ function Model({ url }: { url: string }) {
     // Auto-rotate or just static nicely lit
     // Let's create a nice material
     return (
-        <mesh ref={mesh} geometry={geometry} castShadow receiveShadow>
+        <mesh ref={mesh} geometry={geometry} rotation={rotation} castShadow receiveShadow>
             <meshStandardMaterial
                 color="#4facfe"
                 roughness={0.5}
@@ -42,16 +42,17 @@ function Loader() {
 
 interface STLViewerProps {
     url: string;
+    rotation?: [number, number, number];
 }
 
-export default function STLViewer({ url }: STLViewerProps) {
+export default function STLViewer({ url, rotation }: STLViewerProps) {
     return (
         <div style={{ width: '100%', height: '500px', background: '#111', borderRadius: '12px', overflow: 'hidden' }}>
             <Canvas shadows dpr={[1, 2]} camera={{ fov: 50 }}>
                 <Suspense fallback={<Loader />}>
                     {/* Stage automatically centers and sets up lighting/shadows */}
                     <Stage environment="city" intensity={0.6}>
-                        <Model url={url} />
+                        <Model url={url} rotation={rotation} />
                     </Stage>
                 </Suspense>
                 <OrbitControls autoRotate autoRotateSpeed={0.5} makeDefault />
