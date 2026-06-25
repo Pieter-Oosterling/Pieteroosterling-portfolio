@@ -833,5 +833,48 @@ Het gekozen doublet-scenario "Buurten en Wijken" levert 250 TJ warmte per jaar m
         *   **Communicatie:** Ik heb bewust gewerkt aan mijn toon. Waar ik voorheen soms kortaf kon zijn, nam ik nu de tijd om eerst goed te luisteren en samen te vatten wat de ander zei ("Bedoel je dat...?"). Ik vroeg mijn teamgenoten (Mohammed, Nouschka) wekelijks om tips. Zij gaven aan dat ik rustiger overkwam, en door handige vragen te stellen ("Begrijpen we allemaal waarom Optie B afvalt?") voorkwam ik misverstanden.
       `
         }
+    },
+    {
+        id: 11,
+        year: 4,
+        slug: 'SOS',
+        title: 'Save Our Soldiers (SOS)',
+        description: 'Een medische reddingsdrone voor het slagveld.',
+        client: 'Ministerie van Defensie (Bart de Graaff)',
+        date: '01-05-2026',
+        grade: {},
+        team: ['Mohammad Khaled Yasin', 'Felix Roeterdink', 'Pepijn de Graaff', 'Pieter Oosterling'],
+        role: 'Onderzoeker & Ontwerper',
+        tags: ['Onderzoek', 'Design', 'Tech'],
+        thumbnail: '/images/vwo4/project1/logo-Aardwarmte-in-Rijswijk.png',
+        documents: [
+            { title: 'Onderzoeksverslag', type: 'report', path: '/verslagen/Verslag - SOS - P3&P4&P5-4.pdf' },
+            { title: 'Showcase Portfolio', type: 'portfolio', path: '/bestanden/vwo4/project2/SOS - Save Our Soldiers - Showcaseportfolio.pdf' },
+            { title: '3D Model Iteratie 1', type: 'model', path: '/sos/3d/iteratie/1' },
+            { title: '3D Model Iteratie 2', type: 'model', path: '/sos/3d/iteratie/2' },
+            { title: '3D Model Iteratie 3', type: 'model', path: '/sos/3d/iteratie/3' }
+        ],
+        content: {
+            summary: `
+                In opdracht van het Ministerie van Defensie (Bart de Graaff) hebben wij onderzoek gedaan naar het ontwerpen van een medische reddingsdrone voor het slagveld.
+                Het doel was om een drone te ontwerpen die effectief en verantwoord medische hulp kan verlenen in extreme of afgelegen omstandigheden, om onnodige slachtoffers te beperken. We hebben ruim 30 bestaande drones en meerdere reddingssystemen geanalyseerd.
+            `,
+            result: `
+                Het eindconcept is een drone-module met een sandwichconstructie (carbon fiber buitenlagen, magnesiumlegering AZ31B frame en Divinycell schuim). Deze module weegt slechts 126,9 kg (ruim binnen de 300 kg eis van het BAE Systems T-650 platform) en bevat een medische kist (Coolbox) voor o.a. bloed, zoutoplossing, morfine en een botnaald. De drone beschikt over autonome navigatie.
+            `,
+            reflection: `
+                Tijdens de conceptfase hebben we vier iteraties doorlopen. Waar iteratie 1 (massief UHMWPE) nog op 895 kilo uitkwam, wisten we door slimme ontwerpaanpassingen (zoals een aluminium/magnesium skelet en sandwichpanelen) het gewicht met bijna 90% terug te brengen. Het 3D ontwerpen, berekenen en nadenken over materiaal-eigenschappen (kogelwerend, lichtgewicht, weersbestendig) was zeer uitdagend maar enorm leerzaam.
+            `,
+            extra: {
+                title: 'Belangrijkste Specificaties (PvE)',
+                items: [
+                    'Draagvermogen: 300 kg (BAE Systems T-650)',
+                    'Vliegtijd/Bereik: Minimaal 30 km zonder laden',
+                    'Autonome navigatie & "Return-to-Launch" bij signaalverlies',
+                    'Waterdicht (IP87) en operationeel tussen -10 °C en 40 °C',
+                    'Totale kosten module: ~ €89.494,72'
+                ]
+            }
+        }
     }
 ];
