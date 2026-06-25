@@ -850,9 +850,9 @@ Het gekozen doublet-scenario "Buurten en Wijken" levert 250 TJ warmte per jaar m
         documents: [
             { title: 'Onderzoeksverslag', type: 'report', path: '/verslagen/Verslag - SOS - P3&P4&P5-4.pdf' },
             { title: 'Showcase Portfolio', type: 'portfolio', path: '/bestanden/vwo4/project2/SOS - Save Our Soldiers - Showcaseportfolio.pdf' },
-            { title: '3D Model Iteratie 1', type: 'model', path: '/sos/3d/iteratie/1' },
-            { title: '3D Model Iteratie 2', type: 'model', path: '/sos/3d/iteratie/2' },
-            { title: '3D Model Iteratie 3', type: 'model', path: '/sos/3d/iteratie/3' }
+            { title: '3D Model Iteratie 1', type: 'model', path: '/bestanden/vwo4/project2/iteratie1.stl' },
+            { title: '3D Model Iteratie 2', type: 'model', path: '/bestanden/vwo4/project2/iteratie2.stl' },
+            { title: '3D Model Iteratie 3', type: 'model', path: '/bestanden/vwo4/project2/iteratie3.stl' }
         ],
         content: {
             summary: `
