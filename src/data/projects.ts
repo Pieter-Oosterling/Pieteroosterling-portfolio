@@ -842,7 +842,7 @@ Het gekozen doublet-scenario "Buurten en Wijken" levert 250 TJ warmte per jaar m
         description: 'Een medische reddingsdrone voor het slagveld.',
         client: 'Ministerie van Defensie \n (Bart de Graaff)',
         date: '01-05-2026',
-        grade: { group: 'ntb', personal: 'ntb' }, // Grade pending
+        grade: { group: '0,0', personal: '0,0' }, // Grade pending
         team: ['Mohammad Khaled Yasin', 'Felix Roeterdink', 'Pepijn de Graaff', 'Pieter Oosterling'],
         role: 'Onderzoeker & Ontwerper',
         tags: ['Onderzoek', 'Design', 'Tech'],
