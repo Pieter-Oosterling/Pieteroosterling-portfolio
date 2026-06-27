@@ -75,7 +75,14 @@ export default function DocumentViewer({ documents }: DocumentViewerProps) {
                         <button
                             key={index}
                             className={`${styles.tab} ${index === activeDocIndex ? styles.activeTab : ''}`}
-                            onClick={() => setActiveDocIndex(index)}
+                            onClick={() => {
+                                // Als het een model is en de link niet eindigt op .stl (maar bijv naar /sos/3d/iteratie/1 gaat), redirect dan:
+                                if (doc.type === 'model' && doc.path && !doc.path.toLowerCase().endsWith('.stl')) {
+                                    window.location.href = doc.path;
+                                } else {
+                                    setActiveDocIndex(index);
+                                }
+                            }}
                         >
                             {doc.title}
                             {index === activeDocIndex && <div className={`${styles.glow} fade-in`} />}
