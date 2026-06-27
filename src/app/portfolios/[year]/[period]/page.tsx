@@ -5,6 +5,10 @@ import MissingPortfolio from '@/components/Portfolio/MissingPortfolio';
 import DocumentViewer from '@/components/Portfolio/DocumentViewer';
 
 import { projectsData } from '@/data/projects';
+import IterationTimeline from '@/components/IterationTimeline/IterationTimeline';
+import CostCalculator from '@/components/SOS/CostCalculator';
+import SOSEasterEgg from '@/components/SOS/SOSEasterEgg';
+import BeforeAfterSlider from '@/components/SOS/BeforeAfterSlider';
 
 export default async function PortfolioDetail({
     params,
@@ -133,6 +137,37 @@ export default async function PortfolioDetail({
                     <DocumentViewer documents={documents} />
                 )}
 
+                {/* Specific SOS Project Injections */}
+                {project?.slug === 'SOS' && (
+                    <div style={{ marginTop: '4rem' }}>
+                        <h2 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>Interactief: Mini-Game</h2>
+                        <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem', lineHeight: 1.6 }}>
+                            Probeer zelf de ideale medische lading samen te stellen voor de SOS-drone zonder over de limiet van 300kg te gaan!
+                        </p>
+                        <Link href="/sos/games/makeyourdrone" style={{ 
+                            display: 'inline-block',
+                            background: 'var(--primary)',
+                            color: '#fff',
+                            padding: '0.75rem 1.5rem',
+                            borderRadius: '0.5rem',
+                            textDecoration: 'none',
+                            fontWeight: 'bold',
+                            marginBottom: '3rem'
+                        }}>
+                            Speel de Drone Configurator 🎮
+                        </Link>
+
+                        <h2 style={{ color: 'var(--text-primary)', marginBottom: '1rem' }}>Evolutie van het Ontwerp</h2>
+                        <BeforeAfterSlider 
+                            beforeImage="/images/vwo4/project2/iteratie1.png"
+                            afterImage="/images/vwo4/project2/iteratie4.jpg"
+                        />
+
+                        <IterationTimeline />
+                        <CostCalculator />
+                    </div>
+                )}
+                <SOSEasterEgg />
             </div>
         </main>
     );

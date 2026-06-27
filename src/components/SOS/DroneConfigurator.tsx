@@ -16,7 +16,7 @@ export default function DroneConfigurator() {
 
     const totalWeightKg = baseModuleWeightKg + (totalEquipmentWeightGrams / 1000);
     const isOverweight = totalWeightKg > maxDronePayloadKg;
-    
+
     // Percentage for progress bar
     const weightPercentage = Math.min((totalWeightKg / maxDronePayloadKg) * 100, 100);
 
@@ -54,15 +54,15 @@ export default function DroneConfigurator() {
                     <div className={`${styles.weightValue} ${isOverweight ? styles.overweightText : ''}`}>
                         {totalWeightKg.toFixed(2)} <span className={styles.unit}>kg</span>
                     </div>
-                    
+
                     <div className={styles.progressBarContainer}>
-                        <div 
-                            className={`${styles.progressBar} ${isOverweight ? styles.progressBarDanger : ''}`} 
+                        <div
+                            className={`${styles.progressBar} ${isOverweight ? styles.progressBarDanger : ''}`}
                             style={{ width: `${weightPercentage}%` }}
                         ></div>
                         <div className={styles.maxMarker} style={{ left: '100%' }}></div>
                     </div>
-                    
+
                     <div className={styles.status}>
                         {isOverweight ? (
                             <span className={styles.statusDanger}>⚠️ Te zwaar! De drone zal neerstorten.</span>

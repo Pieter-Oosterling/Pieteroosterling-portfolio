@@ -1,0 +1,68 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(239, 68, 68, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: flash 2s infinite;
+}
+
+@keyframes flash {
+    0%, 100% { background: rgba(239, 68, 68, 0.2); }
+    50% { background: rgba(239, 68, 68, 0.5); }
+}
+
+.alertBox {
+    background: #000;
+    border: 2px solid #ef4444;
+    padding: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    color: #ef4444;
+    box-shadow: 0 0 50px rgba(239, 68, 68, 0.5);
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.alertTitle {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+}
+
+.blueprint {
+    margin: 2rem 0;
+    background: #111;
+    border: 1px solid #ef4444;
+    padding: 1rem;
+    color: #ef4444;
+    font-family: var(--font-mono);
+    text-align: left;
+}
+
+.dismissBtn {
+    background: #ef4444;
+    color: #000;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dismissBtn:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}

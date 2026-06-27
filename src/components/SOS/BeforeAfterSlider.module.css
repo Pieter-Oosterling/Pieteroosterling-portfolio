@@ -1,0 +1,96 @@
+.wrapper {
+    margin: 3rem 0;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: ew-resize;
+    user-select: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: #000;
+}
+
+.imageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.foregroundContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Since they are different sizes/aspect ratios, contain is safer than cover */
+    pointer-events: none;
+}
+
+.labelLeft, .labelRight {
+    position: absolute;
+    top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+}
+
+.labelLeft {
+    left: 1rem;
+}
+
+.labelRight {
+    right: 1rem;
+    z-index: 0;
+}
+
+.sliderLine {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: white;
+    z-index: 2;
+    transform: translateX(-50%);
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.sliderHandle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 600px) {
+    .container {
+        aspect-ratio: 4/3;
+    }
+}

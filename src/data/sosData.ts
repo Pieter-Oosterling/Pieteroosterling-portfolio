@@ -35,5 +35,5 @@ export const sosCostBreakdown = [
 ];
 
 export const totalCost = 89494.72;
-export const baseModuleWeightKg = 100.82; // Skelet + Sandwich
+export const baseModuleWeightKg = 126.82; // Skelet + Sandwich
 export const maxDronePayloadKg = 300; // BAE T-650 Limit

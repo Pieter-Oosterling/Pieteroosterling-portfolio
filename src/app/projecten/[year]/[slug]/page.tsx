@@ -7,6 +7,8 @@ import AnimatedGrade from '@/components/AnimatedGrade/AnimatedGrade';
 import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
 import IterationTimeline from '@/components/IterationTimeline/IterationTimeline';
 import CostCalculator from '@/components/SOS/CostCalculator';
+import SOSEasterEgg from '@/components/SOS/SOSEasterEgg';
+import BeforeAfterSlider from '@/components/SOS/BeforeAfterSlider';
 import ProjectActions from './ProjectActions';
 import styles from './page.module.css';
 
@@ -157,10 +159,18 @@ export default async function ProjectDetailPage({
                                 Speel de Drone Configurator 🎮
                             </Link>
 
+                            <h2 className={styles.sectionTitle}>Evolutie van het Ontwerp</h2>
+                            <BeforeAfterSlider 
+                                beforeImage="/images/vwo4/project2/iteratie1.png"
+                                afterImage="/images/vwo4/project2/iteratie4.jpg"
+                            />
+
                             <IterationTimeline />
                             <CostCalculator />
                         </div>
                     )}
+                    
+                    <SOSEasterEgg />
 
                     {/* Videos Section */}
                     {project.videos && project.videos.length > 0 && (
