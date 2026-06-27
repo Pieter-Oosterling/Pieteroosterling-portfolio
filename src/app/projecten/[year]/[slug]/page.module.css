@@ -272,23 +272,61 @@
 .bottomNav {
     display: flex;
     justify-content: space-between;
-    transform: translateY(-2px);
+    gap: 2rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
 }
 
+.navLink {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.navLink:hover {
+    background: var(--surface-hover);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.navLink span:first-child {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
 
 .navLink.next {
     text-align: right;
     align-items: flex-end;
 }
 
-.navLink.next:hover {
-    transform: translateX(5px);
+.navTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
-.navTitle {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--foreground);
+@media (max-width: 600px) {
+    .bottomNav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .navLink.next {
+        align-items: flex-start;
+        text-align: left;
+    }
 }
 
 /* Grades */
