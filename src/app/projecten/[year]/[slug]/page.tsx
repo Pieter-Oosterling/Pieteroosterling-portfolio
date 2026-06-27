@@ -5,6 +5,8 @@ import ProjectHeroImage from '@/components/ProjectHeroImage/ProjectHeroImage';
 import Gallery from '@/components/Gallery/Gallery';
 import AnimatedGrade from '@/components/AnimatedGrade/AnimatedGrade';
 import VideoPlayer from '@/components/VideoPlayer/VideoPlayer';
+import IterationTimeline from '@/components/IterationTimeline/IterationTimeline';
+import CostCalculator from '@/components/SOS/CostCalculator';
 import ProjectActions from './ProjectActions';
 import styles from './page.module.css';
 
@@ -144,6 +146,12 @@ export default async function ProjectDetailPage({
                         <h2 className={styles.sectionTitle}>Persoonlijke Reflectie</h2>
                         <TextRenderer content={project.content.reflection} />
                     </div>
+
+                    {project.slug === 'SOS' && (
+                        <div className={styles.section}>
+                            <IterationTimeline />
+                        </div>
+                    )}
 
                     {/* Videos Section */}
                     {project.videos && project.videos.length > 0 && (

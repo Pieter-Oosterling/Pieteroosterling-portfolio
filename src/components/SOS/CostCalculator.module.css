@@ -1,0 +1,159 @@
+.calculator {
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 3rem 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+
+    /* Chart colors mapping */
+    --chart-color-1: #8b5cf6; /* Primary */
+    --chart-color-2: #ec4899; /* Red/Pink */
+    --chart-color-3: #10b981; /* Emerald */
+    --chart-color-4: #3b82f6; /* Blue */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.totalDisplay {
+    display: flex;
+    align-items: baseline;
+    color: var(--primary);
+}
+
+.euroSign {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.barContainer {
+    display: flex;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background: var(--surface-hover);
+}
+
+.barSegment {
+    height: 100%;
+    transition: opacity 0.3s, filter 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.barSegment:hover {
+    filter: brightness(1.2);
+}
+
+.barSegment:not(.active) {
+    opacity: 0.8;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--foreground);
+    color: var(--background);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    pointer-events: none;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.barSegment:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: var(--foreground) transparent transparent transparent;
+}
+
+.legend {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--surface-hover);
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.legendItem.highlight {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.legendColor {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.legendName {
+    flex: 1;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.legendValue {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
