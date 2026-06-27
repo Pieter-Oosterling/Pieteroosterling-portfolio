@@ -846,7 +846,7 @@ Het gekozen doublet-scenario "Buurten en Wijken" levert 250 TJ warmte per jaar m
         team: ['Mohammad Khaled Yasin', 'Felix Roeterdink', 'Pepijn de Graaff', 'Pieter Oosterling'],
         role: 'Onderzoeker & Ontwerper',
         tags: ['Onderzoek', 'Design', 'Tech'],
-        thumbnail: '/images/vwo4/project1/logo-Aardwarmte-in-Rijswijk.png',
+        thumbnail: '/images/vwo4/project2/logo-sos.png',
         documents: [
             { title: 'Onderzoeksverslag', type: 'report', path: '/verslagen/Verslag - SOS - P3&P4&P5-4.pdf' },
             { title: 'Showcase Portfolio', type: 'portfolio', path: '/bestanden/vwo4/project2/SOS - Save Our Soldiers - Showcaseportfolio.pdf' },
