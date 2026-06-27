@@ -1,6 +1,7 @@
 import React from 'react';
 import STLViewer from '@/components/3D/STLViewer';
 import styles from './page.module.css';
+import Link from 'next/link';
 
 interface PageProps {
     params: Promise<{
@@ -17,6 +18,9 @@ export default async function SOSIteratiePage({ params }: PageProps) {
     return (
         <main className={styles.main}>
             <div className={styles.header}>
+                <Link href="/projecten/jaar-4/SOS" className={styles.backButton}>
+                    &larr; Terug naar het SOS Project
+                </Link>
                 <h1 className={styles.title}>SOS - Save Our Soldiers</h1>
                 <p className={styles.subtitle}>
                     Vwo 4 Project 2 <br/>

@@ -12,6 +12,24 @@
     max-width: 800px;
 }
 
+.backButton {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--surface-hover);
+    border: 1px solid var(--border-color);
+}
+
+.backButton:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
 .title {
     font-size: 3.5rem;
     margin-bottom: 1rem;
