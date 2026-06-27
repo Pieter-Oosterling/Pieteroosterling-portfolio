@@ -149,6 +149,14 @@ export default async function ProjectDetailPage({
 
                     {project.slug === 'SOS' && (
                         <div className={styles.section}>
+                            <h2 className={styles.sectionTitle}>Interactief: Mini-Game</h2>
+                            <p className={styles.text} style={{ marginBottom: '1rem' }}>
+                                Probeer zelf de ideale medische lading samen te stellen voor de SOS-drone zonder over de limiet van 300kg te gaan!
+                            </p>
+                            <Link href="/sos/games/makeyourdrone" className={styles.portfolioBtn} style={{ marginBottom: '2rem' }}>
+                                Speel de Drone Configurator 🎮
+                            </Link>
+
                             <IterationTimeline />
                             <CostCalculator />
                         </div>
