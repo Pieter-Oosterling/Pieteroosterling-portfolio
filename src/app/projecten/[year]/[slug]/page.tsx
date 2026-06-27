@@ -150,6 +150,7 @@ export default async function ProjectDetailPage({
                     {project.slug === 'SOS' && (
                         <div className={styles.section}>
                             <IterationTimeline />
+                            <CostCalculator />
                         </div>
                     )}
 
