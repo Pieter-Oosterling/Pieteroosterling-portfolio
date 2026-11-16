@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArtworkInteractive from './ArtworkInteractive';
 import BalanceModelInteractive from './BalanceModelInteractive';
+import { ImageSlot, ProcessGallery, VideoPlayerSlot } from './MediaShowcase';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -19,6 +20,9 @@ export default function MentaleGezondheidPage() {
         <nav className={styles.quickNavWrapper} aria-label="Snelmenu">
           <div className={styles.quickNav}>
             <a href="#kunstwerk" className={styles.quickNavLink}>🎨 Kunstwerk</a>
+            <a href="#proces" className={styles.quickNavLink}>📸 Maakproces</a>
+            <a href="#video" className={styles.quickNavLink}>🎬 Video</a>
+            <a href="#verslag" className={styles.quickNavLink}>📄 CKV Verslag</a>
             <a href="#cijfers" className={styles.quickNavLink}>📊 Cijfers 2025</a>
             <a href="#werking" className={styles.quickNavLink}>⚖️ Hoe het werkt</a>
             <a href="#herkennen" className={styles.quickNavLink}>🔍 Signalen</a>
@@ -64,6 +68,27 @@ export default function MentaleGezondheidPage() {
           </div>
         </header>
 
+        {/* Hero Media Showcase: Grote Overzichtsfoto van het Kunstwerk */}
+        <div className={styles.heroArtworkCard}>
+          <div className={styles.heroArtworkImageSlot}>
+            <ImageSlot
+              src="/ckv/mentalegezondheid/kunstwerk-totaal.jpg"
+              alt="Totaaloverzicht van het 3D CKV kunstwerk Verborgen Woorden"
+              title="Totaaloverzicht van het Kunstwerk"
+              tip="Plaats hier je mooiste overzichtsfoto van het voltooide 3D hoofd op een neutrale achtergrond of sokkel."
+              height="380px"
+              icon="🗿"
+            />
+          </div>
+          <div className={styles.heroArtworkCaption}>
+            <span className={styles.heroArtworkCaptionTitle}>
+              <span>🎭</span>
+              <span>Verborgen Woorden — 3D Sculptuur &amp; Mixed Media</span>
+            </span>
+            <span className={styles.heroArtworkTag}>CKV Eindwerk · Pieter Oosterling</span>
+          </div>
+        </div>
+
         {/* SECTION 1: Het Kunstwerk & Gillian Wearing */}
         <section id="kunstwerk" className={styles.section}>
           <div className={styles.sectionHeader}>
@@ -86,6 +111,16 @@ export default function MentaleGezondheidPage() {
             <div className={styles.artTwoCol}>
               <div className={styles.artHalfBox}>
                 <h4>😊 De Buitenkant</h4>
+                <div style={{ margin: '1rem 0' }}>
+                  <ImageSlot
+                    src="/ckv/mentalegezondheid/kunstwerk-buitenkant.jpg"
+                    alt="Foto van de rustige buitenkant van het kunstwerk"
+                    title="Foto Buitenkant (Façade)"
+                    tip="Close-up van het briefje 'Met mij gaat het GOED' en 'Blijf glimlachen!'"
+                    height="180px"
+                    icon="😊"
+                  />
+                </div>
                 <p>
                   Uit de mond steekt een briefje met de tekst: <strong>&lsquo;Met mij gaat het GOED&rsquo;</strong>.
                   Op de lippen staat de sociale dwingende oproep: <strong>&lsquo;Blijf glimlachen!&rsquo;</strong>.
@@ -95,6 +130,16 @@ export default function MentaleGezondheidPage() {
 
               <div className={styles.artHalfBox}>
                 <h4>🧠 De Binnenkant</h4>
+                <div style={{ margin: '1rem 0' }}>
+                  <ImageSlot
+                    src="/ckv/mentalegezondheid/kunstwerk-binnenkant.jpg"
+                    alt="Foto van de opengewerkte hersenkamer met tandwielen en draden"
+                    title="Foto Binnenkant (Realiteit)"
+                    tip="Foto van de opengewerkte hersenen met ijzerdraad, wekker en tandwielen"
+                    height="180px"
+                    icon="🧠"
+                  />
+                </div>
                 <p>
                   Vastgelopen tandwielen (overpeinzen en piekeren), een wekker (toetsdruk en tijdstekort)
                   en oplichtende telefoondraden (sociale vergelijking). Het laat zien dat rust aan de
@@ -120,8 +165,61 @@ export default function MentaleGezondheidPage() {
             </div>
           </div>
 
-          {/* Interactief element voor kunstwerk & symbolen */}
+          {/* Interactief element voor kunstwerk & symbolen met detailfoto's */}
           <ArtworkInteractive />
+        </section>
+
+        {/* NIEUWE SECTIE: Maakproces & Fotogalerij */}
+        <section id="proces" className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.tag}>Behind the Scenes</span>
+            <h2 className={styles.sectionTitle}>Het Ontstaansproces</h2>
+            <p className={styles.sectionLead}>
+              Van de eerste brainstorm en moodboards tot het 3D-printen, assembleren van tandwielen en de technische NFC-integratie.
+            </p>
+          </div>
+          <ProcessGallery />
+        </section>
+
+        {/* NIEUWE SECTIE: Video & Rondgang */}
+        <section id="video" className={styles.section}>
+          <VideoPlayerSlot />
+        </section>
+
+        {/* NIEUWE SECTIE: CKV Verslag Download & Inkijken */}
+        <section id="verslag" className={styles.section}>
+          <div className={styles.reportCard}>
+            <div className={styles.reportContentSide}>
+              <div className={styles.reportIconBox}>📄</div>
+              <div className={styles.reportInfo}>
+                <span className={styles.tag} style={{ color: 'var(--primary)' }}>Officieel CKV Examenverslag</span>
+                <h3>Verslag: Verborgen Woorden</h3>
+                <p>
+                  Lees het complete onderzoeksverslag inclusief kunstanalyse, contextonderzoek naar Gillian Wearing,
+                  materiaalonderzoek, reflectie en bronvermelding.
+                </p>
+              </div>
+            </div>
+            <div className={styles.reportActions}>
+              <a
+                href="/ckv/mentalegezondheid/CKV-Verslag-Verborgen-Woorden.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.btnReportPrimary}
+              >
+                <span>👁️</span>
+                <span>Bekijk Verslag (PDF)</span>
+              </a>
+              <a
+                href="/ckv/mentalegezondheid/CKV-Verslag-Verborgen-Woorden.pdf"
+                download
+                className={styles.btnReportSecondary}
+              >
+                <span>⬇️</span>
+                <span>Download</span>
+              </a>
+            </div>
+          </div>
         </section>
 
         {/* SECTION 2: Actuele Cijfers */}
