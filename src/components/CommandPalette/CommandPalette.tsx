@@ -23,6 +23,7 @@ const PAGES: SearchItem[] = [
     { id: 'portfolios', title: "Portfolio's", category: 'page', href: '/portfolios', icon: '📂' },
     { id: 'over-mij', title: 'Over Mij', category: 'page', href: '/over-mij', icon: '👋' },
     { id: 'competenties', title: 'Competenties', category: 'page', href: '/competenties', icon: '⚡' },
+    { id: 'ckv-mentale-gezondheid', title: 'CKV: Verborgen Woorden (Mentale Gezondheid)', description: 'Kunstwerk & onderzoek naar mentale druk bij scholieren', category: 'page', href: '/ckv/mentalegezondheid', icon: '🧠' },
 ];
 
 export default function CommandPalette() {
