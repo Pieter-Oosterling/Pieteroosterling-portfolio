@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArtworkInteractive from './ArtworkInteractive';
 import BalanceModelInteractive from './BalanceModelInteractive';
+import CkvGallery from './CkvGallery';
 import { ImageSlot, ProcessGallery, VideoPlayerSlot } from './MediaShowcase';
 import styles from './page.module.css';
 
@@ -21,6 +22,7 @@ export default function MentaleGezondheidPage() {
           <div className={styles.quickNav}>
             <a href="#kunstwerk" className={styles.quickNavLink}>🎨 Kunstwerk</a>
             <a href="#proces" className={styles.quickNavLink}>📸 Maakproces</a>
+            <a href="#gallerij" className={styles.quickNavLink}>🖼️ Galerij ({80})</a>
             <a href="#video" className={styles.quickNavLink}>🎬 Video</a>
             <a href="#verslag" className={styles.quickNavLink}>📄 CKV Verslag</a>
             <a href="#cijfers" className={styles.quickNavLink}>📊 Cijfers 2025</a>
@@ -179,6 +181,19 @@ export default function MentaleGezondheidPage() {
             </p>
           </div>
           <ProcessGallery />
+        </section>
+
+        {/* NIEUWE SECTIE: Complete Fotogalerij & Video Archief */}
+        <section id="gallerij" className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.tag}>Foto &amp; Video Archief</span>
+            <h2 className={styles.sectionTitle}>Werkplaats &amp; Detail Galerij</h2>
+            <p className={styles.sectionLead}>
+              Blader door de 80 foto&apos;s en video&apos;s van het 3D-printen, de werkplaats, close-ups van de ijzerdraden en het voltooide kunstwerk.
+              Klik op een thumbnail om de foto groot te bekijken.
+            </p>
+          </div>
+          <CkvGallery />
         </section>
 
         {/* NIEUWE SECTIE: Video & Rondgang */}
